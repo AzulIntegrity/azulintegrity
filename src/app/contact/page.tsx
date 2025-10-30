@@ -3,12 +3,32 @@ import Link from "next/link";
 import Image from "next/image";
 
 
-import React from "react";
+import React, { useCallback } from "react";
 import { Header, Footer } from "@/components";
 import styles from "../page.module.css";
 
 
 export default function ContactPage() {
+  // JS submit handler for Netlify Forms migration
+  const handleSubmit = useCallback(async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const body = new URLSearchParams(formData).toString();
+    try {
+      const response = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      });
+      if (response.ok) {
+        window.location.href = "/success";
+      } else {
+        console.error("Form submission failed:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Network or submission error:", error);
+    }
+  }, []);
   return (
     <div className={styles.page}>
       <Header>
@@ -35,10 +55,7 @@ export default function ContactPage() {
             <span className={styles.contactHeadingLine}></span>
             <form
               name="contact"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              action="/success"
+              onSubmit={handleSubmit}
               className={styles.contactForm}
             >
               <input type="hidden" name="form-name" value="contact" />
