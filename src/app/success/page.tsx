@@ -20,9 +20,9 @@ export default function SuccessPage() {
       </Header>
       <main>
         <section className={styles.contactSectionWrap}>
-            <div className={styles.contactSection} style={{ maxWidth: 800, margin: '3rem auto', textAlign: 'center' }}>
-            <h1>Thanks — message received</h1>
-            <p style={{ marginTop: '1rem' }}>We received your message. We&apos;ll be in touch shortly.</p>
+          <div className={`${styles.contactSection} ${styles.successBox}`}>
+            <h1 className={styles.successTitle}>Thanks — Message Received</h1>
+            <p className={styles.successText}>We received your message. We&apos;ll be in touch shortly.</p>
             <p style={{ marginTop: '1.5rem' }}><Link href="/">Return to Home</Link></p>
           </div>
         </section>

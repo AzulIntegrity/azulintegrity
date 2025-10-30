@@ -218,6 +218,25 @@
   cursor: pointer;
   color: var(--foreground);
 }
+
+/* Success page box */
+.successBox {
+  background: var(--white);
+  color: var(--foreground);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 3rem auto;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.successTitle {
+  color: var(--primary-blue);
+  margin: 0 0 0.5rem 0;
+}
+.successText {
+  margin-top: 1rem;
+}
 .page {
   display: flex;
   flex-direction: column;
