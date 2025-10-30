@@ -3,35 +3,55 @@ import Link from "next/link";
 import Image from "next/image";
 
 
-import React, { useCallback } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import { Header, Footer } from "@/components";
 import styles from "../page.module.css";
 
 
 export default function ContactPage() {
-  // JS submit handler for Netlify Forms migration
+  // JS submit handler for Netlify Forms migration — show in-page modal on success
+  const [showModal, setShowModal] = useState(false);
   const handleSubmit = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    // Convert FormData to array of [key, value] pairs for URLSearchParams
-  // Ensure all values are strings for URLSearchParams
-  const params: [string, string][] = Array.from(formData.entries()).map(([key, value]) => [key, typeof value === 'string' ? value : '']);
-  const body = new URLSearchParams(params).toString();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const params: [string, string][] = Array.from(formData.entries()).map(([key, value]) => [key, typeof value === 'string' ? value : '']);
+    const body = new URLSearchParams(params).toString();
     try {
-      const response = await fetch("/__forms.html", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      const response = await fetch('/__forms.html', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body,
       });
       if (response.ok) {
-        window.location.href = "/success";
+        // Show an in-page modal thanking the user instead of redirecting
+        setShowModal(true);
+        form.reset();
       } else {
-        console.error("Form submission failed:", response.statusText);
+        console.error('Form submission failed:', response.statusText);
       }
     } catch (error) {
-      console.error("Network or submission error:", error);
+      console.error('Network or submission error:', error);
     }
   }, []);
+
+  // close on ESC
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowModal(false);
+    };
+    if (showModal) {
+      window.addEventListener('keydown', onKey);
+    }
+    return () => window.removeEventListener('keydown', onKey);
+  }, [showModal]);
+
+  // auto-close modal after 5 seconds
+  useEffect(() => {
+    if (!showModal) return;
+    const t = window.setTimeout(() => setShowModal(false), 5000);
+    return () => clearTimeout(t);
+  }, [showModal]);
   return (
     <div className={styles.page}>
       <Header>
@@ -58,6 +78,10 @@ export default function ContactPage() {
             <span className={styles.contactHeadingLine}></span>
             <form
               name="contact"
+              action="/success"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className={styles.contactForm}
             >
@@ -90,6 +114,16 @@ export default function ContactPage() {
               </div>
               <button type="submit" className={styles.submitButton}>Send Message</button>
             </form>
+            {/* Modal popup */}
+            {showModal && (
+              <div className={styles.modalOverlay} role="dialog" aria-modal="true" onClick={(e) => { if (e.target === e.currentTarget) setShowModal(false); }}>
+                <div className={styles.modal}>
+                  <button className={styles.modalClose} aria-label="Close" onClick={() => setShowModal(false)}>×</button>
+                  <h2>Thank you for your message</h2>
+                  <p>Azul Integrity Accounting will be in touch shortly.</p>
+                </div>
+              </div>
+            )}
           </div>
         </section>
       </main>
