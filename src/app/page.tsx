@@ -1,95 +1,234 @@
-import Image from "next/image";
+'use client';
+
+import React, { useState } from 'react';
+import { Header, Footer } from "@/components";
 import styles from "./page.module.css";
 
+// Service data
+const serviceCategories = [
+  {
+    key: 'bookkeeping',
+    title: 'Bookkeeping',
+    valueProp: '<strong>Clarity for Decisions</strong> <br />We keep your ledgers accurate, reconciled, and audit-ready every month.',
+    bullets: [
+      'Monthly bank and credit card reconciliation.',
+      'Management of payables and receivables.',
+      'Delivery of all core reports (P&L, Balance Sheet, etc.).',
+    ],
+  },
+  {
+    key: 'accounting',
+    title: 'Accounting / CPA Services',
+    valueProp: '<strong>Insight for Growth</strong> <br /> Go beyond data entry with high-level financial analysis and strategic reporting.',
+    bullets: [
+      'Annual budget creation and actual-to-budget reporting.',
+      'Monthly strategic analysis and statement review.',
+      'Custom profitability tracking and forecasting.',
+    ],
+  },
+  {
+    key: 'taxes',
+    title: 'Small Business Taxes',
+    valueProp: '<strong>Compliance with Confidence</strong> <br /> Ensure your entity and state filings are handled accurately and on time.',
+    bullets: [
+      'Full preparation and filing of entity tax returns (1120, 1065, Schedule C).',
+      'Specialized preparation for per-state and prior-year filings.',
+      'Receipt organization and documentation services.',
+    ],
+  },
+  {
+    key: 'payroll',
+    title: 'Payroll',
+    valueProp: '<strong>Seamless & Stress-Free</strong> <br /> We handle the entire payroll lifecycle so you can focus on your team.',
+    bullets: [
+      'Complete payroll system setup and configuration.',
+      'Ongoing payroll processing, direct deposit, and tax filings.',
+      'Full-service annual 1099 preparation.',
+    ],
+  },
+];
+
+// Testimonial data
+const testimonials = [
+  { quote: "Azul Integrity transformed our year-end process. The best CPA experience we've ever had.", name: "Jane D., Tech CEO" },
+  { quote: "Seamless virtual service. Everything is handled with professionalism and incredible speed.", name: "Mark S., Restaurant Owner" },
+  { quote: "Clarity at Every Click is true! Their monthly reports are easy to understand and act on.", name: "Sarah K., Freelancer" },
+];
+
 export default function Home() {
+  const [activeTab, setActiveTab] = useState(serviceCategories[0].key);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const activeService = serviceCategories.find(s => s.key === activeTab);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      <Header>
+     <div className={styles.logoContainer}>
+  <img src="/logo.png" alt="Azul Integrity Logo" className={styles.logoImage} />
+  
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+</div>
+        <nav className={styles.navigation}>
+          <a href="/">Home</a>
+          <a href="/services">Services</a>
+          <a href="/contact">Contact</a>
+        </nav>
+        <div className={`${styles.hamburger} ${mobileMenuOpen ? styles.active : ''}`} onClick={toggleMobileMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+        <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.active : ''}`}>
+          <a href="/" onClick={() => setMobileMenuOpen(false)}>Home</a>
+          <a href="/services" onClick={() => setMobileMenuOpen(false)}>Services</a>
+          <a href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+        </div>
+      </Header>
+      
+      <main className={styles.main}>
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <div className={styles.heroImageBg}></div>
+          <div className={styles.heroContent}>
+            <div className={styles.heroText}>
+              <h1>Optimize Your Finances, Virtually</h1>
+              <p className={styles.heroSubtext}>
+                Your Virtual CPA - Clarity at Every Click, Rooted in Trust.
+              </p>
+              <button className={styles.ctaButton}>
+                Schedule Your Discovery Call
+              </button>
+            </div>
+          </div>
+        </section>
+
+      
+        <section className={styles.seoBlock}>
+          <h2 className={styles.sectionHeading}>
+            Why Choose Azul Integrity as Your Virtual CPA? <br />
+            Expert Bookkeeping, Tax, Payroll & Accounting Services for Small Businesses Nationwide
+          </h2>
+          <p className={styles.sectionSubtext}>
+            Get trusted financial guidance, accurate records, and stress-free compliance from a licensed CPA with 25+ years of experience. We help small businesses grow with clarity, confidence, and personalized support—no matter where you’re located.
+          </p>
+        </section>
+
+        <section className={styles.services}>
+          <h2 className={styles.sectionHeading}>Our Four Pillars of Service</h2>
+          
+          <div className={styles.tabsHeader}>
+            {serviceCategories.map((category) => (
+              <button
+                key={category.key}
+                className={`${styles.tabButton} ${activeTab === category.key ? styles.active : ''}`}
+                onClick={() => setActiveTab(category.key)}
+              >
+                {category.title}
+              </button>
+            ))}
+          </div>
+          
+          {activeService && (
+            <div className={styles.serviceDetails}>
+              <p className={styles.serviceValueProp} dangerouslySetInnerHTML={{ __html: activeService.valueProp }}></p>
+              <ul className={styles.serviceList}>
+                {activeService.bullets.map((bullet, index) => (
+                  <li key={index}>✓ {bullet}</li>
+                ))}
+              </ul>
+              <a href="/services" className={styles.serviceCta}>
+                View All Packages & Pricing
+              </a>
+            </div>
+          )}
+        </section>
+
+        {/* Testimonials Section */}
+        <section className={styles.testimonials}>
+          <h2 className={styles.testimonialsHeading}>Trusted by Business Owners Nationwide</h2>
+          <div className={styles.testimonialGrid}>
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className={styles.testimonialCard}>
+                <p className={styles.quote}>"{testimonial.quote}"</p>
+                <p className={styles.clientName}>— {testimonial.name}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section className={styles.about}>
+          <img
+  src="/Headshot.jpg"
+  alt="Lead Accountant Profile Photo"
+  className={styles.expertPhoto}
+/>
+          <div className={styles.expertContent}>
+            <h2>Meet the Expert Behind Azul Integrity Accounting Services</h2>
+            <p>
+              Hi, I'm <strong>Heather Duran</strong>, your dedicated Virtual CPA and founder of Azul Integrity. With <strong>over 25 years</strong> in corporate finance, accounting, and financial systems, I bring a unique blend of corporate discipline and entrepreneurial focus to your business. My goal is to deliver clear, actionable financial guidance.
+            </p>
+            <p>
+              I specialize in helping small to medium-sized businesses turn complex books into confident growth strategies. I use my deep expertise in GAAP and process automation to implement streamlined systems, ensuring you get accurate records and the <strong>insights</strong> you need to stop worrying about spreadsheets and focus on your vision.
+            </p>
+            <ul>
+              <li>Licensed CPA in New Mexico and Florida.</li>
+              <li>25+ years of experience in corporate finance and financial systems.</li>
+              <li>Committed to translating complex numbers into confident business strategy.</li>
+            </ul>
+          </div>
+        </section>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      
+      <Footer>
+  <footer className={styles.footerColumns}>
+    <div className={styles.footerGrid}>
+      <div className={styles.footerCol}>
+        <h4>Quick Links</h4>
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+      
+      
+      </div>
+      <div className={styles.footerCol}>
+        <h4>Contact</h4>
+        <span>Email: <a href="mailto:info@azulintegrity.com">info@azulintegrity.com</a></span>
+        <span>Phone: <a href="tel:+15555555555">(904) 476-4732</a></span>
+<div className={styles.footerSocial}>
+  <a
+    href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img src="/facebookIcon.png" alt="Facebook" className={styles.socialIcon} />
+  </a>
+  <a
+    href="https://www.linkedin.com/in/heather-duran-2ba29045"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img src="/linkedInIcon.png" alt="LinkedIn" className={styles.socialIcon} />
+  </a>
+</div>
+      </div>
+      <div className={styles.footerCol}>
+        <h4>Legal Pages</h4>
+        <a href="/terms">Terms of Service</a>
+        <a href="/privacy">Privacy Policy</a>
+      
+     <a href="/sitemap">Site Map</a>
+      </div>
+    </div>
+    <div className={styles.footerCopyright}>
+      &copy; {new Date().getFullYear()} Azul Integrity Accounting Services. All rights reserved.
+    </div>
+  </footer>
+</Footer>
     </div>
   );
 }
