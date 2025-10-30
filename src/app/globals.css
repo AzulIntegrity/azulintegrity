@@ -58,17 +58,7 @@
   margin-top: 1rem;
 }
 
-@media (max-width: 900px) {
-  .footerGrid {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-  }
-  .footerCol {
-    align-items: center;
-    text-align: center;
-  }
-}
+
 :root {
   --background: #ffffff;
   --foreground: #333333;
@@ -82,21 +72,7 @@
   --card-bg: #f7fafc;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1a202c;
-    --foreground: #e2e8f0;
-    --primary: #4299e1;
-    --primary-hover: #3182ce;
-    --accent: #f6e05e;
-    --accent-hover: #ecc94b;
-    --border: #2d3748;
-    --card-bg: #2d3748;
-    --gray-light: #2d3748;
-    --gray-medium: #a0aec0;
-    --text-dark: #e2e8f0;
-  }
-}
+
 
 html,
 body {
@@ -174,5 +150,31 @@ a:hover {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+@media (max-width: 900px) {
+  .footerGrid {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .footerCol {
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a202c;
+    --foreground: #e2e8f0;
+    --primary: #4299e1;
+    --primary-hover: #3182ce;
+    --accent: #f6e05e;
+    --accent-hover: #ecc94b;
+    --border: #2d3748;
+    --card-bg: #2d3748;
+    --gray-light: #2d3748;
+    --gray-medium: #a0aec0;
+    --text-dark: #e2e8f0;
   }
 }

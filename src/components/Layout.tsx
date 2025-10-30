@@ -31,6 +31,9 @@ export function Footer({ children, className = '' }: FooterProps) {
      <footer className={`footer ${className}`}>
       <div className="footer-container">
         <div className="footerGrid">
+             <div className="footerCol footerLogoCol">
+               <Image src="/logo2.png" alt="Azul Integrity Logo" width={140} height={140} />
+             </div>
           <div className="footerCol">
             <h4>Quick Links</h4>
             <Link href="/">Home</Link>

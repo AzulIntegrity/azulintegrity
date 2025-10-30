@@ -1,5 +1,6 @@
 'use client';
-
+import Link from "next/link";
+import Image from "next/image";
 import React, { useState } from 'react';
 import { Header, Footer } from "@/components";
 import styles from "./page.module.css";
@@ -14,13 +15,6 @@ const serviceCategories = [
       'Monthly bank and credit card reconciliation.',
       'Management of payables and receivables.',
       'Delivery of all core reports (P&L, Balance Sheet, etc.).',
-    ],
-  },
-  {
-    key: 'accounting',
-    title: 'Accounting / CPA Services',
-    valueProp: '<strong>Insight for Growth</strong> <br /> Go beyond data entry with high-level financial analysis and strategic reporting.',
-    bullets: [
       'Annual budget creation and actual-to-budget reporting.',
       'Monthly strategic analysis and statement review.',
       'Custom profitability tracking and forecasting.',
@@ -68,14 +62,14 @@ export default function Home() {
     <div className={styles.page}>
       <Header>
      <div className={styles.logoContainer}>
-  <img src="/logo.png" alt="Azul Integrity Logo" className={styles.logoImage} />
+  <Image src="/logo.png" alt="Azul Integrity Logo" className={styles.logoImage} width={60} height={60} />
   
 
 </div>
         <nav className={styles.navigation}>
-          <a href="/">Home</a>
-          <a href="/services">Services</a>
-          <a href="/contact">Contact</a>
+          <Link href="/">Home</Link>
+          <Link href="/services">Services</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
         <div className={`${styles.hamburger} ${mobileMenuOpen ? styles.active : ''}`} onClick={toggleMobileMenu}>
           <span></span>
@@ -162,10 +156,12 @@ export default function Home() {
 
         {/* About Section */}
         <section className={styles.about}>
-          <img
+          <Image
   src="/Headshot.jpg"
   alt="Lead Accountant Profile Photo"
   className={styles.expertPhoto}
+  width={80}
+  height={80}
 />
           <div className={styles.expertContent}>
             <h2>Meet the Expert Behind Azul Integrity Accounting Services</h2>
@@ -189,11 +185,9 @@ export default function Home() {
     <div className={styles.footerGrid}>
       <div className={styles.footerCol}>
         <h4>Quick Links</h4>
-        <a href="/">Home</a>
-        <a href="/services">Services</a>
-        <a href="/contact">Contact</a>
-      
-      
+        <Link href="/">Home</Link>
+        <Link href="/services">Services</Link>
+        <Link href="/contact">Contact</Link>
       </div>
       <div className={styles.footerCol}>
         <h4>Contact</h4>
@@ -205,14 +199,14 @@ export default function Home() {
     target="_blank"
     rel="noopener noreferrer"
   >
-    <img src="/facebookIcon.png" alt="Facebook" className={styles.socialIcon} />
+    <Image src="/facebookIcon.png" alt="Facebook" className={styles.socialIcon} width={28} height={28} />
   </a>
   <a
     href="https://www.linkedin.com/in/heather-duran-2ba29045"
     target="_blank"
     rel="noopener noreferrer"
   >
-    <img src="/linkedInIcon.png" alt="LinkedIn" className={styles.socialIcon} />
+    <Image src="/linkedInIcon.png" alt="LinkedIn" className={styles.socialIcon} width={28} height={28} />
   </a>
 </div>
       </div>

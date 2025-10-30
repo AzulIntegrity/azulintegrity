@@ -1,4 +1,7 @@
-'use client';
+"use client";
+import Link from "next/link";
+import Image from "next/image";
+
 
 import React, { useState} from 'react';
 import { Header, Footer } from "@/components";
@@ -193,13 +196,13 @@ export default function Services() {
     <div className={styles.page}>
       <Header>
      <div className={styles.logoContainer}>
-  <img src="/logo.png" alt="Azul Integrity Logo" className={styles.logoImage} />
+  <Image src="/logo.png" alt="Azul Integrity Logo" className={styles.logoImage} width={60} height={60} />
  
 </div>
         <nav className={styles.navigation}>
-          <a href="/">Home</a>
-          <a href="/services">Services</a>
-          <a href="/contact">Contact</a>
+          <Link href="/">Home</Link>
+          <Link href="/services">Services</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
         <div className={`${styles.hamburger} ${mobileMenuOpen ? styles.active : ''}`} onClick={toggleMobileMenu}>
           <span></span>
