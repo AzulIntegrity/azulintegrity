@@ -27,8 +27,8 @@ export default function ContactPage() {
             <Image src="/Headshot.jpg" alt="Heather Duran" className={styles.cardPhoto} width={80} height={80} />
             <h2 className={styles.cardName}>Heather Duran</h2>
             <p className={styles.cardTitle}>Owner &amp; Certified Public Accountant</p>
-            <p className={styles.cardEmail}><a href="mailto:info@azulintegrity.com">info@azulintegrity.com</a></p>
-            <p className={styles.cardPhone}><a href="tel:+119044764732">(904) 476-4732</a></p>
+            <p className={styles.cardEmail}><Link href="mailto:info@azulintegrity.com">info@azulintegrity.com</Link></p>
+            <p className={styles.cardPhone}><Link href="tel:+119044764732">(904) 476-4732</Link></p>
           </div>
           <div className={styles.contactSection}>
             <h1>Get In Touch </h1>

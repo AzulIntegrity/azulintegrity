@@ -77,9 +77,9 @@ export default function Home() {
           <span></span>
         </div>
         <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.active : ''}`}>
-          <a href="/" onClick={() => setMobileMenuOpen(false)}>Home</a>
-          <a href="/services" onClick={() => setMobileMenuOpen(false)}>Services</a>
-          <a href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+          <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+          <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </div>
       </Header>
       
@@ -134,9 +134,9 @@ export default function Home() {
                   <li key={index}>✓ {bullet}</li>
                 ))}
               </ul>
-              <a href="/services" className={styles.serviceCta}>
+              <Link href="/services" className={styles.serviceCta}>
                 View All Packages & Pricing
-              </a>
+              </Link>
             </div>
           )}
         </section>
@@ -191,23 +191,23 @@ export default function Home() {
       </div>
       <div className={styles.footerCol}>
         <h4>Contact</h4>
-        <span>Email: <a href="mailto:info@azulintegrity.com">info@azulintegrity.com</a></span>
-        <span>Phone: <a href="tel:+15555555555">(904) 476-4732</a></span>
+        <span>Email: <Link href="mailto:info@azulintegrity.com">info@azulintegrity.com</Link></span>
+        <span>Phone: <Link href="tel:+15555555555">(904) 476-4732</Link></span>
 <div className={styles.footerSocial}>
-  <a
+  <Link
     href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#"
     target="_blank"
     rel="noopener noreferrer"
   >
     <Image src="/facebookIcon.png" alt="Facebook" className={styles.socialIcon} width={28} height={28} />
-  </a>
-  <a
+  </Link>
+  <Link
     href="https://www.linkedin.com/in/heather-duran-2ba29045"
     target="_blank"
     rel="noopener noreferrer"
   >
     <Image src="/linkedInIcon.png" alt="LinkedIn" className={styles.socialIcon} width={28} height={28} />
-  </a>
+  </Link>
 </div>
       </div>
       <div className={styles.footerCol}>

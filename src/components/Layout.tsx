@@ -42,15 +42,15 @@ export function Footer({  className = '' }: FooterProps) {
           </div>
           <div className="footerCol">
             <h4>Contact</h4>
-            <span> <Image src="/emailIcon.png" alt="Email" className="contactIcon" width={20} height={20} /> <a href="mailto:info@azulintegrity.com">info@azulintegrity.com</a></span>
-            <span> <Image src="/phoneIcon.png" alt="Phone" className="contactIcon" width={20} height={20} /> <a href="tel:+119044764732">(904) 476-4732</a></span>
+            <span> <Image src="/emailIcon.png" alt="Email" className="contactIcon" width={20} height={20} /> <Link href="mailto:info@azulintegrity.com">info@azulintegrity.com</Link></span>
+            <span> <Image src="/phoneIcon.png" alt="Phone" className="contactIcon" width={20} height={20} /> <Link href="tel:+119044764732">(904) 476-4732</Link></span>
             <div className="footerSocial">
-              <a href="https://www.linkedin.com/company/azul-integrity-accounting-services/" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.linkedin.com/company/azul-integrity-accounting-services/" target="_blank" rel="noopener noreferrer">
                 <Image src="/linkedInIcon.png" alt="LinkedIn" className="socialIcon" width={20} height={20} />
-              </a>
-              <a href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#" target="_blank" rel="noopener noreferrer">
+              </Link>
+              <Link href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#" target="_blank" rel="noopener noreferrer">
                 <Image src="/facebookIcon.png" alt="Facebook" className="socialIcon" width={20} height={20} />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="footerCol">
