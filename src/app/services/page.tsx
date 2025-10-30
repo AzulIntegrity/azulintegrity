@@ -210,9 +210,9 @@ export default function Services() {
           <span></span>
         </div>
         <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.active : ''}`}>
-          <a href="/" onClick={() => setMobileMenuOpen(false)}>Home</a>
-          <a href="/services" onClick={() => setMobileMenuOpen(false)}>Services</a>
-          <a href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+          <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+          <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </div>
       </Header>
       

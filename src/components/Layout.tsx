@@ -22,7 +22,7 @@ interface FooterProps {
   className?: string;
 }
 
-export function Footer({ children, className = '' }: FooterProps) {
+export function Footer({  className = '' }: FooterProps) {
   const [year, setYear] = useState("");
   useEffect(() => {
     setYear(new Date().getFullYear().toString());

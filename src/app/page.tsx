@@ -147,8 +147,8 @@ export default function Home() {
           <div className={styles.testimonialGrid}>
             {testimonials.map((testimonial, index) => (
               <div key={index} className={styles.testimonialCard}>
-                <p className={styles.quote}>"{testimonial.quote}"</p>
-                <p className={styles.clientName}>— {testimonial.name}</p>
+                <p className={styles.quote}>&quot;{testimonial.quote}&quot;</p>
+                <p className={styles.clientName}>&mdash; {testimonial.name}</p>
               </div>
             ))}
           </div>
@@ -166,7 +166,7 @@ export default function Home() {
           <div className={styles.expertContent}>
             <h2>Meet the Expert Behind Azul Integrity Accounting Services</h2>
             <p>
-              Hi, I'm <strong>Heather Duran</strong>, your dedicated Virtual CPA and founder of Azul Integrity. With <strong>over 25 years</strong> in corporate finance, accounting, and financial systems, I bring a unique blend of corporate discipline and entrepreneurial focus to your business. My goal is to deliver clear, actionable financial guidance.
+              Hi, I&apos;m <strong>Heather Duran</strong>, your dedicated Virtual CPA and founder of Azul Integrity. With <strong>over 25 years</strong> in corporate finance, accounting, and financial systems, I bring a unique blend of corporate discipline and entrepreneurial focus to your business. My goal is to deliver clear, actionable financial guidance.
             </p>
             <p>
               I specialize in helping small to medium-sized businesses turn complex books into confident growth strategies. I use my deep expertise in GAAP and process automation to implement streamlined systems, ensuring you get accurate records and the <strong>insights</strong> you need to stop worrying about spreadsheets and focus on your vision.
@@ -212,10 +212,9 @@ export default function Home() {
       </div>
       <div className={styles.footerCol}>
         <h4>Legal Pages</h4>
-        <a href="/terms">Terms of Service</a>
-        <a href="/privacy">Privacy Policy</a>
-      
-     <a href="/sitemap">Site Map</a>
+        <Link href="/terms">Terms of Service</Link>
+        <Link href="/privacy">Privacy Policy</Link>
+        <Link href="/sitemap">Site Map</Link>
       </div>
     </div>
     <div className={styles.footerCopyright}>
