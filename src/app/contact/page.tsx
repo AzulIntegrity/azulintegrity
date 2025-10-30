@@ -33,13 +33,21 @@ export default function ContactPage() {
           <div className={styles.contactSection}>
             <h1>Get In Touch </h1>
             <span className={styles.contactHeadingLine}></span>
-            <form name="contact" method="POST" data-netlify="true" className={styles.contactForm}>
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="/success"
+              className={styles.contactForm}
+            >
               <input type="hidden" name="form-name" value="contact" />
-              {/* Honeypot field for spam prevention */}
-              <div style={{ display: 'none' }}>
-                <label htmlFor="bot-field">Don&apos;t fill this out if you&apos;re human:</label>
-                <input id="bot-field" name="bot-field" type="text" tabIndex={-1} autoComplete="off" />
-              </div>
+              {/* Honeypot field for spam prevention, Netlify migration best practice */}
+              <p style={{ display: 'none' }}>
+                <label>
+                  Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
+                </label>
+              </p>
                 <div className={styles.formGroup}>
                   <label htmlFor="firstName">First Name</label>
                   <input type="text" id="firstName" name="firstName" required placeholder="Enter Your First Name" />
