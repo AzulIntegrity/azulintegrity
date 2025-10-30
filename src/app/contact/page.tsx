@@ -10,10 +10,13 @@ import styles from "../page.module.css";
 
 export default function ContactPage() {
   // JS submit handler for Netlify Forms migration
-  const handleSubmit = useCallback(async (event) => {
+  const handleSubmit = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const body = new URLSearchParams(formData).toString();
+    const formData = new FormData(event.currentTarget);
+    // Convert FormData to array of [key, value] pairs for URLSearchParams
+  // Ensure all values are strings for URLSearchParams
+  const params: [string, string][] = Array.from(formData.entries()).map(([key, value]) => [key, typeof value === 'string' ? value : '']);
+  const body = new URLSearchParams(params).toString();
     try {
       const response = await fetch("/__forms.html", {
         method: "POST",
