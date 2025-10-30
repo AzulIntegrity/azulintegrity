@@ -1,0 +1,2 @@
+# Netlify Forms Next.js 5+ migration: ensure form POSTs are handled
+/contact  /api/contact-form-handler 200!

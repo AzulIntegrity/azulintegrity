@@ -35,6 +35,11 @@ export default function ContactPage() {
             <span className={styles.contactHeadingLine}></span>
             <form name="contact" method="POST" data-netlify="true" className={styles.contactForm}>
               <input type="hidden" name="form-name" value="contact" />
+              {/* Honeypot field for spam prevention */}
+              <div style={{ display: 'none' }}>
+                <label htmlFor="bot-field">Don&apos;t fill this out if you&apos;re human:</label>
+                <input id="bot-field" name="bot-field" type="text" tabIndex={-1} autoComplete="off" />
+              </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="firstName">First Name</label>
                   <input type="text" id="firstName" name="firstName" required placeholder="Enter Your First Name" />
