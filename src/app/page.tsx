@@ -20,7 +20,7 @@ const serviceCategories = [
   {
     key: 'accounting',
     title: 'Accounting/CPA Services',
-    valueProp: '<strong>Insight for Growth</strong> <br />Go beyond data entry with high-level financial analysis and strategic reporting. NM and Florida Clients only.',
+    valueProp: '<strong>Insight for Growth</strong> <br />Go beyond data entry with high-level financial analysis and strategic reporting. <br /> New Mexico and Florida clients only.',
     bullets: [
       'Annual budget creation and actual-to-budget reporting.',
       'Monthly strategic analysis and statement review.',
@@ -47,13 +47,6 @@ const serviceCategories = [
       'Full-service annual 1099 preparation.',
     ],
   },
-];
-
-// Testimonial data
-const testimonials = [
-  { quote: "Azul Integrity transformed our year-end process. The best CPA experience we've ever had.", name: "Jane D., Tech CEO" },
-  { quote: "Seamless virtual service. Everything is handled with professionalism and incredible speed.", name: "Mark S., Restaurant Owner" },
-  { quote: "Clarity at Every Click is true! Their monthly reports are easy to understand and act on.", name: "Sarah K., Freelancer" },
 ];
 
 export default function Home() {
@@ -96,13 +89,13 @@ export default function Home() {
           <div className={styles.heroImageBg}></div>
           <div className={styles.heroContent}>
             <div className={styles.heroText}>
-              <h1>You Grow Your Business. <br />I’ll Handle the Numbers</h1>
+              <h1>You Grow Your Business. <br />I&apos;ll Handle the Numbers</h1>
               <p className={styles.heroSubtext}>
                 Your Virtual CPA - Clarity at Every Click, Rooted in Trust.
               </p>
-              <button className={styles.ctaButton}>
-                Schedule Your Discovery Call
-              </button>
+              <Link href="/contact#contact-form" className={styles.ctaButton}>
+                Get Your Free Consultation
+              </Link>
             </div>
           </div>
         </section>
@@ -111,10 +104,10 @@ export default function Home() {
         <section className={styles.seoBlock}>
           <h2 className={styles.sectionHeading}>
             Why Choose Azul Integrity as Your Virtual CPA? <br />
-            Expert Bookkeeping, Tax, Payroll & Accounting Services for Small Businesses Nationwide
+            Expert Bookkeeping, Tax, Payroll & Accounting Services for Small Businesses
           </h2>
           <p className={styles.sectionSubtext}>
-            Get trusted financial guidance, accurate records, and stress-free compliance from a licensed CPA with 25+ years of experience. We help small businesses grow with clarity, confidence, and personalized support—no matter where you’re located.
+            Get trusted financial guidance, accurate records, and stress-free compliance from a licensed CPA with 25+ years of experience. We help small businesses grow with clarity, confidence, and personalized support. Experience peace of mind knowing your books are done right, make better business decisions with clear, accurate financials, and enjoy less stress around tax time with experience you can trust and support you&apos;ll actually enjoy.
           </p>
         </section>
 
@@ -142,47 +135,33 @@ export default function Home() {
                 ))}
               </ul>
               <Link href="/services" className={styles.serviceCta}>
-                View All Packages & Pricing
+                View All Services and Packages
               </Link>
             </div>
           )}
         </section>
 
-        {/* Testimonials Section */}
-        <section className={styles.testimonials}>
-          <h2 className={styles.testimonialsHeading}>Trusted by Business Owners Nationwide</h2>
-          <div className={styles.testimonialGrid}>
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className={styles.testimonialCard}>
-                <p className={styles.quote}>&quot;{testimonial.quote}&quot;</p>
-                <p className={styles.clientName}>&mdash; {testimonial.name}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* About Section */}
-        <section className={styles.about}>
-          <Image
-  src="/Headshot.jpg"
-  alt="Lead Accountant Profile Photo"
-  className={styles.expertPhoto}
-  width={80}
-  height={80}
-/>
-          <div className={styles.expertContent}>
-            <h2>Meet the Expert Behind Azul Integrity Accounting Services</h2>
-            <p>
-              Hi, I&apos;m <strong>Heather Duran</strong>, your dedicated Virtual CPA and founder of Azul Integrity. With <strong>over 25 years</strong> in corporate finance, accounting, and financial systems, I bring a unique blend of corporate discipline and entrepreneurial focus to your business. My goal is to deliver clear, actionable financial guidance.
-            </p>
-            <p>
-              I specialize in helping small to medium-sized businesses turn complex books into confident growth strategies. I use my deep expertise in GAAP and process automation to implement streamlined systems, ensuring you get accurate records and the <strong>insights</strong> you need to stop worrying about spreadsheets and focus on your vision.
-            </p>
-            <ul>
-              <li>Licensed CPA in New Mexico and Florida.</li>
-              <li>25+ years of experience in corporate finance and financial systems.</li>
-              <li>Committed to translating complex numbers into confident business strategy.</li>
-            </ul>
+        {/* Software Badges Section */}
+        <section className={styles.softwareBadges}>
+          <h2 className={styles.badgesHeading}>Certified in Industry-Leading Software</h2>
+          <p className={styles.badgesSubtext}>Professional certifications and partnerships with the tools you trust</p>
+          <div className={styles.badgesGrid}>
+            <div className={styles.badgeItem}>
+              <Image src="/badges/xero-badge.png" alt="Xero Certified" className={styles.badgeImage} width={160} height={120} />
+              <span className={styles.badgeLabel}>Xero Certified</span>
+            </div>
+            <div className={styles.badgeItem}>
+              <Image src="/badges/quickbooks-proadvisor.png" alt="QuickBooks ProAdvisor" className={styles.badgeImage} width={160} height={120} />
+              <span className={styles.badgeLabel}>QuickBooks ProAdvisor</span>
+            </div>
+            <div className={styles.badgeItem}>
+              <Image src="/badges/arx-badge.jpg" alt="ARX Certified" className={styles.badgeImage} width={160} height={120} />
+              <span className={styles.badgeLabel}>ARX Certified</span>
+            </div>
+            <div className={styles.badgeItem}>
+              <Image src="/badges/intuit-proconnect.jpg" alt="Intuit ProConnect" className={styles.badgeImage} width={160} height={120} />
+              <span className={styles.badgeLabel}>Intuit ProConnect</span>
+            </div>
           </div>
         </section>
       </main>

@@ -286,7 +286,7 @@ export default function Services() {
             <h2>Ready to Get Started?</h2>
             <p>Call Azul Integrity Accounting Services for a personalized quote or submit your details for a high‑level estimate by clicking the button below.</p>
             <div className={styles.ctaButtons}>
-              <button className={styles.primaryCta}>Get Your Free Consultation</button>
+              <Link href="/contact#contact-form" className={styles.primaryCta}>Get Your Free Consultation</Link>
             </div>
           </div>
         </section>

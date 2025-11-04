@@ -15,23 +15,8 @@
   object-fit: contain;
   display: block;
 }
-.footerLogoCol img {
 
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-}
-.footerLogoCol {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 100px;
-  flex: 1 1 100px;
-  padding: 0;
-  margin: 0;
-  margin-top: 5px;
-}
+
 .cardPhoto {
   width: 80px;
   height: 80px;
@@ -49,7 +34,7 @@
   align-items: flex-start;
   gap: 2rem;
   margin: 2rem auto;
-  max-width: 1400px;
+  max-width: 1600px;
 }
 
 .contactCard {
@@ -97,33 +82,50 @@
 }
 /* Contact Form Styles */
 .contactSection {
-  max-width: 700px;
+  max-width: 1300px;
   margin: 0;
   flex: 1;
-  background: var(--dark-navy);
+  background: var(--trust-green);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 3rem;
   text-align: center;
 }
 .contactSection h1 {
-  font-size: 2rem;
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-variant: small-caps;
+  font-size: 3rem;
   color: var(--white);
-  margin-bottom: 2rem;
-  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 .contactForm {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   width: 100%;
- 
 }
+
 .formGroup {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+ 
+}
+
+.formRowThree {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+ 
+}
+
 .formGroup label {
   font-weight: 600;
   color: var(--white);
@@ -139,6 +141,10 @@
   color: var(--dark-navy);
   margin-bottom: 0.75rem;
   
+}
+
+.formGroup textarea {
+  margin-top: 0;
 }
 
 .contactHeadingLine {
@@ -157,20 +163,24 @@
   outline: none;
 }
 .submitButton {
-  background-color: var(--trust-green);
-  color: var(--dark-navy);
-  padding: 0.85rem 2.5rem;
+  background-color: var(--dark-navy);
+  color: var(--white);
+  padding: 0.3rem 2.5rem;
   border: none;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.1s;
   box-shadow: 0 5px 15px rgba(0,0,0,0.08);
   margin-top: 1rem;
+  height: auto;
+  line-height: 1.2;
+  min-height: unset;
 }
 .submitButton:hover {
-  background-color: var(--light-blue);
+  background-color: var(--duskblue);
+  color: var(--white);
 }
 .submitButton:active {
   transform: translateY(2px);
@@ -390,14 +400,17 @@
 }
 
 .heroText h1 { 
-  font-size: 4rem; 
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-variant: small-caps;
+  font-size: 3.3rem; 
   margin-bottom: 0.5rem; 
   color: var(--dark-navy); 
   line-height: 1.1; 
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .heroSubtext { 
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 1.1rem; 
   color: var(--trust-green); 
   font-weight: 600; 
@@ -424,6 +437,7 @@
 
 .ctaButton:hover { 
   background-color: var(--dark-navy); 
+  color: var(--white);
 }
 
 .ctaButton:active { 
@@ -449,18 +463,41 @@
   padding: 2.5rem 5% 2rem 5%;
   border-radius: 12px;
   margin: 2rem auto 2.5rem auto;
-  max-width: 1200px;
+  max-width: 1400px;
   box-shadow: 0 2px 12px rgba(0,34,51,0.06);
   text-align: center;
   border: 1px solid var(--border);
 }
 .sectionSubtext {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 1.15rem;
   color: var(--dark-navy);
   margin-top: 1rem;
   line-height: 1.6;
   font-weight: 500;
 }
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.8rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.benefitsList li {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
+  color: var(--duskblue);
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+
 /* Services Section */
 .services {
   padding: 4rem 5%;
@@ -471,6 +508,8 @@
 }
 
 .sectionHeading {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-variant: small-caps;
   text-align: center;
   font-size: 2rem;
   color: var(--dark-navy);
@@ -532,6 +571,7 @@
 }
 
 .serviceValueProp {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   font-weight: 500;
   color: var(--dark-navy);
@@ -572,84 +612,291 @@
   color: var(--white);
 }
 
-/* Testimonials Section */
-.testimonials {
-  background-color: var(--trust-green);
+/* Software Badges Section */
+.softwareBadges {
+  background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
   padding: 4rem 5%;
   text-align: center;
 }
 
-.testimonialsHeading {
-  font-size: 2rem;
-  color: var(--white);
-  margin-bottom: 2.5rem;
-  font-weight: 700;
-}
-
-.testimonialGrid {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.testimonialCard {
-  background-color: var(--white);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  max-width: 300px;
-  text-align: center;
-}
-
-.quote {
-  font-style: italic;
-  margin-bottom: 1rem;
-  color: #555;
-}
-
-.clientName {
-  font-weight: 700;
-  color: var(--primary-blue);
-}
-
-/* About Section */
-.about {
-  padding: 4rem 5%;
-  background-color: var(--white);
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-}
-
-.expertPhoto {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.expertContent h2 {
+.badgesHeading {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-variant: small-caps;
   font-size: 2rem;
   color: var(--dark-navy);
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
-.expertContent p {
+.badgesSubtext {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  color: var(--duskblue);
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+
+.badgesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.badgeItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.badgeItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.badgeImage {
+  object-fit: contain;
+  filter: grayscale(20%);
+  transition: filter 0.3s ease;
+}
+
+.badgeItem:hover .badgeImage {
+  filter: grayscale(0%);
+}
+
+.badgeLabel {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark-navy);
+  text-align: center;
+}
+
+/* Modern About Section for Contact Page */
+.aboutSection {
+  padding: 4rem 5%;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  margin: 0;
+}
+
+.aboutContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.aboutImageSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.aboutPhoto {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(32, 97, 120, 0.15);
+  border: 3px solid var(--duskblue);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutPhoto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(32, 97, 120, 0.25);
+}
+
+.aboutContactInfo {
+  background: linear-gradient(135deg, var(--duskblue) 0%, var(--primary-blue) 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(32, 97, 120, 0.2);
+  width: 100%;
+}
+
+.aboutContactInfo h3 {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-variant: small-caps;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
   margin-bottom: 1rem;
-  line-height: 1.6;
-  color: var(--foreground);
+  text-align: center;
+  letter-spacing: 0.5px;
 }
 
-.expertContent ul {
-  list-style: disc;
-  margin-left: 1.5rem;
+.aboutContactInfo h4 {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-variant: small-caps;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: 0.5px;
 }
 
-.expertContent li {
-  margin-bottom: 0.5rem;
+.aboutContactInfo p {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+  line-height: 1.4;
+  color: var(--white);
+}
+
+.aboutContactInfo p:first-of-type {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.aboutContactInfo p:nth-of-type(2) {
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 0.8rem;
+}
+
+.aboutContactInfo a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.aboutContactInfo a:hover {
+  color: var(--trust-green);
+  transform: translateX(2px);
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.aboutHeading {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-variant: small-caps;
+  font-size: 2.2rem;
+  color: var(--dark-navy);
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.aboutSubheading {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  color: var(--duskblue);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  border-left: 4px solid var(--duskblue);
+  padding-left: 1rem;
+}
+
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.aboutText p {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
   color: var(--foreground);
+  margin: 0;
+}
+
+.credentialsList {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--duskblue);
+  margin-top: 1rem;
+}
+
+.credentialsList h4 {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  color: var(--dark-navy);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.credentialsList ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.credentialsList li {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: var(--foreground);
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.credentialsList li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--trust-green);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design for About Section */
+@media (max-width: 968px) {
+  .aboutContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .aboutImageSection {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .aboutPhoto {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .aboutContactInfo {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .aboutHeading {
+    font-size: 1.8rem;
+  }
+  
+  .aboutSubheading {
+    font-size: 1.2rem;
+  }
 }
 
 /* Footer Styles */
@@ -897,20 +1144,6 @@
   
   .testimonialCard {
     max-width: 80%;
-  }
-  
-  .about {
-    flex-direction: column;
-    text-align: center;
-    padding: 3rem 1rem;
-  }
-  
-  .expertPhoto {
-    margin-bottom: 1.5rem;
-  }
-  
-  .expertContent h2 {
-    font-size: 1.5rem;
   }
   
   .tabsHeader {
