@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 
 
 import React, { useState} from 'react';
@@ -195,10 +194,6 @@ export default function Services() {
   return (
     <div className={styles.page}>
       <Header>
-     <div className={styles.logoContainer}>
-  <Image src="/logo.png" alt="Azul Integrity Logo" className={styles.logoImage} width={60} height={60} />
- 
-</div>
         <nav className={styles.navigation}>
           <Link href="/">Home</Link>
           <Link href="/services">Services</Link>

@@ -9,6 +9,13 @@ import styles from "../page.module.css";
 
 
 export default function ContactPage() {
+  // Mobile menu state
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   // JS submit handler for Netlify Forms migration — show in-page modal on success
   const [showModal, setShowModal] = useState(false);
   const handleSubmit = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
@@ -55,14 +62,21 @@ export default function ContactPage() {
   return (
     <div className={styles.page}>
       <Header>
-        <div className={styles.logoContainer}>
-          <Image src="/logo.png" alt="Azul Integrity Logo" className={styles.logoImage} width={60} height={60} />
-        </div>
         <nav className={styles.navigation}>
           <Link href="/">Home</Link>
           <Link href="/services">Services</Link>
           <Link href="/contact">Contact</Link>
         </nav>
+        <div className={`${styles.hamburger} ${mobileMenuOpen ? styles.active : ''}`} onClick={toggleMobileMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.active : ''}`}>
+          <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+          <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+        </div>
       </Header>
       <main>
         {/* About Section - Modern Card Layout */}
