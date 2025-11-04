@@ -28,7 +28,7 @@
   gap: 0.7rem;
 }
 .footerCol h4 {
-  color: var(--gold-accent);
+  color: var(--duskblue);
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
@@ -42,7 +42,7 @@
   margin-bottom: 0.3rem;
 }
 .footerCol a:hover {
-  color: var(--gold-accent);
+  color: var(--light-blue);
 }
 .footerSocial {
   display: flex;
@@ -65,11 +65,13 @@
   --primary-blue: #005B99;
   --dark-navy: #003366;
   --trust-green: #3A7D2F;
-  --gold-accent: #C2B700;
+  --duskblue: #206178;
+  --light-blue: #99dbe8;
   --white: #FFFFFF;
   --light-gray: #F4F7F9;
   --border: #e2e8f0;
   --card-bg: #f7fafc;
+
 }
 
 
@@ -169,8 +171,8 @@ a:hover {
     --foreground: #e2e8f0;
     --primary: #4299e1;
     --primary-hover: #3182ce;
-    --accent: #f6e05e;
-    --accent-hover: #ecc94b;
+    --accent: #4cb6cc;
+    --accent-hover: #99dbe8;
     --border: #2d3748;
     --card-bg: #2d3748;
     --gray-light: #2d3748;

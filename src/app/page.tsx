@@ -15,6 +15,13 @@ const serviceCategories = [
       'Monthly bank and credit card reconciliation.',
       'Management of payables and receivables.',
       'Delivery of all core reports (P&L, Balance Sheet, etc.).',
+    ],
+  },
+  {
+    key: 'accounting',
+    title: 'Accounting/CPA Services',
+    valueProp: '<strong>Insight for Growth</strong> <br />Go beyond data entry with high-level financial analysis and strategic reporting. NM and Florida Clients only.',
+    bullets: [
       'Annual budget creation and actual-to-budget reporting.',
       'Monthly strategic analysis and statement review.',
       'Custom profitability tracking and forecasting.',
@@ -89,7 +96,7 @@ export default function Home() {
           <div className={styles.heroImageBg}></div>
           <div className={styles.heroContent}>
             <div className={styles.heroText}>
-              <h1>Optimize Your Finances, Virtually</h1>
+              <h1>You Grow Your Business. <br />I’ll Handle the Numbers</h1>
               <p className={styles.heroSubtext}>
                 Your Virtual CPA - Clarity at Every Click, Rooted in Trust.
               </p>

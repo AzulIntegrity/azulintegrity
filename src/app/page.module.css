@@ -75,7 +75,7 @@
 }
 .cardTitle {
   font-size: 1rem;
-  color: var(--gold-accent);
+  color: var(--duskblue);
   margin-bottom: 0.5rem;
 }
 .cardEmail a, .cardPhone a {
@@ -144,7 +144,7 @@
 .contactHeadingLine {
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary-blue), var(--gold-accent));
+  background: linear-gradient(90deg, var(--primary-blue), var(--duskblue));
   border-radius: 2px;
   margin: 0 auto 2rem auto;
   display: block;
@@ -157,7 +157,7 @@
   outline: none;
 }
 .submitButton {
-  background-color: var(--gold-accent);
+  background-color: var(--trust-green);
   color: var(--dark-navy);
   padding: 0.85rem 2.5rem;
   border: none;
@@ -170,7 +170,7 @@
   margin-top: 1rem;
 }
 .submitButton:hover {
-  background-color: #d1c637;
+  background-color: var(--light-blue);
 }
 .submitButton:active {
   transform: translateY(2px);
@@ -202,7 +202,7 @@
 }
 .modal h2 {
   margin: 0 0 0.5rem 0;
-  color: var(--primary-blue);
+  color: var(--navy-blue);
 }
 .modal p {
   margin: 0.25rem 0 0;
@@ -274,7 +274,7 @@
 }
 
 .navigation a:hover {
-  color: #FFD700;
+  color: var(--light-blue);
 }
 
 /* Hamburger Menu */
@@ -331,7 +331,7 @@
 }
 
 .mobileMenu a:hover {
-  color: #FFD700;
+  color: var(--light-blue);
 }
 
 .mobileMenu a:last-child {
@@ -361,12 +361,16 @@
   left: 0;
   width: 60%; /* Controls how much image is shown from the left */
   height: 100%;
-  background-image: url('/HeroSm.png'); 
+  background-image: url('/trusttree.png'); 
   background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
   /* V-shaped clip: Creates an inward V on the right side */
   clip-path: polygon(0 0, 85% 0, 70% 50%, 85% 100%, 0% 100%); 
   z-index: 1;
+  /* Optimize for performance */
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .heroContent {
@@ -386,7 +390,7 @@
 }
 
 .heroText h1 { 
-  font-size: 3rem; 
+  font-size: 4rem; 
   margin-bottom: 0.5rem; 
   color: var(--dark-navy); 
   line-height: 1.1; 
@@ -398,11 +402,12 @@
   color: var(--trust-green); 
   font-weight: 600; 
   margin-bottom: 1.5rem; 
+  text-align: center;
 }
 
 .ctaButton {
-  background-color: var(--gold-accent);
-  color: var(--dark-navy);
+  background-color: var(--trust-green);
+  color: var(--white);
   padding: 0.85rem 2.5rem;
   border: none;
   border-radius: 8px;
@@ -411,10 +416,14 @@
   cursor: pointer;
   transition: background-color 0.3s, transform 0.1s;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  justify-content: center;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
 }
 
 .ctaButton:hover { 
-  background-color: #d1c637; 
+  background-color: var(--dark-navy); 
 }
 
 .ctaButton:active { 
@@ -499,8 +508,8 @@
 
 .tabButton:hover:not(.active) {
   background-color: var(--light-gray);
-  color: #FFD700;
-  border-color: #FFD700;
+  color: var(--primary-blue);
+  border-color: var(--primary-blue);
 }
 
 .serviceDetails {
@@ -548,8 +557,8 @@
 }
 
 .serviceCta {
-  background-color: var(--gold-accent);
-  color: var(--dark-navy);
+  background-color: var(--trust-green);
+  color: var(--white);
   padding: 0.75rem 2rem;
   text-decoration: none;
   border-radius: 8px;
@@ -559,7 +568,8 @@
 }
 
 .serviceCta:hover {
-  background-color: #B4A900;
+  background-color: var(--dark-navy);
+  color: var(--white);
 }
 
 /* Testimonials Section */
@@ -667,7 +677,7 @@
 }
 
 .footerNav a:hover {
-  color: var(--gold-accent);
+  color: var(--duskblue);
 }
 
 .footerContact {
@@ -679,7 +689,7 @@
 }
 
 .footerContact a {
-  color: var(--gold-accent);
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -714,7 +724,7 @@
 }
 
 .footerSocial a:hover {
-  color: var(--gold-accent);
+  color: var(--light-blue);
 }
 
 .footerLegal {
@@ -750,7 +760,7 @@
   align-items: center;
 }
 .footerCol h4 {
-  color: var(--gold-accent);
+  color: var(--white);
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
@@ -762,7 +772,7 @@
   transition: color 0.2s;
 }
 .footerCol a:hover {
-  color: var(--gold-accent);
+  color: var(--light-blue);
 }
 .footerSocial {
   display: flex;
@@ -830,11 +840,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/HeroSm.png');
+    background-image: url('/trusttree.png');
     background-size: cover;
     background-position: center center;
+    background-repeat: no-repeat;
     clip-path: none;
     z-index: 1;
+    /* Mobile optimization */
+    will-change: transform;
+    backface-visibility: hidden;
   }
   
   .heroImageBg::after {
@@ -938,6 +952,13 @@
 }
 
 @media (min-width: 769px) and (max-width: 1280px) {
+  .heroImageBg {
+    width: 65%; /* Slightly wider for tablet */
+    background-position: center left; /* Better positioning for tablet */
+    /* Tablet-optimized clip path */
+    clip-path: polygon(0 0, 80% 0, 65% 50%, 80% 100%, 0% 100%);
+  }
+  
   .heroContent {
     display: flex;
     flex-direction: row;

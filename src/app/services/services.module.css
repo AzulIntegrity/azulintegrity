@@ -32,7 +32,7 @@
   gap: 0.7rem;
 }
 .footerCol h4 {
-  color: var(--gold-accent);
+  color: var(--light-blue);
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
@@ -44,7 +44,7 @@
   transition: color 0.2s;
 }
 .footerCol a:hover {
-  color: var(--gold-accent);
+  color: var(--light-blue);
 }
 .footerSocial {
   display: flex;
@@ -78,7 +78,7 @@
 }
 
 .navigation a:hover {
-  color: #FFD700;
+  color: var(--light-blue);
 }
 
 /* Hamburger Menu */
@@ -135,7 +135,7 @@
 }
 
 .mobileMenu a:hover {
-  color: #FFD700;
+  color: var(--light-blue);
 }
 
 .mobileMenu a:last-child {
@@ -169,7 +169,7 @@
 
 .headerContent p {
   font-size: 1.2rem;
-  color: #FFD700;
+  color: var(--white);
   font-weight: 500;
 }
 
@@ -209,8 +209,8 @@
 
 .tabButton:hover:not(.active) {
   background-color: var(--light-gray);
-  color: #FFD700;
-  border-color: #FFD700;
+  color: var(--dark-navy);
+  border-color: var(--dark-navy);
 }
 
 /* Service Details */
@@ -289,7 +289,7 @@
 }
 
 .note {
-  background: var(--gold-accent);
+  background: var(--duskblue);
   color: var(--dark-navy);
   padding: 1rem;
   border-radius: 8px;
@@ -356,8 +356,8 @@
 }
 
 .primaryCta {
-  background-color: var(--gold-accent);
-  color: var(--dark-navy);
+  background-color: var(--trust-green);
+  color: var(--white);
   padding: 1rem 2rem;
   border: none;
   border-radius: 8px;
@@ -368,7 +368,7 @@
 }
 
 .primaryCta:hover {
-  background-color: #B4A900;
+  background-color: var(--light-blue);
   transform: translateY(-2px);
 }
 
