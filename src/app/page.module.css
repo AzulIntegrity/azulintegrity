@@ -1055,6 +1055,16 @@
   .serviceList li {
     justify-content: flex-start;
   }
+  
+  /* Contact Form Tablet Responsive */
+  .formRowThree {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .formRowThree .formGroup:nth-child(3) {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1181,6 +1191,37 @@
   }
   .sectionSubtext {
     font-size: 1rem;
+  }
+  
+  /* Contact Form Mobile Responsive */
+  .contactSection {
+    padding: 2rem 1.5rem;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .formRowThree {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .formGroup {
+    margin-bottom: 1.2rem;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 0.8rem 1rem;
+  }
+  
+  .submitButton {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    width: 100%;
   }
 }
 
