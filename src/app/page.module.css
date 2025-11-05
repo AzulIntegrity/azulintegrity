@@ -1303,6 +1303,156 @@
   }
 }
 
+/* ===== TERMS PAGE STYLES ===== */
+.pageHeader {
+  padding: 3rem 5% 2rem 5%;
+  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--duskblue) 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.headerContent h1 {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.headerContent p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.termsContent {
+  padding: 4rem 5%;
+  background: var(--white);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.termsContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.termsEffectiveDate {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: var(--light-gray);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-blue);
+}
+
+.termsEffectiveDate p {
+  font-size: 1.1rem;
+  color: var(--dark-navy);
+  margin: 0;
+}
+
+.termsSection {
+  margin-bottom: 3rem;
+}
+
+.termsSection h2 {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 1.6rem;
+  color: var(--dark-navy);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 0.5rem;
+}
+
+.termsSection h3 {
+  font-size: 1.2rem;
+  color: var(--duskblue);
+  margin: 2rem 0 1rem 0;
+  font-weight: 600;
+}
+
+.termsSection p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.termsList {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.termsList li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--foreground);
+  line-height: 1.6;
+  margin-left: 1rem;
+}
+
+.contactInfo {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.contactInfo p {
+  margin: 0.5rem 0;
+}
+
+.contactInfo a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contactInfo a:hover {
+  color: var(--duskblue);
+  text-decoration: underline;
+}
+
+.contactIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Terms page responsive design */
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 2rem 1rem;
+  }
+  
+  .headerContent h1 {
+    font-size: 2.2rem;
+  }
+  
+  .headerContent p {
+    font-size: 1.1rem;
+  }
+  
+  .termsContent {
+    padding: 2rem 1rem;
+  }
+  
+  .termsSection h2 {
+    font-size: 1.4rem;
+  }
+  
+  .termsSection p {
+    font-size: 0.95rem;
+  }
+  
+  .termsEffectiveDate {
+    padding: 1rem;
+  }
+}
+
 
 
 

@@ -179,7 +179,7 @@ export default function Home() {
       </div>
       <div className={styles.footerCol}>
         <h4>Contact</h4>
-        <span>Email: <Link href="mailto:info@azulintegrity.com">info@azulintegrity.com</Link></span>
+        <span>Email: <Link href="mailto:azulintegrity@gmail.com">azulintegrity@gmail.com</Link></span>
         <span>Phone: <Link href="tel:+15555555555">(904) 476-4732</Link></span>
 <div className={styles.footerSocial}>
   <Link
