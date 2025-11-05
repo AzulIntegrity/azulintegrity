@@ -66,6 +66,13 @@ export default function Home() {
           <Link href="/services">Services</Link>
           <Link href="/contact">Contact</Link>
         </nav>
+        <div className={styles.logoContainer}>
+          <Image src="/tree.png" alt="Azul Integrity Tree Logo" className={styles.logoImage} width={50} height={50} />
+          <div className={styles.logoText}>
+            <div className={styles.companyName}>Azul Integrity</div>
+            <div className={styles.companySubtitle}>Accounting Services</div>
+          </div>
+        </div>
         <div className={`${styles.hamburger} ${mobileMenuOpen ? styles.active : ''}`} onClick={toggleMobileMenu}>
           <span></span>
           <span></span>
@@ -86,7 +93,7 @@ export default function Home() {
             <div className={styles.heroText}>
               <h1>You Grow Your Business. <br />I&apos;ll Handle the Numbers</h1>
               <p className={styles.heroSubtext}>
-                Your Virtual CPA - Clarity at Every Click, Rooted in Trust.
+                Your Virtual CPA - Rooted in Trust, Partner in Growth.
               </p>
               <Link href="/contact#contact-form" className={styles.ctaButton}>
                 Get Your Free Consultation

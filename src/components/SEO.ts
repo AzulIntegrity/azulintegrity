@@ -18,6 +18,7 @@ export function generateMetadata({
   noIndex = false,
 }: SEOProps = {}): Metadata {
   return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://azulintegrityaccounting.netlify.app'),
     title,
     description,
     keywords: keywords.join(', '),
