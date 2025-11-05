@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = generateMetadata({
-  title: "Azul Integrity - SEO Optimized Next.js App",
+  title: "Azul Integrity Accounting Services",
   description: "A modern React application built with Next.js, TypeScript, and SEO best practices for optimal search engine performance.",
   keywords: ["nextjs", "react", "seo", "typescript", "web development", "azul integrity"],
 });

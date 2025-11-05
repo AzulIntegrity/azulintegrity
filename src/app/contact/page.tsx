@@ -91,7 +91,7 @@ export default function ContactPage() {
           <div className={styles.aboutContainer}>
             <div className={styles.aboutImageSection}>
               <Image
-                src="/Headshot.jpg"
+                src="/Headshot.png"
                 alt="Heather Duran - Lead Accountant"
                 className={styles.aboutPhoto}
                 width={300}
