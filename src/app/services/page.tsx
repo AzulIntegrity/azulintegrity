@@ -201,7 +201,15 @@ export default function Services() {
           <Link href="/contact">Contact</Link>
         </nav>
         <div className={styles.logoContainer}>
-          <Image src="/tree.png" alt="Azul Integrity Tree Logo" className={styles.logoImage} width={50} height={50} />
+          <Image 
+            src="/tree.png" 
+            alt="Azul Integrity Tree Logo" 
+            className={styles.logoImage} 
+            width={50} 
+            height={50}
+            priority
+            sizes="(max-width: 768px) 40px, 50px"
+          />
           <div className={styles.logoText}>
             <div className={styles.companyName}>Azul Integrity</div>
             <div className={styles.companySubtitle}>Accounting Services</div>

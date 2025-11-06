@@ -67,7 +67,15 @@ export default function Home() {
           <Link href="/contact">Contact</Link>
         </nav>
         <div className={styles.logoContainer}>
-          <Image src="/tree.png" alt="Azul Integrity Tree Logo" className={styles.logoImage} width={50} height={50} />
+          <Image 
+            src="/tree.png" 
+            alt="Azul Integrity Tree Logo" 
+            className={styles.logoImage} 
+            width={50} 
+            height={50}
+            priority
+            sizes="(max-width: 768px) 40px, 50px"
+          />
           <div className={styles.logoText}>
             <div className={styles.companyName}>Azul Integrity</div>
             <div className={styles.companySubtitle}>Accounting Services</div>
@@ -149,19 +157,51 @@ export default function Home() {
           <p className={styles.badgesSubtext}>Professional certifications and partnerships with the tools you trust</p>
           <div className={styles.badgesGrid}>
             <div className={styles.badgeItem}>
-              <Image src="/badges/xero-badge.png" alt="Xero Certified" className={styles.badgeImage} width={160} height={120} />
+              <Image 
+                src="/badges/xero-badge.png" 
+                alt="Xero Certified" 
+                className={styles.badgeImage} 
+                width={160} 
+                height={120}
+                loading="lazy"
+                sizes="(max-width: 768px) 120px, (max-width: 1024px) 140px, 160px"
+              />
               <span className={styles.badgeLabel}>Xero Certified</span>
             </div>
             <div className={styles.badgeItem}>
-              <Image src="/badges/quickbooks-proadvisor.png" alt="QuickBooks ProAdvisor" className={styles.badgeImage} width={160} height={120} />
+              <Image 
+                src="/badges/quickbooks-proadvisor.png" 
+                alt="QuickBooks ProAdvisor" 
+                className={styles.badgeImage} 
+                width={160} 
+                height={120}
+                loading="lazy"
+                sizes="(max-width: 768px) 120px, (max-width: 1024px) 140px, 160px"
+              />
               <span className={styles.badgeLabel}>QuickBooks ProAdvisor</span>
             </div>
             <div className={styles.badgeItem}>
-              <Image src="/badges/arx-badge.jpg" alt="ARX Certified" className={styles.badgeImage} width={160} height={120} />
+              <Image 
+                src="/badges/arx-badge.jpg" 
+                alt="ARX Certified" 
+                className={styles.badgeImage} 
+                width={160} 
+                height={120}
+                loading="lazy"
+                sizes="(max-width: 768px) 120px, (max-width: 1024px) 140px, 160px"
+              />
               <span className={styles.badgeLabel}>ARX Certified</span>
             </div>
             <div className={styles.badgeItem}>
-              <Image src="/badges/intuit-proconnect.jpg" alt="Intuit ProConnect" className={styles.badgeImage} width={160} height={120} />
+              <Image 
+                src="/badges/intuit-proconnect.jpg" 
+                alt="Intuit ProConnect" 
+                className={styles.badgeImage} 
+                width={160} 
+                height={120}
+                loading="lazy"
+                sizes="(max-width: 768px) 120px, (max-width: 1024px) 140px, 160px"
+              />
               <span className={styles.badgeLabel}>Intuit ProConnect</span>
             </div>
           </div>
@@ -187,14 +227,30 @@ export default function Home() {
     target="_blank"
     rel="noopener noreferrer"
   >
-    <Image src="/facebookIcon.png" alt="Facebook" className={styles.socialIcon} width={28} height={28} />
+    <Image 
+      src="/facebookIcon.png" 
+      alt="Facebook" 
+      className={styles.socialIcon} 
+      width={28} 
+      height={28}
+      loading="lazy"
+      sizes="(max-width: 768px) 24px, 28px"
+    />
   </Link>
   <Link
     href="https://www.linkedin.com/in/heather-duran-2ba29045"
     target="_blank"
     rel="noopener noreferrer"
   >
-    <Image src="/linkedInIcon.png" alt="LinkedIn" className={styles.socialIcon} width={28} height={28} />
+    <Image 
+      src="/linkedInIcon.png" 
+      alt="LinkedIn" 
+      className={styles.socialIcon} 
+      width={28} 
+      height={28}
+      loading="lazy"
+      sizes="(max-width: 768px) 24px, 28px"
+    />
   </Link>
 </div>
       </div>

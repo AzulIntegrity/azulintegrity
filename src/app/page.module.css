@@ -15,6 +15,12 @@
   height: 65px;
   width: auto;
   flex-shrink: 0;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.logoImage:hover {
+  transform: scale(1.05);
 }
 
 .logoText {
@@ -679,11 +685,14 @@
 .badgeImage {
   object-fit: contain;
   filter: grayscale(20%);
-  transition: filter 0.3s ease;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  max-width: 100%;
+  height: auto;
 }
 
 .badgeItem:hover .badgeImage {
   filter: grayscale(0%);
+  transform: scale(1.02);
 }
 
 .badgeLabel {
@@ -730,6 +739,9 @@
   box-shadow: 0 8px 24px rgba(32, 97, 120, 0.15);
   border: 3px solid var(--duskblue);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1;
 }
 
 .aboutPhoto:hover {
@@ -1247,6 +1259,26 @@
     height: 40px;
   }
   
+  .badgeImage {
+    max-width: 120px;
+    height: auto;
+  }
+  
+  .aboutPhoto {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .socialIcon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .contactIcon {
+    width: 18px;
+    height: 18px;
+  }
+  
   .companyName {
     font-size: 0.95rem;
   }
@@ -1420,6 +1452,27 @@
   object-fit: contain;
   margin-right: 0.5rem;
   vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+.contactIcon:hover {
+  transform: scale(1.1);
+}
+
+/* Social and other icon optimizations */
+.socialIcon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  max-width: 100%;
+  height: auto;
+}
+
+.socialIcon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
 /* Terms page responsive design */

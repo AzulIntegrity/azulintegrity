@@ -15,7 +15,15 @@ export default function TermsPage() {
           <Link href="/contact">Contact</Link>
         </nav>
         <div className={styles.logoContainer}>
-          <Image src="/tree.png" alt="Azul Integrity Tree Logo" className={styles.logoImage} width={50} height={50} />
+          <Image 
+            src="/tree.png" 
+            alt="Azul Integrity Tree Logo" 
+            className={styles.logoImage} 
+            width={50} 
+            height={50}
+            priority
+            sizes="(max-width: 768px) 40px, 50px"
+          />
           <div className={styles.logoText}>
             <div className={styles.companyName}>Azul Integrity</div>
             <div className={styles.companySubtitle}>Accounting Services</div>
@@ -154,8 +162,24 @@ export default function TermsPage() {
               <h2>21. Contact Information</h2>
               <p>Questions about these Terms or the Site may be directed to:</p>
               <div className={styles.contactInfo}>
-                <p><Image src="/emailblue.png" alt="Email" className={styles.contactIcon} width={20} height={20} /> <a href="mailto:azulintegrity@gmail.com">azulintegrity@gmail.com</a></p>
-                <p><Image src="/phoneblue.png" alt="Phone" className={styles.contactIcon} width={20} height={20} /> <a href="tel:+19044764732">(904) 476-4732</a></p>
+                <p><Image 
+                  src="/emailblue.png" 
+                  alt="Email" 
+                  className={styles.contactIcon} 
+                  width={20} 
+                  height={20}
+                  loading="lazy"
+                  sizes="20px"
+                /> <a href="mailto:azulintegrity@gmail.com">azulintegrity@gmail.com</a></p>
+                <p><Image 
+                  src="/phoneblue.png" 
+                  alt="Phone" 
+                  className={styles.contactIcon} 
+                  width={20} 
+                  height={20}
+                  loading="lazy"
+                  sizes="20px"
+                /> <a href="tel:+19044764732">(904) 476-4732</a></p>
               </div>
             </div>
 

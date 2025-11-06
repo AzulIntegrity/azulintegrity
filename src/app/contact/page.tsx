@@ -68,7 +68,15 @@ export default function ContactPage() {
           <Link href="/contact">Contact</Link>
         </nav>
         <div className={styles.logoContainer}>
-          <Image src="/tree.png" alt="Azul Integrity Tree Logo" className={styles.logoImage} width={50} height={50} />
+          <Image 
+            src="/tree.png" 
+            alt="Azul Integrity Tree Logo" 
+            className={styles.logoImage} 
+            width={50} 
+            height={50}
+            priority
+            sizes="(max-width: 768px) 40px, 50px"
+          />
           <div className={styles.logoText}>
             <div className={styles.companyName}>Azul Integrity</div>
             <div className={styles.companySubtitle}>Accounting Services</div>
@@ -96,6 +104,8 @@ export default function ContactPage() {
                 className={styles.aboutPhoto}
                 width={300}
                 height={300}
+                priority
+                sizes="(max-width: 768px) 200px, (max-width: 1024px) 250px, 300px"
               />
               <div className={styles.aboutContactInfo}>
                 <h4>Contact Information</h4>

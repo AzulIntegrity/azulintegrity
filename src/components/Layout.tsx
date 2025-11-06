@@ -39,14 +39,46 @@ export function Footer({  className = '' }: FooterProps) {
           </div>
           <div className="footerCol">
             <h4>Contact</h4>
-            <span> <Image src="/emailIcon.png" alt="Email" className="contactIcon" width={20} height={20} /> <Link href="mailto:azulintegrity@gmail.com">azulintegrity@gmail.com</Link></span>
-            <span> <Image src="/phoneIcon.png" alt="Phone" className="contactIcon" width={20} height={20} /> <Link href="tel:+119044764732">(904) 476-4732</Link></span>
+            <span> <Image 
+              src="/emailIcon.png" 
+              alt="Email" 
+              className="contactIcon" 
+              width={20} 
+              height={20}
+              loading="lazy"
+              sizes="20px"
+            /> <Link href="mailto:azulintegrity@gmail.com">azulintegrity@gmail.com</Link></span>
+            <span> <Image 
+              src="/phoneIcon.png" 
+              alt="Phone" 
+              className="contactIcon" 
+              width={20} 
+              height={20}
+              loading="lazy"
+              sizes="20px"
+            /> <Link href="tel:+119044764732">(904) 476-4732</Link></span>
             <div className="footerSocial">
               <Link href="https://www.linkedin.com/company/azul-integrity-accounting-services/" target="_blank" rel="noopener noreferrer">
-                <Image src="/linkedInIcon.png" alt="LinkedIn" className="socialIcon" width={20} height={20} />
+                <Image 
+                  src="/linkedInIcon.png" 
+                  alt="LinkedIn" 
+                  className="socialIcon" 
+                  width={20} 
+                  height={20}
+                  loading="lazy"
+                  sizes="20px"
+                />
               </Link>
               <Link href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#" target="_blank" rel="noopener noreferrer">
-                <Image src="/facebookIcon.png" alt="Facebook" className="socialIcon" width={20} height={20} />
+                <Image 
+                  src="/facebookIcon.png" 
+                  alt="Facebook" 
+                  className="socialIcon" 
+                  width={20} 
+                  height={20}
+                  loading="lazy"
+                  sizes="20px"
+                />
               </Link>
             </div>
           </div>
