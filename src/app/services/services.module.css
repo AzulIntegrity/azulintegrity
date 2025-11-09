@@ -447,9 +447,10 @@
 .whatWeDo li {
   padding: 0.5rem 0;
   font-size: 1rem;
-  color: var(--foreground);
+  color: var(--dark-navy);
   display: flex;
   align-items: flex-start;
+  line-height: 1.6;
 }
 
 .whatWeDo li:before {
