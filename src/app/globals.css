@@ -1,3 +1,54 @@
+
+:root {
+  /* Light Mode Colors */
+  --background: #ffffff;
+  --foreground: #333333;
+  --primary-blue: #005B99;
+  --dark-navy: #003366;
+  --trust-green: #3A7D2F;
+  --duskblue: #206178;
+  --light-blue: #99dbe8;
+  --white: #FFFFFF;
+  --light-gray: #F4F7F9;
+  --border: #e2e8f0;
+  --card-bg: #f7fafc;
+  
+  /* Text colors */
+  --text-primary: #003366;
+  --text-secondary: #333333;
+  --text-muted: #718096;
+  
+  /* Background variations */
+  --bg-primary: #ffffff;
+  --bg-secondary: #F4F7F9;
+  --bg-elevated: #ffffff;
+}
+/* Dark Mode Colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --foreground: #e2e8f0;
+    --primary-blue: #60a5fa;
+    --dark-navy: #1e293b;
+    --trust-green: #248347;
+    --duskblue: #38bdf8;
+    --light-blue: #7dd3fc;
+    --white: #f8fafc;
+    --light-gray: #c5d2e4;
+    --border: #334155;
+    --card-bg: #1e293b;
+    
+    /* Text colors for dark mode */
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    
+    /* Background variations for dark mode */
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-elevated: #334155;
+  }
+}
 .footerCol span {
   justify-content: center;
   width: 100%;
@@ -59,20 +110,8 @@
 }
 
 
-:root {
-  --background: #ffffff;
-  --foreground: #333333;
-  --primary-blue: #005B99;
-  --dark-navy: #003366;
-  --trust-green: #3A7D2F;
-  --duskblue: #206178;
-  --light-blue: #99dbe8;
-  --white: #FFFFFF;
-  --light-gray: #F4F7F9;
-  --border: #e2e8f0;
-  --card-bg: #f7fafc;
 
-}
+
 
 
 
@@ -89,6 +128,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 * {
@@ -119,6 +159,14 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background-color 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    background: #0f172a;
+    border-bottom: 1px solid var(--border);
+  }
 }
 
 .nav-container {
@@ -135,6 +183,14 @@ a:hover {
   color: var(--white);
   padding: 2rem 0;
   margin-top: auto;
+  transition: background-color 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background: #0f172a;
+    border-top: 1px solid var(--border);
+  }
 }
 
 .footer-container {
@@ -153,6 +209,17 @@ a:hover {
   html {
     color-scheme: dark;
   }
+  
+  /* Ensure images don't get inverted in dark mode */
+  img {
+    filter: none;
+  }
+  
+  /* Adjust logo background for dark mode */
+  .logoContainer {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid var(--border);
+  }
 }
 @media (max-width: 900px) {
   .footerGrid {
@@ -163,20 +230,5 @@ a:hover {
   .footerCol {
     align-items: center;
     text-align: center;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1a202c;
-    --foreground: #e2e8f0;
-    --primary: #4299e1;
-    --primary-hover: #3182ce;
-    --accent: #4cb6cc;
-    --accent-hover: #99dbe8;
-    --border: #2d3748;
-    --card-bg: #2d3748;
-    --gray-light: #2d3748;
-    --gray-medium: #a0aec0;
-    --text-dark: #e2e8f0;
   }
 }

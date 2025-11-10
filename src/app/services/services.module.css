@@ -428,14 +428,16 @@
 /* What We Do Section */
 .whatWeDo {
   margin-bottom: 3rem;
-  background: var(--light-gray);
+  background: #f8fafc;
   padding: 2rem;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
 }
 
 .whatWeDo h3 {
   font-size: 1.5rem;
-  color: var(--dark-navy);
+  color: #003366;
   margin-bottom: 1rem;
 }
 
@@ -447,7 +449,7 @@
 .whatWeDo li {
   padding: 0.5rem 0;
   font-size: 1rem;
-  color: var(--dark-navy);
+  color: #1e293b;
   display: flex;
   align-items: flex-start;
   line-height: 1.6;
@@ -455,7 +457,7 @@
 
 .whatWeDo li:before {
   content: "✓ ";
-  color: var(--primary-blue);
+  color: #3A7D2F;
   font-weight: bold;
   margin-right: 0.5rem;
   margin-top: 0.1rem;
@@ -700,5 +702,105 @@
   .footerCol {
     align-items: center;
     text-align: center;
+  }
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+  /* Page background */
+  .page {
+    background: var(--bg-primary);
+  }
+  
+  /* Services section */
+  .services {
+    background: var(--bg-primary);
+  }
+  
+  /* Service details */
+  .serviceDetails h2 {
+    color: var(--text-primary);
+  }
+  
+  .serviceDescription {
+    color: var(--text-primary);
+  }
+  
+  /* What We Do section */
+  .whatWeDo {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+  }
+  
+  .whatWeDo h3 {
+    color: var(--text-primary);
+  }
+  
+  .whatWeDo ul li {
+    color: var(--text-secondary);
+  }
+  
+  .whatWeDo li:before {
+    color: #4ade80;
+  }
+  
+  /* Packages section */
+  .packages {
+    background: #2d5a2b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  .packages h3 {
+    color: var(--white);
+  }
+  
+  /* Package cards */
+  .packageCard {
+    background: var(--card-bg);
+    border-color: var(--border);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .packageCard h4 {
+    color: #60a5fa;
+  }
+  
+  .packageCard p {
+    color: var(--text-secondary);
+  }
+  
+  /* Package banner */
+  .packageBanner {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border-color: var(--border);
+  }
+  
+  /* CTA Section */
+  .ctaSection {
+    background: #1e40af;
+  }
+  
+  .ctaContent h2,
+  .ctaContent p {
+    color: var(--white);
+  }
+  
+  /* Tabs */
+  .tabButton {
+    background: var(--card-bg);
+    border-color: var(--border);
+    color: var(--text-primary);
+  }
+  
+  .tabButton.active {
+    background: var(--primary-blue);
+    color: var(--white);
+  }
+  
+  .tabButton:hover:not(.active) {
+    background: var(--bg-elevated);
+    border-color: var(--primary-blue);
+    color: var(--text-primary);
   }
 }

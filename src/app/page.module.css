@@ -1506,6 +1506,208 @@
   }
 }
 
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+  /* Page background */
+  .page {
+    background: var(--bg-primary);
+  }
+  
+  /* Cards and elevated surfaces */
+  .contactCard,
+  .packageCard,
+  .badgeItem,
+  .aboutContainer,
+  .testimonialCard {
+    background: var(--card-bg);
+    border-color: var(--border);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+  
+  /* Text colors */
+  .sectionHeading,
+  .aboutHeading,
+  .serviceDetails h2,
+  .cardName {
+    color: var(--text-primary);
+  }
+  
+  .sectionSubtext,
+  .aboutText p,
+  .cardTitle,
+  .serviceDescription {
+    color: var(--text-secondary);
+  }
+  
+  /* Service list items */
+  .serviceList li {
+    color: var(--text-secondary);
+  }
+  
+  .serviceValueProp {
+    color: var(--text-secondary);
+  }
+  
+  /* Service details section - fix white background */
+  .serviceDetails {
+    background: var(--card-bg);
+    border-color: var(--border);
+  }
+  
+  /* Services section */
+  .services {
+    background: var(--bg-primary);
+  }
+  
+  /* Hero section adjustments */
+  .heroText {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid var(--border);
+  }
+  
+  .heroText h1 {
+    color: var(--white) !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .heroSubtext {
+    color: var(--trust-green) !important;
+  }
+  
+  /* SEO block */
+  .seoBlock {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+  }
+  
+  /* Badges */
+  .badgeLabel {
+    color: var(--text-primary);
+  }
+  
+  /* About section */
+  .aboutSection {
+    background: var(--bg-primary);
+  }
+  
+  .aboutContactInfo {
+    background: linear-gradient(135deg, var(--duskblue) 0%, var(--primary-blue) 100%);
+  }
+  
+  /* Form elements */
+  .formGroup input,
+  .formGroup textarea {
+    background: var(--card-bg);
+    border-color: var(--border);
+    color: var(--text-primary);
+  }
+  
+  .formGroup input::placeholder,
+  .formGroup textarea::placeholder {
+    color: var(--text-muted);
+  }
+  
+  .formGroup label {
+    color: var(--text-primary);
+  }
+  
+  /* Contact section */
+  .contactSection {
+    background: var(--bg-secondary);
+  }
+  
+  .contactHeading {
+    color: var(--text-primary);
+  }
+  
+  /* Terms and Privacy pages */
+  .termsContent {
+    background: var(--bg-primary);
+  }
+  
+  .termsSection {
+    color: var(--text-secondary);
+  }
+  
+  .termsSection h2 {
+    color: var(--text-primary);
+    border-bottom-color: var(--primary-blue);
+  }
+  
+  .termsEffectiveDate {
+    background: var(--card-bg);
+    border-left-color: var(--primary-blue);
+  }
+  
+  .termsEffectiveDate p {
+    color: var(--text-primary);
+  }
+  
+  .contactInfo {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+  }
+  
+  /* Service tabs */
+  .tabButton {
+    background: var(--card-bg);
+    border-color: var(--border);
+    color: var(--text-primary);
+  }
+  
+  .tabButton.active {
+    background: var(--primary-blue);
+    color: var(--white);
+  }
+  
+  .tabButton:hover:not(.active) {
+    background: var(--bg-elevated);
+    border-color: var(--primary-blue);
+  }
+  
+  /* Software badges - prevent color inversion */
+  .badgeImage {
+    filter: brightness(0.9) grayscale(20%);
+  }
+  
+  .badgeItem:hover .badgeImage {
+    filter: brightness(1) grayscale(0%);
+  }
+  
+  /* Modal */
+  .modalOverlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .modal {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+  }
+  
+  .modal h2,
+  .modal p {
+    color: var(--text-primary);
+  }
+  
+  /* Credentials list */
+  .credentialsList {
+    background: var(--card-bg);
+    border-left-color: var(--trust-green);
+  }
+  
+  .credentialsList h4 {
+    color: var(--text-primary);
+  }
+  
+  .credentialsList li {
+    color: var(--text-secondary);
+  }
+  
+  .credentialsList li:before {
+    color: #4ade80;
+  }
+}
+
 
 
 
