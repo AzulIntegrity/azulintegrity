@@ -202,51 +202,58 @@ export default function Home() {
           <div className={styles.badgesGrid}>
             <div className={styles.badgeItem}>
               <Image 
+                src="/badges/logo_inTuit.webp" 
+                alt="Intuit Certified" 
+                className={styles.badgeImage} 
+                width={180} 
+                height={100}
+                loading="lazy"
+                sizes="(max-width: 768px) 140px, 180px"
+              />
+            </div>
+            <div className={styles.badgeItem}>
+              <Image 
+                src="/badges/logo_quickbooks.webp" 
+                alt="QuickBooks ProAdvisor" 
+                className={styles.badgeImage} 
+                width={180} 
+                height={100}
+                loading="lazy"
+                sizes="(max-width: 768px) 140px, 180px"
+              />
+            </div>
+            <div className={styles.badgeItem}>
+              <Image 
                 src="/badges/xero-badge.png" 
                 alt="Xero Certified" 
                 className={styles.badgeImage} 
-                width={160} 
-                height={120}
+                width={180} 
+                height={100}
                 loading="lazy"
-                sizes="(max-width: 768px) 120px, (max-width: 1024px) 140px, 160px"
+                sizes="(max-width: 768px) 140px, 180px"
               />
-              <span className={styles.badgeLabel}>Xero Certified</span>
             </div>
             <div className={styles.badgeItem}>
               <Image 
-                src="/badges/quickbooks-proadvisor.png" 
-                alt="QuickBooks ProAdvisor" 
+                src="/badges/logo_efile.webp" 
+                alt="E-File Authorized" 
                 className={styles.badgeImage} 
-                width={160} 
-                height={120}
+                width={180} 
+                height={100}
                 loading="lazy"
-                sizes="(max-width: 768px) 120px, (max-width: 1024px) 140px, 160px"
+                sizes="(max-width: 768px) 140px, 180px"
               />
-              <span className={styles.badgeLabel}>QuickBooks ProAdvisor</span>
-            </div>
-            <div className={styles.badgeItem}>
-              <Image 
-                src="/badges/arx-badge.jpg" 
-                alt="ARX Certified" 
-                className={styles.badgeImage} 
-                width={160} 
-                height={120}
-                loading="lazy"
-                sizes="(max-width: 768px) 120px, (max-width: 1024px) 140px, 160px"
-              />
-              <span className={styles.badgeLabel}>ARX Certified</span>
             </div>
             <div className={styles.badgeItem}>
               <Image 
                 src="/badges/intuit-proconnect.jpg" 
                 alt="Intuit ProConnect" 
                 className={styles.badgeImage} 
-                width={160} 
-                height={120}
+                width={180} 
+                height={100}
                 loading="lazy"
-                sizes="(max-width: 768px) 120px, (max-width: 1024px) 140px, 160px"
+                sizes="(max-width: 768px) 140px, 180px"
               />
-              <span className={styles.badgeLabel}>Intuit ProConnect</span>
             </div>
           </div>
         </section>

@@ -646,6 +646,9 @@
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   margin-top: 2rem;
   border: 1px solid var(--border);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .serviceDetails .serviceList {
@@ -658,14 +661,16 @@
   font-weight: 500;
   color: var(--dark-navy);
   margin-bottom: 1.5rem;
-  text-align: left;
+  text-align: center;
 }
 
 .serviceList {
   list-style: none;
   text-align: left;
   margin-bottom: 2rem;
-  max-width: 800px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .serviceList li {
@@ -684,6 +689,9 @@
   font-weight: 700;
   font-size: 1rem;
   transition: background-color 0.3s;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .serviceCta:hover {
@@ -798,9 +806,9 @@
 
 .badgesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -1286,6 +1294,11 @@
 
 /* Tablet Portrait / Small Desktop (1280px to 769px) */
 @media (min-width: 769px) and (max-width: 1280px) {
+  .badgesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
   .heroImageBg {
     width: 60%;
     background-position: center center;
@@ -1572,6 +1585,15 @@
     height: 40px;
   }
   
+  .badgesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .badgeItem {
+    padding: 1rem;
+  }
+  
   .badgeImage {
     max-width: 120px;
     width: auto;
@@ -1703,6 +1725,15 @@
 
 /* Smallest Mobile Devices (480px) */
 @media (max-width: 480px) {
+  .badgesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .badgeItem {
+    padding: 1.5rem 1rem;
+  }
+  
   .phoneLink {
     padding: 0.4rem 0.6rem;
     gap: 0.3rem;
