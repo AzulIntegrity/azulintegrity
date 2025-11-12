@@ -484,6 +484,8 @@
   max-width: 800px; /* Increased from 500px to accommodate longer title */
   text-align: center;
   margin-left: auto; /* Final push to the right within the flex container */
+  border-radius: 8px;
+  padding: 1rem;
 }
 
 .heroText h1 { 
@@ -639,11 +641,8 @@
 }
 
 .serviceDetails {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 3rem 2rem;
+  display: block;
+  padding: 2rem;
   background: var(--white);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -652,9 +651,7 @@
 }
 
 .serviceDetails .serviceList {
-  align-self: flex-start;
   text-align: left;
-  padding-left: 23rem;
 }
 
 .serviceValueProp {
@@ -663,10 +660,7 @@
   font-weight: 500;
   color: var(--dark-navy);
   margin-bottom: 1.5rem;
-  max-width: 1100px;
   text-align: left;
-  align-self: flex-start;
-  padding-left: 20rem;
 }
 
 .serviceList {
@@ -834,6 +828,7 @@
   filter: grayscale(20%);
   transition: filter 0.3s ease, transform 0.3s ease;
   max-width: 100%;
+  width: auto;
   height: auto;
 }
 
@@ -1040,39 +1035,6 @@
   font-size: 1.1rem;
 }
 
-/* Responsive Design for About Section */
-@media (max-width: 968px) {
-  .aboutContainer {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .aboutImageSection {
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .aboutPhoto {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .aboutContactInfo {
-    max-width: 350px;
-    margin: 0 auto;
-  }
-  
-  .aboutHeading {
-    font-size: 1.8rem;
-  }
-  
-  .aboutSubheading {
-    font-size: 1.2rem;
-  }
-}
-
 /* Footer Styles */
 .footer {
   background: var(--dark-navy);
@@ -1205,336 +1167,6 @@
   opacity: 0.8;
   text-align: center;
   margin-top: 1rem;
-}
-
-
-@media (max-width: 900px) {
-  .footerGrid {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-  }
-  .footerCol {
-    align-items: center;
-    text-align: center;
-  }
-}
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .serviceDetails .serviceList {
-    align-self: flex-start;
-    text-align: left;
-  }
-  
-  .serviceList li {
-    justify-content: flex-start;
-  }
-  
-  /* Contact Form Tablet Responsive */
-  .formRowThree {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-  
-  .formRowThree .formGroup:nth-child(3) {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 768px) {
-    .footerNav {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .footerContact,
-  .footerSocial,
-  .footerLegal {
-    font-size: 0.95rem;
-    gap: 0.5rem;
-  }
-  .navigation {
-    display: none;
-  }
-  
-  .hamburger {
-    display: flex;
-  }
-  
-  .phoneContact {
-    order: 1; /* Move phone to first position on mobile */
-  }
-  
-  .phoneNumber {
-    display: none; /* Hide only phone number on mobile */
-  }
-  
-  .callNow {
-    font-size: 0.75rem; /* Slightly smaller on mobile */
-  }
-  
-  .phoneLink {
-    padding: 0.6rem 1rem;
-    border-radius: 24px; /* Rounded rectangle instead of circle */
-    min-width: 44px; /* Touch target size */
-    min-height: 44px;
-    justify-content: center;
-  }
-  
-  .phoneIcon {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-/* Small mobile devices - reduce Call Now button padding */
-@media (max-width: 480px) {
-  .phoneLink {
-    padding: 0.4rem 0.6rem; /* Smaller padding for small screens */
-    gap: 0.3rem; /* Reduce gap between icon and text */
-  }
-  
-  .callNow {
-    font-size: 0.7rem; /* Even smaller text on very small screens */
-  }
-  
-  .phoneIcon {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 3rem 1rem;
-    min-height: 400px;
-  }
-  
-  .heroImageBg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/trusttree.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    clip-path: none;
-    z-index: 1;
-    /* Mobile optimization */
-    will-change: transform;
-    backface-visibility: hidden;
-  }
-  
-  .heroImageBg::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,34,51,0.18) 0%, rgba(0,34,51,0.08) 100%);
-    pointer-events: none;
-    z-index: 2;
-  }
-  
-  .heroContent {
-    position: relative;
-    z-index: 3;
-    background: none;
-  }
-  
-  .heroText {
-    background: rgba(0,34,51,0.45);
-    color: #fff;
-    border-radius: 12px;
-    padding: 1.2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    position: relative;
-    z-index: 4;
-  }
-  
-  .heroText h1,
-  .heroText p {
-    color: #fff;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  }
-  
-  .testimonialsHeading,
-  .sectionHeading {
-    font-size: 1.8rem;
-  }
-  
-  .testimonials {
-    padding: 3rem 1.5rem;
-  }
-  
-  .testimonialsGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  
-  .testimonialCard {
-    padding: 2rem 1.5rem;
-  }
-  
-  .testimonialQuote {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  .tabsHeader {
-    flex-wrap: wrap;
-  }
-  
-  .tabButton {
-    padding: 0.75rem 0.5rem;
-    font-size: 0.85rem;
-  }
-  
-  .services {
-    margin-top: 0;
-  }
-  
-  .serviceValueProp {
-    padding-left: 0;
-    max-width: 100%;
-    text-align: center;
-  }
-  
-  .serviceDetails .serviceList {
-    padding-left: 0;
-    align-self: center;
-    text-align: center;
-  }
-  
-  .serviceList li {
-    justify-content: center;
-  }
-    .seoBlock {
-    padding: 1.5rem 1rem 1.2rem 1rem;
-    max-width: 100%;
-    border-radius: 8px;
-  }
-  .sectionSubtext {
-    font-size: 1rem;
-  }
-  
-  /* Contact Form Mobile Responsive */
-  .contactSection {
-    padding: 2rem 1.5rem;
-  }
-  
-  .formRow {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  
-  .formRowThree {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  
-  .formGroup {
-    margin-bottom: 1.2rem;
-  }
-  
-  .formGroup input,
-  .formGroup textarea {
-    font-size: 16px; /* Prevents zoom on iOS */
-    padding: 0.8rem 1rem;
-  }
-  
-  .submitButton {
-    font-size: 1rem;
-    padding: 0.8rem 2rem;
-    width: 100%;
-  }
-    .logoContainer {
-    gap: 0.5rem;
-    height: 50px;
-    order: 2; /* Logo comes second on mobile (after phone) */
-  }
-  
-  .logoImage {
-    height: 40px;
-  }
-  
-  .badgeImage {
-    max-width: 120px;
-    height: auto;
-  }
-  
-  .aboutPhoto {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .socialIcon {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .contactIcon {
-    width: 18px;
-    height: 18px;
-  }
-  
-  .companyName {
-    font-size: 0.95rem;
-  }
-  
-  .companySubtitle {
-    font-size: 0.8rem;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1280px) {
-  .heroImageBg {
-    width: 60%; /* Consistent with desktop */
-    background-position: center center; /* Better positioning for tablet */
-    /* Use circular clip-path like desktop for consistency */
-    clip-path: circle(50% at 50% 50%);
-  }
-  
-  .heroContent {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 3rem 2vw;
-    width: 100%;
-  }
-  .heroText {
-    max-width: 420px;
-    margin-left: auto;
-    padding-right: 3vw;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    position: relative;
-    z-index: 3;
-    text-align: left;
-  }
-  .heroText h1,
-  .heroText p {
-    color: var(--dark-navy);
-    text-shadow: none;
-  }
-  .serviceValueProp {
-    padding-left: 1vw;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .serviceList {
-    padding-left: 0 !important;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 /* ===== TERMS PAGE STYLES ===== */
@@ -1676,35 +1308,534 @@
   transform: scale(1.1);
   opacity: 0.8;
 }
+/* Responsive Design for About Section */
+/* Responsive Design for About Section (968px) */
+@media (max-width: 968px) {
+  .aboutContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .aboutImageSection {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .aboutPhoto {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .aboutContactInfo {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .aboutHeading {
+    font-size: 1.8rem;
+  }
+  
+  .aboutSubheading {
+    font-size: 1.2rem;
+  }
+}
 
-/* Terms page responsive design */
+/* Responsive Design (Tablet/Service List Adjustment - 1024px) */
+@media (max-width: 1024px) {
+  .serviceDetails .serviceList {
+    align-self: flex-start;
+    text-align: left;
+  }
+  
+  .serviceList li {
+    justify-content: flex-start;
+  }
+  
+  /* The conflicting Contact Form adjustments were REMOVED from this block */
+}
+
+/* Responsive Design (Mobile Collapse - 768px) */
 @media (max-width: 768px) {
+  /* ... (Existing hero, testimonial, tab styles remain) ... */
+  
+  /* Contact Form Mobile Responsive - All rows collapse to 1fr */
+  .contactSection {
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  
+  .contactSection h1 {
+    text-align: center;
+  }
+  
+  .formGroup label {
+    text-align: left;
+  }
+  
+  .formRow,
+  .formRowThree {
+    grid-template-columns: 1fr; /* Ensures both row types collapse completely */
+    gap: 0;
+  }
+  
+  .formGroup {
+    margin-bottom: 1.2rem;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 16px;
+    padding: 0.8rem 1rem;
+  }
+  
+  .submitButton {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    width: 100%;
+  }
+  /* ... (Existing header, logo, phone, service details adjustments remain) ... */
+  
+  .footerNav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  /* ... (Existing footer contact/social/legal adjustments remain) ... */
+}
+
+/* Footer Grid Collapse (900px) */
+@media (max-width: 900px) {
+  .footerGrid {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .footerCol {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Small mobile devices (480px) */
+@media (max-width: 480px) {
+  .phoneLink {
+    padding: 0.4rem 0.6rem;
+    gap: 0.3rem;
+  }
+  
+  .callNow {
+    font-size: 0.7rem;
+  }
+  
+  .phoneIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .footerGrid {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .footerCol {
+    align-items: center;
+    text-align: center;
+  }
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .serviceDetails .serviceList {
+    align-self: flex-start;
+    text-align: left;
+  }
+  
+  .serviceList li {
+    justify-content: flex-start;
+  }
+  
+  /* Contact Form Tablet Responsive */
+  .formRowThree {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .formRowThree .formGroup:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
+
+
+
+/* Small mobile devices - reduce Call Now button padding */
+@media (max-width: 480px) {
+  .phoneLink {
+    padding: 0.4rem 0.6rem; /* Smaller padding for small screens */
+    gap: 0.3rem; /* Reduce gap between icon and text */
+  }
+  
+  .callNow {
+    font-size: 0.7rem; /* Even smaller text on very small screens */
+  }
+  
+  .phoneIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  .heroImageBg {
+    width: 60%; /* Consistent with desktop */
+    background-position: center center; /* Better positioning for tablet */
+    /* Use circular clip-path like desktop for consistency */
+    clip-path: circle(50% at 50% 50%);
+  }
+  
+  .heroContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 3rem 2vw;
+    width: 100%;
+  }
+  .heroText {
+    max-width: 420px;
+    margin-left: auto;
+    padding-right: 3vw;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 3;
+    text-align: left;
+  }
+  .heroText h1,
+  .heroText p {
+    color: var(--dark-navy);
+    text-shadow: none;
+  }
+  .serviceValueProp {
+    padding-left: 1vw;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .serviceList {
+    padding-left: 0 !important;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+@media (max-width: 768px) {
+.hero {
+    padding: 3rem 1rem;
+    min-height: 400px;
+  }
+  
+  .heroImageBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/trusttree.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    clip-path: none;
+    z-index: 1;
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+  
+  .heroImageBg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,34,51,0.18) 0%, rgba(0,34,51,0.08) 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  .heroContent {
+    position: relative;
+    z-index: 3;
+    background: none;
+  }
+  
+  .heroText {
+    background: rgba(0,34,51,0.45);
+    color: #fff;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    position: relative;
+    z-index: 4;
+  }
+  
+  .heroText h1,
+  .heroText p {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+  
+  .testimonialsHeading,
+  .sectionHeading {
+    font-size: 1.8rem;
+    text-align: center; /* Headers stay centered */
+  }
+  
+  .testimonials {
+    padding: 3rem 1.5rem;
+  }
+  
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .testimonialCard {
+    padding: 2rem 1.5rem;
+    text-align: left;
+  }
+  
+  .testimonialQuote {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+  
+  .tabsHeader {
+    flex-wrap: wrap;
+  }
+  
+  .tabButton {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .services {
+    margin-top: 0;
+  }
+  
+  .serviceValueProp {
+    padding-left: 0;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .serviceDetails .serviceList {
+    padding-left: 0;
+    align-self: flex-start;
+    text-align: left;
+  }
+  
+  .serviceList li {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .seoBlock {
+    padding: 1.5rem 1rem 1.2rem 1rem;
+    max-width: 100%;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .sectionSubtext {
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  /* Contact Form Mobile Responsive */
+  .contactSection {
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  
+  .contactSection h1 {
+    text-align: center;
+  }
+  
+  .formGroup label {
+    text-align: left;
+  }
+  
+  .formRow,
+  .formRowThree {
+    grid-template-columns: 1fr; /* Ensures both row types collapse completely */
+    gap: 0;
+  }
+  
+  .formGroup {
+    margin-bottom: 1.2rem;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 16px;
+    padding: 0.8rem 1rem;
+  }
+  
+  .submitButton {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    width: 100%;
+  }
+
+  /* Header/Navigation Elements */
+  .logoContainer {
+    gap: 0.5rem;
+    height: 50px;
+    order: 2;
+  }
+  
+  .logoImage {
+    height: 40px;
+  }
+  
+  .badgeImage {
+    max-width: 120px;
+    width: auto;
+    height: auto;
+  }
+  
+  .aboutPhoto {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .socialIcon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .contactIcon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .companyName {
+    font-size: 0.95rem;
+  }
+  
+  .companySubtitle {
+    font-size: 0.8rem;
+  }
+  
+  .footerNav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .footerContact,
+  .footerSocial,
+  .footerLegal {
+    font-size: 0.95rem;
+    gap: 0.5rem;
+  }
+  
+  .navigation {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .phoneContact {
+    order: 1;
+  }
+  
+  .phoneNumber {
+    display: none;
+  }
+  
+  .callNow {
+    font-size: 0.75rem;
+  }
+  
+  .phoneLink {
+    padding: 0.6rem 1rem;
+    border-radius: 24px;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+  
+  .phoneIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* ==================================== */
+  /* === TERMS PAGE STYLES (768px) === */
+  /* ==================================== */
+
   .pageHeader {
     padding: 2rem 1rem;
+    text-align: center;
   }
   
   .headerContent h1 {
     font-size: 2.2rem;
+    text-align: center;
   }
   
   .headerContent p {
     font-size: 1.1rem;
+    text-align: center;
   }
   
   .termsContent {
     padding: 2rem 1rem;
   }
   
+  .termsSection {
+    text-align: left;
+  }
+  
   .termsSection h2 {
     font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .termsSection h3 {
+    text-align: center;
   }
   
   .termsSection p {
-    font-size: 0.95rem;
+    font-size: 1rem; /* Adjusted to 16px minimum */
+    line-height: 1.5;
+    text-align: left;
+  }
+  
+  .termsList li {
+    font-size: 1rem; /* Adjusted to 16px minimum */
+    line-height: 1.5;
+    text-align: left;
   }
   
   .termsEffectiveDate {
     padding: 1rem;
+    text-align: center;
+  }
+  
+  .contactInfo {
+    text-align: left;
   }
 }
 
