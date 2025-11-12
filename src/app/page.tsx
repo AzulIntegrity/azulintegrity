@@ -205,10 +205,9 @@ export default function Home() {
                 src="/badges/logo_inTuit.webp" 
                 alt="Intuit Certified" 
                 className={styles.badgeImage} 
-                width={180} 
-                height={100}
+                width={300} 
+                height={150}
                 loading="lazy"
-                sizes="(max-width: 768px) 140px, 180px"
               />
             </div>
             <div className={styles.badgeItem}>
@@ -216,32 +215,28 @@ export default function Home() {
                 src="/badges/logo_quickbooks.webp" 
                 alt="QuickBooks ProAdvisor" 
                 className={styles.badgeImage} 
-                width={180} 
-                height={100}
+                width={300} 
+                height={150}
                 loading="lazy"
-                sizes="(max-width: 768px) 140px, 180px"
               />
             </div>
-            <div className={styles.badgeItem}>
-              <Image 
-                src="/badges/xero-badge.png" 
-                alt="Xero Certified" 
-                className={styles.badgeImage} 
-                width={180} 
-                height={100}
-                loading="lazy"
-                sizes="(max-width: 768px) 140px, 180px"
-              />
-            </div>
+           
             <div className={styles.badgeItem}>
               <Image 
                 src="/badges/logo_efile.webp" 
                 alt="E-File Authorized" 
                 className={styles.badgeImage} 
-                width={180} 
-                height={100}
+                width={300} 
+                height={150}
                 loading="lazy"
-                sizes="(max-width: 768px) 140px, 180px"
+              />
+              <Image 
+                src="/badges/xero-badge.webp" 
+                alt="Xero Certified" 
+                className={styles.badgeImage} 
+                width={300} 
+                height={150}
+                loading="lazy"
               />
             </div>
             <div className={styles.badgeItem}>
@@ -249,10 +244,9 @@ export default function Home() {
                 src="/badges/intuit-proconnect.jpg" 
                 alt="Intuit ProConnect" 
                 className={styles.badgeImage} 
-                width={180} 
-                height={100}
+                width={300} 
+                height={150}
                 loading="lazy"
-                sizes="(max-width: 768px) 140px, 180px"
               />
             </div>
           </div>
