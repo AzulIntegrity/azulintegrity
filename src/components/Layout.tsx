@@ -47,7 +47,7 @@ export function Footer({  className = '' }: FooterProps) {
               height={20}
               loading="lazy"
               sizes="20px"
-            /> <Link href="mailto:azulintegrity@gmail.com">azulintegrity@gmail.com</Link></span>
+            /> <Link href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</Link></span>
             <span> <Image 
               src="/phoneIcon.png" 
               alt="Phone" 

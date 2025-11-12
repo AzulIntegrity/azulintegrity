@@ -66,6 +66,21 @@ export default function Home() {
           <Link href="/services">Services</Link>
           <Link href="/contact">Contact</Link>
         </nav>
+        <div className={styles.phoneContact}>
+          <Link href="tel:+19044764732" className={styles.phoneLink}>
+            <Image 
+              src="/phoneicon.png" 
+              alt="Call us" 
+              className={styles.phoneIcon}
+              width={20} 
+              height={20}
+            />
+            <span className={styles.phoneText}>
+              <span className={styles.callNow}>Call Now</span>
+              <span className={styles.phoneNumber}>(904) 476-4732</span>
+            </span>
+          </Link>
+        </div>
         <div className={styles.logoContainer}>
           <Image 
             src="/tree.png" 
@@ -145,10 +160,39 @@ export default function Home() {
                 ))}
               </ul>
               <Link href="/services" className={styles.serviceCta}>
-                View All Services and Packages
+                Learn More
               </Link>
             </div>
           )}
+        </section>
+
+        {/* Testimonials Section */}
+        <section className={styles.testimonials}>
+          <div className={styles.testimonialsContent}>
+            <h2 className={styles.testimonialsHeading}>What Our Clients Say</h2>
+            <p className={styles.testimonialsSubtext}>Trusted by small business owners for over 25 years</p>
+            
+            <div className={styles.testimonialsGrid}>
+              <div className={styles.testimonialCard}>
+                <div className={styles.testimonialQuote}>
+                  "I wholeheartedly recommend the services of Heather Duran. I have known Heather for the past 25 years and have consistently been impressed by her exceptional skills and professionalism."
+                </div>
+                <div className={styles.testimonialAuthor}>
+                  <strong>Beth M.</strong>
+                </div>
+              </div>
+              
+              <div className={styles.testimonialCard}>
+                <div className={styles.testimonialQuote}>
+                  "Heather is an extremely competent and reliable accountant. She is very thorough with your tax information. Heather will also look for the greatest number of deductions for filing your taxes and is very easy to work with."
+                </div>
+                <div className={styles.testimonialAuthor}>
+                  <strong>John P.</strong>
+                  <span className={styles.testimonialBusiness}>Lawn Service</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Software Badges Section */}
@@ -219,7 +263,7 @@ export default function Home() {
       </div>
       <div className={styles.footerCol}>
         <h4>Contact</h4>
-        <span>Email: <Link href="mailto:azulintegrity@gmail.com">azulintegrity@gmail.com</Link></span>
+        <span>Email: <Link href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</Link></span>
         <span>Phone: <Link href="tel:+15555555555">(904) 476-4732</Link></span>
 <div className={styles.footerSocial}>
   <Link

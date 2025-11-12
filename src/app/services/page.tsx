@@ -11,7 +11,7 @@ import styles from "./services.module.css";
 const serviceCategories = [
   {
     key: 'bookkeeping',
-    title: 'Bookkeeping',
+    title: '🧾 Bookkeeping',
     content: {
       description: 'We keep your books accurate and audit-ready so you can make faster, smarter decisions.',
       whatWeDo: [
@@ -23,19 +23,19 @@ const serviceCategories = [
       ],
       packages: [
         {
-          name: 'Azul Basic',
+          name: 'Azul Basic*',
           description: 'Monthly bookkeeping for very small operations (under 50 transactions/month); ideal for freelancers and micro-businesses.'
         },
         {
-          name: 'Azul Core',
+          name: 'Azul Core*',
           description: 'Monthly bookkeeping for moderate activity (51–200 transactions/month).'
         },
         {
-          name: 'Azul Growth',
+          name: 'Azul Growth*',
           description: 'Monthly bookkeeping for multi-channel or expanding operations (251–400 transactions/month).'
         },
         {
-          name: 'Azul Scale',
+          name: 'Azul Scale*',
           description: 'High-volume and multi-entity bookkeeping (401+ transactions/month). Additional fee will apply for every 100 transactions above 501.'
         },
         {
@@ -51,15 +51,15 @@ const serviceCategories = [
   },
   {
     key: 'accounting',
-    title: 'Accounting / CPA Services',
+    title: '💰 Accounting / CPA Services',
     content: {
-      description: 'Professional CPA services to take your financial management to the next level. Only available for clients in Florida and New Mexico.',
+      description: 'Professional CPA services to take your financial management to the next level.',
       whatWeDo: [
         'Create comprehensive annual budgets with actual-to-budget reporting.',
         'Conduct monthly financial statement reviews and analysis.',
         'Provide strategic recommendations through monthly consultations.',
         'Design custom KPI dashboards and forecasting models.',
-        'Perform compilation, review, and attest services.',
+        'Perform compilation, review, and attest services for Florida and New Mexico clients only.',
         'Implement internal controls and compliance monitoring.'
       ],
       packages: [
@@ -79,24 +79,18 @@ const serviceCategories = [
           name: 'Integrity Attest',
           description: 'Compilation, review, or attest services for Florida and New Mexico clients only.'
         },
-        {
-          name: 'Integrity Safeguards',
-          description: 'Internal control design, monitoring recommendations, and compliance alignment.'
-        }
       ]
     }
   },
   {
     key: 'payroll',
-    title: 'Payroll',
+    title: '💸 Payroll',
     content: {
       description: 'Complete payroll solutions from setup to ongoing processing.',
       whatWeDo: [
-        'Set up complete payroll systems and employee configurations.',
+        'Manage employee onboarding for payroll.',
         'Process payroll runs with direct deposit and tax filings.',
-        'Handle all payroll tax deposits and compliance requirements.',
         'Prepare and file year-end 1099 forms for contractors.',
-        'Manage employee onboarding and payroll documentation.',
         'Provide full-service payroll lifecycle management.'
       ],
       packages: [
@@ -111,17 +105,13 @@ const serviceCategories = [
         {
           name: '1099 Essentials',
           description: 'Year‑end 1099 preparation.'
-        },
-        {
-          name: 'Integrity Payroll Suite',
-          description: 'Full service payroll lifecycle. Setup, pay runs, and tax deposits. Receive 10% discount by signing up for the Suite.'
         }
       ]
     }
   },
   {
     key: 'taxes',
-    title: 'Small Business Taxes',
+    title: '🪙 Small Business Taxes',
     content: {
       description: 'Comprehensive tax preparation and filing services for small businesses.',
       whatWeDo: [
@@ -129,7 +119,6 @@ const serviceCategories = [
         'Handle quarterly 941 filings and tax compliance.',
         'Manage multi-state tax return preparation and filing.',
         'Complete prior year tax return preparation and amendments.',
-        'Organize and document receipts for tax preparation.',
         'File tax extensions and handle IRS correspondence.'
       ],
       packages: [
@@ -144,17 +133,13 @@ const serviceCategories = [
         {
           name: 'Prior Year Rescue',
           description: 'Complete preparation and filing of prior year returns.'
-        },
-        {
-          name: 'Receipt Ready',
-          description: 'Organize receipts and documentation for your tax professional.'
         }
       ]
     }
   },
   {
     key: 'additional',
-    title: 'Additional Support',
+    title: '💬 Additional Support',
     content: {
       description: 'Specialized services to enhance your financial operations.',
       whatWeDo: [
@@ -232,7 +217,7 @@ export default function Services() {
         <section className={styles.pageHeader}>
           <div className={styles.headerContent}>
             <h1>Find Your Financial Solution</h1>
-            <p>All services include a one-time 15‑minute consultation to find the package that fits your business and get a fast high-level estimate. <br /> Choose standalone services or bundle for a discounted, streamlined experience.<br /> For custom needs not listed, call Azul Integrity Accounting Services for a tailored quote.
+            <p>All services include a one-time 15‑minute consultation to find the package that fits your business and get a fast high-level estimate. <br />  For custom needs not listed, call Azul Integrity Accounting Services for a tailored quote.
 </p>
           </div>
         </section>
@@ -259,12 +244,25 @@ export default function Services() {
               {/* What We Do Section (for Bookkeeping) */}
               {activeService.content.whatWeDo && (
                 <div className={styles.whatWeDo}>
-                  <h3>What I Do For You: </h3>
-                  <ul>
-                    {activeService.content.whatWeDo.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
+                  <div className={styles.whatWeDoContent}>
+                    <div className={styles.whatWeDoTextSection}>
+                      <h3>What I Do For You: </h3>
+                      <ul className={styles.whatWeDoList}>
+                        {activeService.content.whatWeDo.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className={styles.whatWeDoImage}>
+                      <Image 
+                        src="/imagePlaceholder.png" 
+                        alt={`${activeService.title} illustration`}
+                        width={300}
+                        height={200}
+                        className={styles.placeholderImage}
+                      />
+                    </div>
+                  </div>
                 </div>
               )}
 
@@ -282,7 +280,7 @@ export default function Services() {
                   </div>
                    {activeService.key === 'bookkeeping' && (
     <div className={styles.packageBanner}>
-      10% Discount for Annual Contracts with All Packages
+      **10% Discount for Annual Contracts on Select Packages.
     </div>
   )}
                 </div>

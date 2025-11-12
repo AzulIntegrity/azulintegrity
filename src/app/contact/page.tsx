@@ -109,7 +109,7 @@ export default function ContactPage() {
               />
               <div className={styles.aboutContactInfo}>
                 <h4>Contact Information</h4>
-                <p><Link href="mailto:azulintegrity@gmail.com">azulintegrity@gmail.com</Link></p>
+                <p><Link href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</Link></p>
                 <p><Link href="tel:+119044764732">(904) 476-4732</Link></p>
               </div>
             </div>

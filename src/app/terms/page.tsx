@@ -102,7 +102,7 @@ export default function TermsPage() {
             <div className={styles.termsSection}>
               <h2>10. Intellectual Property and Copyright Policy</h2>
               <p>All content on the Site is owned or licensed by Azul Integrity Accounting Services LLC and protected by copyright, trademark, and other intellectual property laws. You may use Site content solely for personal, noncommercial purposes. Unauthorized use is prohibited.</p>
-              <p>To report alleged copyright infringement, please email azulintegrity@gmail.com with sufficient information to support a valid DMCA takedown request.</p>
+              <p>To report alleged copyright infringement, please email azulintegritycpa@gmail.com with sufficient information to support a valid DMCA takedown request.</p>
             </div>
 
             <div className={styles.termsSection}>
@@ -112,7 +112,7 @@ export default function TermsPage() {
 
             <div className={styles.termsSection}>
               <h2>12. Product and Service Descriptions</h2>
-              <p>We strive to ensure that all product and service descriptions are accurate; however, we do not warrant that descriptions or other content on the Site are error-free or complete. If a service you purchase from us is not as described, your sole remedy is to cancel your service by contacting us at azulintegrity@gmail.com or (904) 476-4732.</p>
+              <p>We strive to ensure that all product and service descriptions are accurate; however, we do not warrant that descriptions or other content on the Site are error-free or complete. If a service you purchase from us is not as described, your sole remedy is to cancel your service by contacting us at azulintegritycpa@gmail.com or (904) 476-4732.</p>
             </div>
 
             <div className={styles.termsSection}>
@@ -145,7 +145,7 @@ export default function TermsPage() {
 
             <div className={styles.termsSection}>
               <h2>18. Accessibility</h2>
-              <p>We are committed to making our Site accessible to all users. If you encounter any accessibility barriers, please contact us at azulintegrity@gmail.com for assistance.</p>
+              <p>We are committed to making our Site accessible to all users. If you encounter any accessibility barriers, please contact us at azulintegritycpa@gmail.com for assistance.</p>
             </div>
 
             <div className={styles.termsSection}>
@@ -170,7 +170,7 @@ export default function TermsPage() {
                   height={20}
                   loading="lazy"
                   sizes="20px"
-                /> <a href="mailto:azulintegrity@gmail.com">azulintegrity@gmail.com</a></p>
+                /> <a href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</a></p>
                 <p><Image 
                   src="/phoneblue.png" 
                   alt="Phone" 

@@ -1,4 +1,4 @@
-
+.navigation
 .page {
   display: flex;
   flex-direction: column;
@@ -113,9 +113,8 @@
   color: var(--white);
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.3rem !important;
-  line-height: 1.25 !important;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 1.3rem;
+line-height: 1.25;
   transition: color 0.3s;
 }
 
@@ -192,7 +191,12 @@
 /* Page Header */
 .pageHeader {
   position: relative;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--duskblue) 50%, var(--dark-navy) 100%);
+  background: 
+   
+    url('/servicehero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--white);
   padding: 5rem 5% 4rem 5%;
   text-align: center;
@@ -201,117 +205,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: gradientShift 8s ease-in-out infinite;
 }
 
-/* Inner border frame */
-.pageHeader::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  z-index: 1;
-  pointer-events: none;
-  animation: borderGlow 4s ease-in-out infinite alternate;
-}
 
-/* Border glow animation */
-@keyframes borderGlow {
-  0% {
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
-  }
-  100% {
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.2);
-  }
-}
-
-/* Animated gradient background */
-@keyframes gradientShift {
-  0%, 100% { 
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--duskblue) 50%, var(--dark-navy) 100%);
-  }
-  50% { 
-    background: linear-gradient(135deg, var(--duskblue) 0%, var(--primary-blue) 50%, var(--trust-green) 100%);
-  }
-}
-
-/* Background pattern overlay with floating animation */
-.pageHeader .headerContent::before {
-  content: '';
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  right: -50px;
-  bottom: -50px;
-  background-image: 
-    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(255,255,255,0.04) 0%, transparent 50%);
-  z-index: -1;
-  animation: floatingPatterns 12s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes floatingPatterns {
-  0%, 100% { 
-    transform: translateY(0px); 
-    opacity: 0.8;
-  }
-  50% { 
-    transform: translateY(-10px); 
-    opacity: 1;
-  }
-}
-
-/* Animated geometric accent shapes */
-.pageHeader::after {
-  content: '';
-  position: absolute;
-  top: -10%;
-  right: -5%;
-  width: 200px;
-  height: 200px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 50%;
-  z-index: 1;
-  animation: pulseAndRotate 6s ease-in-out infinite;
-}
-
-@keyframes pulseAndRotate {
-  0%, 100% { 
-    transform: scale(1) rotate(0deg);
-    opacity: 0.6;
-  }
-  50% { 
-    transform: scale(1.1) rotate(180deg);
-    opacity: 0.9;
-  }
-}
 
 .headerContent {
   position: relative;
   z-index: 2;
   max-width: 800px;
   margin: 0 auto;
-  animation: fadeInUp 1.2s ease-out;
-}
-
-/* Text entrance animation */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .headerContent h1 {
@@ -320,25 +227,15 @@
   margin-bottom: 1.5rem;
   color: var(--white);
   font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 
+    0 2px 4px rgba(0,0,0,0.5),
+    0 4px 8px rgba(0,0,0,0.3);
   letter-spacing: 1px;
   line-height: 1.2;
-  animation: slideInFromLeft 1.5s ease-out 0.3s both;
-}
-
-/* H1 sliding animation */
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 .headerContent p {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
   color: var(--white);
   font-weight: 400;
@@ -346,20 +243,7 @@
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.5;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  animation: slideInFromRight 1.5s ease-out 0.6s both;
-}
-
-/* Subtitle sliding animation */
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
 
 /* Services Section */
@@ -377,6 +261,7 @@
 }
 
 .tabButton {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   background-color: var(--white);
   border: 1px solid var(--border);
   padding: 0.75rem 1.25rem;
@@ -410,6 +295,7 @@
 }
 
 .serviceDetails h2 {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-size: 2.5rem;
   color: var(--dark-navy);
   margin-bottom: 1.5rem;
@@ -417,10 +303,11 @@
 }
 
 .serviceDescription {
+  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 1.2rem;
   color: var(--foreground);
   margin-bottom: 2rem;
-  text-align: left;
+  text-align: center;
   line-height: 1.6;
   padding-left: 2rem;
 }
@@ -436,9 +323,11 @@
 }
 
 .whatWeDo h3 {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-size: 1.5rem;
   color: #003366;
   margin-bottom: 1rem;
+  text-align: left
 }
 
 .whatWeDo ul {
@@ -447,6 +336,7 @@
 }
 
 .whatWeDo li {
+  font-family: 'Open Sans', Arial, sans-serif;
   padding: 0.5rem 0;
   font-size: 1rem;
   color: #1e293b;
@@ -463,6 +353,40 @@
   margin-top: 0.1rem;
 }
 
+/* Two-column layout for What We Do section */
+.whatWeDoContent {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.whatWeDoTextSection {
+  flex: 1;
+  min-width: 0;
+  order: 2;
+}
+
+.whatWeDoList {
+  margin: 0;
+}
+
+.whatWeDoImage {
+  flex: 0 0 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+  padding-top: 4em;
+  padding-right: 6rem;
+  padding-left: 4rem;
+}
+
+.placeholderImage {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
 /* Packages Section */
 .packages {
   margin-bottom: 3rem;
@@ -473,7 +397,8 @@
 }
 
 .packages h3 {
-  font-size: 1.5rem;
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 2rem;
   color: var(--white);
   margin-bottom: 1rem;
   text-align: center;
@@ -481,6 +406,7 @@
 }
 
 .note {
+  font-family: 'Open Sans', Arial, sans-serif;
   background: var(--duskblue);
   color: var(--dark-navy);
   padding: 1rem;
@@ -511,6 +437,7 @@
 }
 
 .packageCard h4 {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-size: 1.3rem;
   color: var(--primary-blue);
   margin-bottom: 0.75rem;
@@ -518,6 +445,7 @@
 }
 
 .packageCard p {
+  font-family: 'Open Sans', Arial, sans-serif;
   color: var(--foreground);
   line-height: 1.5;
 }
@@ -531,12 +459,14 @@
 }
 
 .ctaContent h2 {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: var(--white);
 }
 
 .ctaContent p {
+  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 1.2rem;
   margin-bottom: 2rem;
   opacity: 0.9;
@@ -548,6 +478,7 @@
 }
 
 .primaryCta {
+  font-family: 'Open Sans', Arial, sans-serif;
   background-color: var(--trust-green);
   color: var(--white);
   padding: 1rem 2rem;
@@ -565,6 +496,7 @@
 }
 
 .secondaryCta {
+  font-family: 'Open Sans', Arial, sans-serif;
   background-color: transparent;
   color: var(--white);
   border: 2px solid var(--white);
@@ -600,22 +532,14 @@
   .pageHeader {
     padding: 4rem 1rem 3rem 1rem;
     min-height: 350px;
+    background-position: center center;
+    background-size: cover;
   }
   
-  /* Adjust inner border for mobile */
-  .pageHeader::before {
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
-    border-width: 1.5px;
-  }
-  
-  .pageHeader::after {
-    width: 150px;
-    height: 150px;
-    top: -5%;
-    right: -10%;
+  .headerContent {
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(5px);
   }
   
   .headerContent h1 {
@@ -652,6 +576,30 @@
   
   .ctaSection {
     padding: 3rem 1rem;
+  }
+  
+  /* Mobile responsive for What We Do two-column layout */
+  .whatWeDoContent {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .whatWeDoTextSection {
+    flex: none;
+    order: 1;
+  }
+  
+  .whatWeDoImage {
+    flex: none;
+    width: 100%;
+    justify-content: center;
+    order: 2;
+  }
+  
+  .placeholderImage {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
   }
   
   .ctaContent h2 {
