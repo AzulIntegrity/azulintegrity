@@ -175,7 +175,7 @@ export default function Home() {
             <div className={styles.testimonialsGrid}>
               <div className={styles.testimonialCard}>
                 <div className={styles.testimonialQuote}>
-                  "I wholeheartedly recommend the services of Heather Duran. I have known Heather for the past 25 years and have consistently been impressed by her exceptional skills and professionalism."
+                  &quot;I wholeheartedly recommend the services of Heather Duran. I have known Heather for the past 25 years and have consistently been impressed by her exceptional skills and professionalism.&quot;
                 </div>
                 <div className={styles.testimonialAuthor}>
                   <strong>Beth M.</strong>
@@ -184,7 +184,7 @@ export default function Home() {
               
               <div className={styles.testimonialCard}>
                 <div className={styles.testimonialQuote}>
-                  "Heather is an extremely competent and reliable accountant. She is very thorough with your tax information. Heather will also look for the greatest number of deductions for filing your taxes and is very easy to work with."
+                  &quot;Heather is an extremely competent and reliable accountant. She is very thorough with your tax information. Heather will also look for the greatest number of deductions for filing your taxes and is very easy to work with.&quot;
                 </div>
                 <div className={styles.testimonialAuthor}>
                   <strong>John P.</strong>
