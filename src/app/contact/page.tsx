@@ -67,6 +67,21 @@ export default function ContactPage() {
           <Link href="/services">Services</Link>
           <Link href="/contact">Contact</Link>
         </nav>
+        <div className={styles.phoneContact}>
+          <Link href="tel:+19044764732" className={styles.phoneLink}>
+            <Image 
+              src="/phoneicon.png" 
+              alt="Call us" 
+              className={styles.phoneIcon}
+              width={20} 
+              height={20}
+            />
+            <span className={styles.phoneText}>
+              <span className={styles.callNow}>Call Now</span>
+              <span className={styles.phoneNumber}>(904) 476-4732</span>
+            </span>
+          </Link>
+        </div>
         <div className={styles.logoContainer}>
           <Image 
             src="/tree.png" 
@@ -114,25 +129,39 @@ export default function ContactPage() {
               </div>
             </div>
             <div className={styles.aboutContent}>
-              <h2 className={styles.aboutHeading}>Meet the Expert Behind Azul Integrity Accounting Services</h2>
-              <h3 className={styles.aboutSubheading}>Heather Duran, Owner and Certified Public Accountant</h3>
+              <h2 className={styles.aboutHeading}>Heather Duran, CPA</h2>
+              <h3 className={styles.aboutSubheading}>Founder of Azul Integrity — Your Virtual CPA — Rooted in Trust, Partner in Growth</h3>
               <div className={styles.aboutText}>
                 <p>
-                  I&apos;m <strong>Heather Duran</strong>, founder of Azul Integrity and your Virtual CPA. After 25 years working in corporate finance, accounting, and financial systems, I bring corporate rigor with a practical, small‑business mindset. I make finances simple so you can focus on what you do best: growing your business.
+                  <strong>If you&apos;re allergic to accounting and taxes, call me — I&apos;ve got the antidote.</strong>
                 </p>
                 <p>
-                  I help small and medium‑sized businesses turn messy books into clear, actionable plans. Using GAAP best practices and smart process automation, I build streamlined systems that give you accurate records and timely insights. No more wrestling with numbers — just dependable numbers and guidance you can act on.
+                  After 25+ years in corporate finance, accounting, insurance, and financial systems, I founded Azul Integrity to bring big-company clarity and efficiency to growing entrepreneurs — without the corporate headaches.
                 </p>
+                <p>
+                  I help business owners turn messy books into meaningful insight. Using GAAP best practices, smart automation, and plain-language explanations, I make your numbers reliable, understandable, and actionable.
+                </p>
+                <p><strong>When we work together, you get:</strong></p>
+                <ul style={{ paddingLeft: '2rem' }}>
+                  <li>Tidy, accurate books that tell your business&apos;s true story</li>
+                  <li>Taxes handled on time — no last-minute chaos</li>
+                  <li>Reports that drive smarter decisions</li>
+                  <li>A partner who cares about your goals, not just your numbers</li>
+                </ul>
                 <div className={styles.credentialsList}>
                   <h4>Credentials & Experience</h4>
                   <ul>
-                    <li>Licensed CPA in New Mexico and Florida</li>
-                    <li>25+ years of corporate and financial systems experience</li>
-                    <li>What I do: bookkeeping, accounting, taxes, payroll, and virtual CPA support for small businesses</li>
+                    <li>Licensed CPA — New Mexico & Florida</li>
+                    <li>25+ years in corporate finance, accounting, insurance, and systems</li>
+                    <li>Expertise in GAAP compliance, automation, and audit readiness</li>
+                    <li>Trusted by small businesses, startups, and local nonprofits</li>
                   </ul>
                 </div>
                 <p>
-                  I care about clarity, reliability, and helping you feel confident about your financial decisions. If you want bookkeeping that&apos;s tidy, taxes that are handled, and financial reports that actually help you grow, let&apos;s talk.
+                  At Azul Integrity, I combine technical rigor with genuine care — creating financial systems that reduce stress and build confidence.
+                </p>
+                <p>
+                  <strong>You grow your business. I&apos;ll handle the numbers.</strong>
                 </p>
               </div>
             </div>

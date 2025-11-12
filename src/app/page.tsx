@@ -28,16 +28,6 @@ const serviceCategories = [
     ],
   },
   {
-    key: 'taxes',
-    title: 'Small Business Taxes',
-    valueProp: '<strong>Compliance with Confidence</strong> <br /> Ensure your entity and state filings are handled accurately and on time.',
-    bullets: [
-      'Full preparation and filing of entity tax returns (1120, 1065, Schedule C).',
-      'Specialized preparation for per-state and prior-year filings.',
-      'Receipt organization and documentation services.',
-    ],
-  },
-  {
     key: 'payroll',
     title: 'Payroll',
     valueProp: '<strong>Seamless & Stress-Free</strong> <br /> We handle the entire payroll lifecycle so you can focus on your team.',
@@ -45,6 +35,16 @@ const serviceCategories = [
       'Complete payroll system setup and configuration.',
       'Ongoing payroll processing, direct deposit, and tax filings.',
       'Full-service annual 1099 preparation.',
+    ],
+  },
+  {
+    key: 'taxes',
+    title: 'Small Business Taxes',
+    valueProp: '<strong>Compliance with Confidence</strong> <br /> Ensure your entity and state filings are handled accurately and on time.',
+    bullets: [
+      'Full preparation and filing of entity tax returns (1120, 1065, Schedule C).',
+      'Specialized preparation for per-state and prior-year filings.',
+      'Receipt organization and documentation services.',
     ],
   },
 ];
@@ -125,7 +125,7 @@ export default function Home() {
           </div>
         </section>
 
-      
+        {/* --- UPDATED SEO BLOCK --- */}
         <section className={styles.seoBlock}>
           <h2 className={styles.sectionHeading}>
             Why Choose Azul Integrity as Your Virtual CPA? <br />
@@ -135,10 +135,8 @@ export default function Home() {
             Get trusted financial guidance, accurate records, and stress-free compliance from a licensed CPA with 25+ years of experience. We help small businesses grow with clarity, confidence, and personalized support. Experience peace of mind knowing your books are done right, make better business decisions with clear, accurate financials, and enjoy less stress around tax time with experience you can trust and support you&apos;ll actually enjoy.
           </p>
         </section>
-
-        <section className={styles.services}>
+        <section className={styles.services} suppressHydrationWarning>
           <h2 className={styles.sectionHeading}>Our Four Pillars of Service</h2>
-          
           <div className={styles.tabsHeader}>
             {serviceCategories.map((category) => (
               <button
@@ -153,10 +151,12 @@ export default function Home() {
           
           {activeService && (
             <div className={styles.serviceDetails}>
+              {/* NOTE: valueProp uses dangerouslySetInnerHTML, ensure content is clean */}
               <p className={styles.serviceValueProp} dangerouslySetInnerHTML={{ __html: activeService.valueProp }}></p>
+              
               <ul className={styles.serviceList}>
                 {activeService.bullets.map((bullet, index) => (
-                  <li key={index}>✓ {bullet}</li>
+                  <li key={index}>{bullet}</li>
                 ))}
               </ul>
               <Link href="/services" className={styles.serviceCta}>
@@ -253,63 +253,63 @@ export default function Home() {
       </main>
       
       <Footer>
-  <footer className={styles.footerColumns}>
-    <div className={styles.footerGrid}>
-      <div className={styles.footerCol}>
-        <h4>Quick Links</h4>
-        <Link href="/">Home</Link>
-        <Link href="/services">Services</Link>
-        <Link href="/contact">Contact</Link>
-      </div>
-      <div className={styles.footerCol}>
-        <h4>Contact</h4>
-        <span>Email: <Link href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</Link></span>
-        <span>Phone: <Link href="tel:+15555555555">(904) 476-4732</Link></span>
-<div className={styles.footerSocial}>
-  <Link
-    href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Image 
-      src="/facebookIcon.png" 
-      alt="Facebook" 
-      className={styles.socialIcon} 
-      width={28} 
-      height={28}
-      loading="lazy"
-      sizes="(max-width: 768px) 24px, 28px"
-    />
-  </Link>
-  <Link
-    href="https://www.linkedin.com/in/heather-duran-2ba29045"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Image 
-      src="/linkedInIcon.png" 
-      alt="LinkedIn" 
-      className={styles.socialIcon} 
-      width={28} 
-      height={28}
-      loading="lazy"
-      sizes="(max-width: 768px) 24px, 28px"
-    />
-  </Link>
-</div>
-      </div>
-      <div className={styles.footerCol}>
-        <h4>Legal Pages</h4>
-        <Link href="/terms">Terms of Service</Link>
-        <Link href="/privacy">Privacy Policy</Link>
-        <Link href="/sitemap">Site Map</Link>
-      </div>
-    </div>
-    <div className={styles.footerCopyright}>
-      &copy; {new Date().getFullYear()} Azul Integrity Accounting Services. All rights reserved.
-    </div>
-  </footer>
-</Footer>
+        <footer className={styles.footerColumns}>
+          <div className={styles.footerGrid}>
+            <div className={styles.footerCol}>
+              <h4>Quick Links</h4>
+              <Link href="/">Home</Link>
+              <Link href="/services">Services</Link>
+              <Link href="/contact">Contact</Link>
+            </div>
+            <div className={styles.footerCol}>
+              <h4>Contact</h4>
+              <span>Email: <Link href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</Link></span>
+              <span>Phone: <Link href="tel:+15555555555">(904) 476-4732</Link></span>
+              <div className={styles.footerSocial}>
+                <Link
+                  href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image 
+                    src="/facebookIcon.png" 
+                    alt="Facebook" 
+                    className={styles.socialIcon} 
+                    width={28} 
+                    height={28}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 24px, 28px"
+                  />
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/heather-duran-2ba29045"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image 
+                    src="/linkedInIcon.png" 
+                    alt="LinkedIn" 
+                    className={styles.socialIcon} 
+                    width={28} 
+                    height={28}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 24px, 28px"
+                  />
+                </Link>
+              </div>
+            </div>
+            <div className={styles.footerCol}>
+              <h4>Legal Pages</h4>
+              <Link href="/terms">Terms of Service</Link>
+              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="/sitemap">Site Map</Link>
+            </div>
+          </div>
+          <div className={styles.footerCopyright}>
+            &copy; {new Date().getFullYear()} Azul Integrity Accounting Services. All rights reserved.
+          </div>
+        </footer>
+      </Footer>
     </div>
   );
 }

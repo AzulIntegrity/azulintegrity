@@ -168,7 +168,7 @@ const serviceCategories = [
   }
 ];
 
-export default function Services() {
+export default function ServicesPage() {
   const [activeTab, setActiveTab] = useState(serviceCategories[0].key);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const activeService = serviceCategories.find(s => s.key === activeTab);
@@ -185,6 +185,21 @@ export default function Services() {
           <Link href="/services">Services</Link>
           <Link href="/contact">Contact</Link>
         </nav>
+        <div className={styles.phoneContact}>
+          <Link href="tel:+19044764732" className={styles.phoneLink}>
+            <Image 
+              src="/phoneicon.png" 
+              alt="Call us" 
+              className={styles.phoneIcon}
+              width={20} 
+              height={20}
+            />
+            <span className={styles.phoneText}>
+              <span className={styles.callNow}>Call Now</span>
+              <span className={styles.phoneNumber}>(904) 476-4732</span>
+            </span>
+          </Link>
+        </div>
         <div className={styles.logoContainer}>
           <Image 
             src="/tree.png" 
