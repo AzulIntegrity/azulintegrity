@@ -37,21 +37,7 @@ export default function RootLayout({
         <link rel="manifest" href="/favicon.ico/site.webmanifest" />
         <meta name="theme-color" content="#005B99" />
         
-        {/* Preload critical images for performance */}
-        <link 
-          rel="preload" 
-          as="image" 
-          href="/trusttree.png" 
-          type="image/png"
-          media="(min-width: 768px)"
-        />
-        <link 
-          rel="preload" 
-          as="image" 
-          href="/trusttree.png" 
-          type="image/png"
-          media="(max-width: 767px)"
-        />
+
    
     <meta name="theme-color" content="#005B99" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#003B66" media="(prefers-color-scheme: dark)" />

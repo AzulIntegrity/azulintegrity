@@ -1,54 +1,5 @@
 /* Sitemap Page Styles */
 
-/* Header Navigation Styles */
-.navigation {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.navigation a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  font-family: 'Open Sans', Arial, sans-serif;
-  transition: color 0.3s ease;
-}
-
-.navigation a:hover {
-  color: #e2e8f0;
-}
-
-.phoneContact {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-}
-
-.phoneLink {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  font-family: 'Open Sans', Arial, sans-serif;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.phoneLink:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-}
-
-.phoneIcon {
-  object-fit: contain;
-}
-
 .phoneText {
   display: flex;
   flex-direction: column;
@@ -114,31 +65,7 @@
   padding: 0 2rem;
 }
 
-.logoContainer {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  margin-bottom: 3rem;
-  width: fit-content;
-  transition: transform 0.2s ease;
-}
 
-.logoContainer:hover {
-  transform: translateY(-2px);
-}
-
-.logoImage {
-  object-fit: contain;
-}
-
-.logoText {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
-  font-variant: small-caps;
-  font-size: 1.5rem;
-  color: #1a365d;
-  font-weight: 600;
-}
 
 .content {
   background: white;

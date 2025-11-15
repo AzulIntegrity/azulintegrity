@@ -1,2 +1,2 @@
 export { generateMetadata } from './SEO';
-export { Header, Footer } from './Layout';
+export { Header, Footer, headerStyles } from './Layout';

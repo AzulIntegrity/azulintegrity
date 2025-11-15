@@ -57,203 +57,12 @@
 
 /* Header Styles - Reusing from main page */
 
-/* Logo Styling */
-.logoContainer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  height: 60px;
-  order: 3; /* Logo comes third (right side) */
-  background: var(--white);
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.logoImage {
-  height: 50px;
-  width: auto;
-  flex-shrink: 0;
-  object-fit: contain;
-  transition: transform 0.2s ease;
-}
-
-.logoImage:hover {
-  transform: scale(1.05);
-}
-
-.logoText {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.companyName {
-  font-family: 'Trajan Pro', 'Times New Roman', serif !important;
-  font-size: 1.3rem !important;
-  font-weight: 600;
-  color: var(--dark-navy);
-  margin: 0;
-  letter-spacing: 0.5px;
-}
-
-.companySubtitle {
-  font-family: 'Trajan Pro', 'Times New Roman', serif !important;
-  font-size: 0.9rem !important;
-  font-weight: 400;
-  color: var(--dark-navy);
-  margin: 0;
-  letter-spacing: 0.3px;
-}
-
-/* Mobile logo adjustments */
 
 
-.navigation {
-  display: flex;
-  gap: 2rem;
-  order: 1; /* Navigation comes first (left side) */
-}
 
-.navigation a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.3rem;
-line-height: 1.25;
-  transition: color 0.3s;
-}
 
-.navigation a:hover {
-  color: var(--light-blue);
-}
 
-/* Phone Contact Styles */
-.phoneContact {
-  display: flex;
-  align-items: center;
-  order: 2;
-}
 
-.phoneLink {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--white);
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.5rem 1rem;
-  border-radius: 24px;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.phoneLink:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.phoneIcon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-  transition: transform 0.2s ease;
-}
-
-.phoneLink:hover .phoneIcon {
-  transform: scale(1.1);
-}
-
-.phoneText {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.1rem;
-  line-height: 1.4;
-}
-
-.callNow {
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--white);
-  opacity: 0.9;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.phoneNumber {
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 0.3px;
-}
-
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background-color: var(--white);
-  transition: 0.3s;
-  transform-origin: center;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
-}
-
-.mobileMenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: var(--dark-navy);
-  flex-direction: column;
-  padding: 1rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.mobileMenu.active {
-  display: flex;
-}
-
-.mobileMenu a {
-  color: var(--white);
-  text-decoration: none;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.mobileMenu a:hover {
-  color: var(--light-blue);
-}
-
-.mobileMenu a:last-child {
-  border-bottom: none;
-}
 
 /* Main Content */
 .main {
@@ -725,11 +534,14 @@ line-height: 1.25;
     width: 100%;
     justify-content: center;
     order: 2;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 2rem;
   }
   
   .placeholderImage {
     width: 100%;
-    max-width: 280px;
+    max-width: 350px;
     height: auto;
   }
   
@@ -764,31 +576,56 @@ line-height: 1.25;
     padding: 1rem 2rem;
     font-size: 1rem;
   }
-  
-  .navigation {
-    display: none;
+
+  /* Left-justify text content on mobile */
+  .serviceDescription {
+    text-align: left;
+    padding: 0 1rem;
+  }
+
+  .whatWeDo {
+    text-align: left;
+  }
+
+  .whatWeDo h3 {
+    text-align: left;
+  }
+
+  .whatWeDo ul {
+    text-align: left;
+  }
+
+  .whatWeDo li {
+    text-align: left;
+  }
+
+  .note {
+    text-align: left;
+  }
+
+  .packageCard h4 {
+    text-align: left;
+  }
+
+  .packageCard p {
+    text-align: left;
   }
   
-  .hamburger {
-    display: flex;
-  }
-    .logoContainer {
-    gap: 0.5rem;
-    height: 50px;
-  }
-  
-  .logoImage {
-    height: 40px;
+
+}
+/* Medium/Tablet screens - larger images */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .whatWeDoImage {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   
-  .companyName {
-    font-size: 0.95rem;
-  }
-  
-  .companySubtitle {
-    font-size: 0.8rem;
+  .placeholderImage {
+    max-width: 400px;
+    width: 100%;
   }
 }
+
 @media (max-width: 900px) {
   .footerGrid {
     flex-direction: column;

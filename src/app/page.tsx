@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState, useEffect } from 'react';
-import { Header, Footer } from "@/components";
+import { Header, Footer, headerStyles } from "@/components";
 import styles from "./page.module.css";
 
 // Service data
@@ -61,43 +61,43 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <Header>
-        <nav className={styles.navigation}>
-          <Link href="/">Home</Link>
+        <nav className={headerStyles.navigation}>
+          <Link href="/" className={headerStyles.active}>Home</Link>
           <Link href="/services">Services</Link>
           <Link href="/contact">Contact</Link>
         </nav>
-        <div className={styles.phoneContact}>
-          <Link href="tel:+19044764732" className={styles.phoneLink}>
+        <div className={headerStyles.phoneContact}>
+          <Link href="tel:+19044764732" className={headerStyles.phoneLink}>
             <Image 
               src="/phoneicon.webp" 
               alt="Call Azul Integrity CPA - Jacksonville Accounting Services" 
-              className={styles.phoneIcon}
+              className={headerStyles.phoneIcon}
               width={20} 
               height={20}
             />
-            <span className={styles.phoneText}>
-              <span className={styles.callNow}>Call Now</span>
-              <span className={styles.phoneNumber}>(904) 476-4732</span>
+            <span className={headerStyles.phoneText}>
+              <span className={headerStyles.callNow}>Call Now</span>
+              <span className={headerStyles.phoneNumber}>(904) 476-4732</span>
             </span>
           </Link>
         </div>
-        <div className={styles.logoContainer}>
+        <div className={headerStyles.logoContainer}>
           <Image 
             src="/tree.png" 
             alt="Azul Integrity Tree Logo" 
-            className={styles.logoImage} 
+            className={headerStyles.logoImage} 
             width={50} 
             height={50}
             priority
             sizes="(max-width: 768px) 40px, 50px"
           />
-          <div className={styles.logoText}>
-            <div className={styles.companyName}>Azul Integrity</div>
-            <div className={styles.companySubtitle}>Accounting Services</div>
+          <div className={headerStyles.logoText}>
+            <div className={headerStyles.companyName}>Azul Integrity</div>
+            <div className={headerStyles.companySubtitle}>Accounting Services</div>
           </div>
         </div>
         <button 
-          className={`${styles.hamburger} ${mobileMenuOpen ? styles.active : ''}`} 
+          className={`${headerStyles.hamburger} ${mobileMenuOpen ? headerStyles.active : ''}`} 
           onClick={toggleMobileMenu}
           aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={mobileMenuOpen}
@@ -109,12 +109,12 @@ export default function Home() {
           <span></span>
         </button>
         <nav 
-          className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.active : ''}`}
+          className={`${headerStyles.mobileMenu} ${mobileMenuOpen ? headerStyles.active : ''}`}
           id="mobile-navigation"
           aria-label="Mobile navigation"
           role="navigation"
         >
-          <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+          <Link href="/" className={headerStyles.active} onClick={() => setMobileMenuOpen(false)}>Home</Link>
           <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </nav>

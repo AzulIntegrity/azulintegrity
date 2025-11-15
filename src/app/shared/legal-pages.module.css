@@ -1,54 +1,7 @@
 /* ===== SHARED LEGAL PAGES CSS MODULE ===== */
 /* Used by: Terms, Privacy, and Site-map pages */
 
-/* Logo Styling */
-.logoContainer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  height: 60px;
-  order: 3;
-  background: var(--white);
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
 
-.logoImage {
-  height: 50px;
-  width: auto;
-  flex-shrink: 0;
-  object-fit: contain;
-  transition: transform 0.2s ease;
-}
-
-.logoImage:hover {
-  transform: scale(1.05);
-}
-
-.logoText {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.companyName {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--dark-navy);
-  margin: 0;
-  letter-spacing: 0.5px;
-}
-
-.companySubtitle {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: var(--dark-navy);
-  margin: 0;
-  letter-spacing: 0.3px;
-}
 
 /* Page Layout */
 .page {
@@ -58,25 +11,7 @@
   background: var(--white);
 }
 
-/* Navigation Styles */
-.navigation {
-  display: flex;
-  gap: 2rem;
-  order: 1;
-}
 
-.navigation a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.3rem;
-  line-height: 1.25;
-  transition: color 0.3s;
-}
-
-.navigation a:hover {
-  color: var(--light-blue);
-}
 
 /* Main Content */
 .main {
@@ -209,29 +144,6 @@
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
-  /* Header/Navigation Elements */
-  .logoContainer {
-    gap: 0.5rem;
-    height: 50px;
-    order: 2;
-  }
-  
-  .logoImage {
-    height: 40px;
-  }
-  
-  .companyName {
-    font-size: 0.95rem;
-  }
-  
-  .companySubtitle {
-    font-size: 0.8rem;
-  }
-  
-  .navigation {
-    display: none;
-  }
-
   /* Terms Page Mobile Styles */
   .pageHeader {
     padding: 2rem 1rem;

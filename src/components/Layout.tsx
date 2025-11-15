@@ -2,6 +2,8 @@
 import React, { useState, useEffect} from "react";
 import Link from "next/link";
 import Image from "next/image";
+import headerStyles from "./header.module.css";
+
 interface HeaderProps {
   children: React.ReactNode;
   className?: string;
@@ -16,6 +18,9 @@ export function Header({ children, className = '' }: HeaderProps) {
     </header>
   );
 }
+
+// Export header styles for use in page components
+export { headerStyles };
 
 interface FooterProps {
   children?: React.ReactNode;

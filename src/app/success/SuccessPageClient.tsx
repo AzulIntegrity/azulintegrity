@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Header, Footer } from "@/components";
+import { Header, Footer, headerStyles } from "@/components";
 import styles from "./success.module.css";
 
 export default function SuccessPageClient() {
@@ -10,16 +10,16 @@ export default function SuccessPageClient() {
   return (
     <div className={styles.page}>
       <Header>
-        <nav className={styles.navigation}>
+        <nav className={headerStyles.navigation}>
           <Link href="/">Home</Link>
           <Link href="/services">Services</Link>
           <Link href="/contact">Contact</Link>
         </nav>
-        <div className={styles.logoContainer}>
-          <Image src="/tree.png" alt="Azul Integrity Tree Logo" className={styles.logoImage} width={50} height={50} />
-          <div className={styles.logoText}>
-            <div className={styles.companyName}>Azul Integrity</div>
-            <div className={styles.companySubtitle}>Accounting Services</div>
+        <div className={headerStyles.logoContainer}>
+          <Image src="/tree.png" alt="Azul Integrity Tree Logo" className={headerStyles.logoImage} width={50} height={50} />
+          <div className={headerStyles.logoText}>
+            <div className={headerStyles.companyName}>Azul Integrity</div>
+            <div className={headerStyles.companySubtitle}>Accounting Services</div>
           </div>
         </div>
       </Header>
