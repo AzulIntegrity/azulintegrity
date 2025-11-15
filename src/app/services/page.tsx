@@ -188,7 +188,7 @@ export default function ServicesPage() {
         <div className={styles.phoneContact}>
           <Link href="tel:+19044764732" className={styles.phoneLink}>
             <Image 
-              src="/phoneicon.png" 
+              src="/phoneicon.webp" 
               alt="Call us" 
               className={styles.phoneIcon}
               width={20} 
@@ -270,7 +270,7 @@ export default function ServicesPage() {
                     </div>
                     <div className={styles.whatWeDoImage}>
                       <Image 
-                        src="/imagePlaceholder.png" 
+                        src={`/M${activeService.key === 'additional' ? 'support' : activeService.key}.webp`}
                         alt={`${activeService.title} illustration`}
                         width={300}
                         height={200}

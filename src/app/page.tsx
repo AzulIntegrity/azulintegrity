@@ -69,7 +69,7 @@ export default function Home() {
         <div className={styles.phoneContact}>
           <Link href="tel:+19044764732" className={styles.phoneLink}>
             <Image 
-              src="/phoneicon.png" 
+              src="/phoneicon.webp" 
               alt="Call us" 
               className={styles.phoneIcon}
               width={20} 
@@ -273,7 +273,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                 >
                   <Image 
-                    src="/facebookIcon.png" 
+                    src="/facebookIcon.webp" 
                     alt="Facebook" 
                     className={styles.socialIcon} 
                     width={28} 
@@ -288,7 +288,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                 >
                   <Image 
-                    src="/linkedInIcon.png" 
+                    src="/linkedInIcon.webp" 
                     alt="LinkedIn" 
                     className={styles.socialIcon} 
                     width={28} 
