@@ -86,7 +86,7 @@ export function Footer({  className = '' }: FooterProps) {
             <h4>Legal Pages</h4>
             <Link href="/terms">Terms and Conditions</Link>
             <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/sitemap">Site Map</Link>
+            <Link href="/site-map">Site Map</Link>
           </div>
         </div>
         <div className="footer-copyright">

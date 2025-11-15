@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = generateMetadata({
-  title: "Azul Integrity Accounting Services",
-  description: "A modern React application built with Next.js, TypeScript, and SEO best practices for optimal search engine performance.",
-  keywords: ["nextjs", "react", "seo", "typescript", "web development", "azul integrity"],
+  title: "Azul Integrity CPA | Professional Accounting & Bookkeeping Services",
+  description: "Professional CPA and accounting services for small businesses. Expert bookkeeping, payroll processing, tax preparation, and financial consulting. Licensed CPA in Florida and New Mexico.",
+  keywords: ["CPA services", "accounting services", "bookkeeping", "virtual bookkeeping", "Xero bookkeeper", "QuickBooks bookkeeping expert", "payroll processing", "tax preparation", "small business accounting", "financial consulting", "Florida CPA", "New Mexico CPA", "QuickBooks", "GAAP compliance"],
 });
 
 export default function RootLayout({

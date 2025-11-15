@@ -1,0 +1,41 @@
+# Robots.txt for Azul Integrity CPA
+# Professional accounting and bookkeeping services
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow crawling of admin and form processing areas
+Disallow: /admin/
+Disallow: /_redirects
+Disallow: /__forms.html
+
+# Disallow crawling of duplicate or temporary pages
+Disallow: /sitemap/
+
+# Allow crawling of important business pages
+Allow: /services
+Allow: /contact
+Allow: /site-map
+Allow: /privacy
+Allow: /terms
+
+# Specify sitemap location for search engines
+Sitemap: https://azulintegritycpa.com/sitemap.xml
+
+# Crawl delay to be respectful to server resources
+Crawl-delay: 1
+
+# Specific instructions for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block any aggressive crawlers or scrapers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

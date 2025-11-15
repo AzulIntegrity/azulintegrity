@@ -1,8 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Header, Footer } from "@/components";
+import { Header, Footer, generateMetadata } from "@/components";
 import headerStyles from "../page.module.css";
 import styles from "./sitemap.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = generateMetadata({
+  title: "Site Map | Azul Integrity Accounting Services Navigation",
+  description: "Complete sitemap for Azul Integrity Accounting Services. Navigate through all our services, pages, and resources for professional accounting help.",
+  keywords: ["sitemap", "navigation", "accounting services map", "site structure"],
+  canonicalUrl: "/site-map",
+  noIndex: true,
+});
 
 export default function SitemapPage() {
   return (
@@ -29,7 +38,7 @@ export default function SitemapPage() {
           </div>
         </div>
       </Header>
-      <main className={styles.main}>
+      <main className={styles.main} id="main-content">
         <div className={styles.container}>
           <div className={styles.content}>
             <h1 className={styles.title}>Site Map</h1>
@@ -117,7 +126,7 @@ export default function SitemapPage() {
                     <span className={styles.linkDescription}>Terms and conditions for our services</span>
                   </li>
                   <li>
-                    <Link href="/sitemap" className={styles.link}>
+                    <Link href="/site-map" className={styles.link}>
                       🗺️ Site Map
                     </Link>
                     <span className={styles.linkDescription}>This page - complete site navigation</span>

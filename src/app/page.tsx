@@ -303,7 +303,7 @@ export default function Home() {
               <h4>Legal Pages</h4>
               <Link href="/terms">Terms of Service</Link>
               <Link href="/privacy">Privacy Policy</Link>
-              <Link href="/sitemap">Site Map</Link>
+            <Link href="/site-map">Site Map</Link>
             </div>
           </div>
           <div className={styles.footerCopyright}>
