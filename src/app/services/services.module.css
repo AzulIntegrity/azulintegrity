@@ -71,9 +71,15 @@
 }
 
 .logoImage {
-  height: 65px !important;
+  height: 50px;
   width: auto;
   flex-shrink: 0;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.logoImage:hover {
+  transform: scale(1.05);
 }
 
 .logoText {
