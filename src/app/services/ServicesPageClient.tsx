@@ -176,53 +176,7 @@ export default function ServicesPage() {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  // Breadcrumb and Service structured data
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://azulintegritycpa.com/"
-      },
-      {
-        "@type": "ListItem", 
-        "position": 2,
-        "name": "Services",
-        "item": "https://azulintegritycpa.com/services"
-      }
-    ]
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Professional Accounting Services",
-    "description": "Comprehensive accounting, bookkeeping, payroll, and tax services for small businesses",
-    "provider": {
-      "@type": "Organization",
-      "name": "Azul Integrity Accounting Services LLC"
-    },
-    "areaServed": ["Florida", "New Mexico"],
-    "serviceType": ["Bookkeeping", "Accounting", "Payroll", "Tax Preparation"]
-  };
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema),
-        }}
-      />
     <div className={styles.page}>
       <Header>
         <nav className={headerStyles.navigation}>
@@ -364,6 +318,5 @@ export default function ServicesPage() {
       
       <Footer />
     </div>
-    </>
   );
 }
