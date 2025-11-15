@@ -14,7 +14,7 @@ export function generateMetadata({
   description = 'A Next.js React application with SEO optimization',
   keywords = ['nextjs', 'react', 'seo', 'typescript'],
   canonicalUrl,
-  ogImage = '/og-image.jpg',
+  ogImage = '/ogCard.png',
   noIndex = false,
 }: SEOProps = {}): Metadata {
   return {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Header, Footer, generateMetadata } from "@/components";
-import headerStyles from "../page.module.css";
+import headerStyles from "../shared/legal-pages.module.css";
 import styles from "./sitemap.module.css";
 import type { Metadata } from "next";
 
@@ -139,13 +139,13 @@ export default function SitemapPage() {
                 <h2 className={styles.sectionTitle}>Get In Touch</h2>
                 <div className={styles.contactInfo}>
                   <div className={styles.contactItem}>
-                    <Image src="/emailblue.png" alt="Email" width={20} height={20} />
+                    <Image src="/emailblue.png" alt="Email Azul Integrity CPA" width={20} height={20} />
                     <a href="mailto:azulintegritycpa@gmail.com" className={styles.contactLink}>
                       azulintegritycpa@gmail.com
                     </a>
                   </div>
                   <div className={styles.contactItem}>
-                    <Image src="/phoneblue.png" alt="Phone" width={20} height={20} />
+                    <Image src="/phoneblue.png" alt="Call Azul Integrity CPA" width={20} height={20} />
                     <a href="tel:+19044764732" className={styles.contactLink}>
                       (904) 476-4732
                     </a>

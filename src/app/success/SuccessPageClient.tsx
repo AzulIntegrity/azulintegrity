@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Header, Footer } from "@/components";
-import styles from "../page.module.css";
+import styles from "./success.module.css";
 
 export default function SuccessPageClient() {
 
@@ -25,10 +25,20 @@ export default function SuccessPageClient() {
       </Header>
       <main>
         <section className={styles.contactSectionWrap}>
-          <div className={`${styles.contactSection} ${styles.successBox}`}>
-            <h1 className={styles.successTitle}>Thanks — Message Received</h1>
-            <p className={styles.successText}>We received your message. We&apos;ll be in touch shortly.</p>
-            <p style={{ marginTop: '1.5rem' }}><Link href="/">Return to Home</Link></p>
+          <div className={styles.successBox}>
+            <div className={styles.successIcon}>✓</div>
+            <h1 className={styles.successTitle}>Message Received!</h1>
+            <p className={styles.successText}>
+              Thank you for contacting Azul Integrity CPA. We&apos;ve received your message and will respond promptly to discuss your accounting and bookkeeping needs.
+            </p>
+            <div className={styles.successActions}>
+              <Link href="/" className={styles.successButton}>
+                ← Return to Home
+              </Link>
+              <Link href="/services" className={styles.secondaryButton}>
+                View Our Services
+              </Link>
+            </div>
           </div>
         </section>
       </main>

@@ -1,0 +1,279 @@
+/* ===== SHARED LEGAL PAGES CSS MODULE ===== */
+/* Used by: Terms, Privacy, and Site-map pages */
+
+/* Logo Styling */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 60px;
+  order: 3;
+  background: var(--white);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.logoImage {
+  height: 50px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.logoImage:hover {
+  transform: scale(1.05);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.companyName {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark-navy);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.companySubtitle {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--dark-navy);
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Page Layout */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--white);
+}
+
+/* Navigation Styles */
+.navigation {
+  display: flex;
+  gap: 2rem;
+  order: 1;
+}
+
+.navigation a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1.25;
+  transition: color 0.3s;
+}
+
+.navigation a:hover {
+  color: var(--light-blue);
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+}
+
+/* Page Header */
+.pageHeader {
+  padding: 3rem 5% 2rem 5%;
+  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--duskblue) 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.headerContent h1 {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.headerContent p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Terms/Privacy Content */
+.termsContent {
+  padding: 4rem 5%;
+  background: var(--white);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.termsContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.termsEffectiveDate {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: var(--light-gray);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-blue);
+}
+
+.termsEffectiveDate p {
+  font-size: 1.1rem;
+  color: var(--dark-navy);
+  margin: 0;
+}
+
+.termsSection {
+  margin-bottom: 3rem;
+}
+
+.termsSection h2 {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 1.6rem;
+  color: var(--dark-navy);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 0.5rem;
+}
+
+.termsSection h3 {
+  font-size: 1.2rem;
+  color: var(--duskblue);
+  margin: 2rem 0 1rem 0;
+  font-weight: 600;
+}
+
+.termsSection p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.termsList {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.termsList li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--foreground);
+  line-height: 1.6;
+}
+
+.contactInfo {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.contactInfo p {
+  margin: 0.5rem 0;
+}
+
+.contactInfo a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contactInfo a:hover {
+  color: var(--duskblue);
+  text-decoration: underline;
+}
+
+.contactIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+.contactIcon:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Header/Navigation Elements */
+  .logoContainer {
+    gap: 0.5rem;
+    height: 50px;
+    order: 2;
+  }
+  
+  .logoImage {
+    height: 40px;
+  }
+  
+  .companyName {
+    font-size: 0.95rem;
+  }
+  
+  .companySubtitle {
+    font-size: 0.8rem;
+  }
+  
+  .navigation {
+    display: none;
+  }
+
+  /* Terms Page Mobile Styles */
+  .pageHeader {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .headerContent h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  
+  .headerContent p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .termsContent {
+    padding: 2rem 1rem;
+  }
+  
+  .termsSection {
+    text-align: left;
+  }
+  
+  .termsSection h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .termsSection h3 {
+    text-align: center;
+  }
+  
+  .termsSection p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+  
+  .termsList li {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+}

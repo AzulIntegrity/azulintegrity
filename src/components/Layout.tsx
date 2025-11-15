@@ -40,8 +40,8 @@ export function Footer({  className = '' }: FooterProps) {
           <div className="footerCol">
             <h4>Contact</h4>
             <span> <Image 
-              src="/emailIcon.png" 
-              alt="Email" 
+              src="/emailIcon.webp" 
+              alt="Email Azul Integrity CPA - azulintegritycpa@gmail.com" 
               className="contactIcon" 
               width={20} 
               height={20}
@@ -49,8 +49,8 @@ export function Footer({  className = '' }: FooterProps) {
               sizes="20px"
             /> <Link href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</Link></span>
             <span> <Image 
-              src="/phoneIcon.png" 
-              alt="Phone" 
+              src="/phoneIcon.webp" 
+              alt="Call Azul Integrity CPA - (904) 476-4732" 
               className="contactIcon" 
               width={20} 
               height={20}
@@ -61,7 +61,7 @@ export function Footer({  className = '' }: FooterProps) {
               <Link href="https://www.linkedin.com/company/azul-integrity-accounting-services/" target="_blank" rel="noopener noreferrer">
                 <Image 
                   src="/linkedInIcon.png" 
-                  alt="LinkedIn" 
+                  alt="Follow Azul Integrity CPA on LinkedIn" 
                   className="socialIcon" 
                   width={20} 
                   height={20}
@@ -72,7 +72,7 @@ export function Footer({  className = '' }: FooterProps) {
               <Link href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#" target="_blank" rel="noopener noreferrer">
                 <Image 
                   src="/facebookIcon.png" 
-                  alt="Facebook" 
+                  alt="Like Azul Integrity CPA on Facebook" 
                   className="socialIcon" 
                   width={20} 
                   height={20}
@@ -91,6 +91,10 @@ export function Footer({  className = '' }: FooterProps) {
         </div>
         <div className="footer-copyright">
           &copy; {year} Azul Integrity Accounting Services. All rights reserved.
+          <br />
+          <span style={{ fontSize: '0.85rem', opacity: 0.8, marginTop: '0.5rem', display: 'inline-block' }}>
+            Crafted by <a href="https://scarletcodes.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--light-blue)', textDecoration: 'none' }}>Scarlet Codes</a>
+          </span>
         </div>
       </div>
     </footer>

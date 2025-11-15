@@ -69,7 +69,7 @@ export default function ContactPageClient() {
         <div className={styles.phoneContact}>
           <Link href="tel:+19044764732" className={styles.phoneLink}>
             <Image 
-              src="/phoneicon.png" 
+              src="/phoneIcon.webp" 
               alt="Phone icon - Call Azul Integrity Accounting at (904) 476-4732" 
               className={styles.phoneIcon}
               width={20} 
@@ -96,16 +96,28 @@ export default function ContactPageClient() {
             <div className={styles.companySubtitle}>Accounting Services</div>
           </div>
         </div>
-        <div className={`${styles.hamburger} ${mobileMenuOpen ? styles.active : ''}`} onClick={toggleMobileMenu}>
+        <button 
+          className={`${styles.hamburger} ${mobileMenuOpen ? styles.active : ''}`} 
+          onClick={toggleMobileMenu}
+          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-navigation"
+          type="button"
+        >
           <span></span>
           <span></span>
           <span></span>
-        </div>
-        <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.active : ''}`}>
+        </button>
+        <nav 
+          className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.active : ''}`}
+          id="mobile-navigation"
+          aria-label="Mobile navigation"
+          role="navigation"
+        >
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
           <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
-        </div>
+        </nav>
       </Header>
       <main>
         {/* About Section - Modern Card Layout */}
@@ -171,6 +183,9 @@ export default function ContactPageClient() {
           <div className={styles.contactSection}>
             <h1>Get In Touch </h1>
             <span className={styles.contactHeadingLine}></span>
+            <p id="form-description" className={styles.srOnly}>
+              Contact form to reach Azul Integrity Accounting Services. All fields marked with asterisk are required.
+            </p>
                 <form
                 name="contact"
                 action="/success"
@@ -180,6 +195,8 @@ export default function ContactPageClient() {
                 onSubmit={handleSubmit}
                 className={styles.contactForm}
                 suppressHydrationWarning={true}
+                aria-label="Contact form"
+                role="form"
               >
               <input type="hidden" name="form-name" value="contact" />
               {/* Honeypot field for spam prevention, Netlify migration best practice */}
@@ -217,7 +234,13 @@ export default function ContactPageClient() {
                 <label htmlFor="message">Message</label>
                 <textarea id="message" name="message" rows={5} required placeholder="Enter Your Message"></textarea>
               </div>
-              <button type="submit" className={styles.submitButton}>Send Message</button>
+              <button 
+                type="submit" 
+                className={styles.submitButton}
+                aria-describedby="form-description"
+              >
+                Send Message
+              </button>
             </form>
             {/* Modal popup */}
             {showModal && (

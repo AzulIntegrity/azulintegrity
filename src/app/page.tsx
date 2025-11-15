@@ -70,7 +70,7 @@ export default function Home() {
           <Link href="tel:+19044764732" className={styles.phoneLink}>
             <Image 
               src="/phoneicon.webp" 
-              alt="Call us" 
+              alt="Call Azul Integrity CPA - Jacksonville Accounting Services" 
               className={styles.phoneIcon}
               width={20} 
               height={20}
@@ -96,16 +96,28 @@ export default function Home() {
             <div className={styles.companySubtitle}>Accounting Services</div>
           </div>
         </div>
-        <div className={`${styles.hamburger} ${mobileMenuOpen ? styles.active : ''}`} onClick={toggleMobileMenu}>
+        <button 
+          className={`${styles.hamburger} ${mobileMenuOpen ? styles.active : ''}`} 
+          onClick={toggleMobileMenu}
+          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-navigation"
+          type="button"
+        >
           <span></span>
           <span></span>
           <span></span>
-        </div>
-        <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.active : ''}`}>
+        </button>
+        <nav 
+          className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.active : ''}`}
+          id="mobile-navigation"
+          aria-label="Mobile navigation"
+          role="navigation"
+        >
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
           <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
-        </div>
+        </nav>
       </Header>
       
       <main className={styles.main}>
@@ -220,7 +232,16 @@ export default function Home() {
                 loading="lazy"
               />
             </div>
-           
+             <div className={styles.badgeItem}>
+              <Image 
+                src="/badges/intuit-proconnect.jpg" 
+                alt="Intuit ProConnect" 
+                className={styles.badgeImage} 
+                width={300} 
+                height={150}
+                loading="lazy"
+              />
+            </div>
             <div className={styles.badgeItem}>
               <Image 
                 src="/badges/logo_efile.webp" 
@@ -230,19 +251,12 @@ export default function Home() {
                 height={150}
                 loading="lazy"
               />
-              <Image 
-                src="/badges/xero-badge.webp" 
-                alt="Xero Certified" 
-                className={styles.badgeImage} 
-                width={300} 
-                height={150}
-                loading="lazy"
-              />
+           
             </div>
             <div className={styles.badgeItem}>
-              <Image 
-                src="/badges/intuit-proconnect.jpg" 
-                alt="Intuit ProConnect" 
+             <Image 
+                src="/badges/xero-badge.webp" 
+                alt="Xero Certified" 
                 className={styles.badgeImage} 
                 width={300} 
                 height={150}
@@ -274,7 +288,7 @@ export default function Home() {
                 >
                   <Image 
                     src="/facebookIcon.webp" 
-                    alt="Facebook" 
+                    alt="Follow Azul Integrity CPA on Facebook" 
                     className={styles.socialIcon} 
                     width={28} 
                     height={28}
@@ -289,7 +303,7 @@ export default function Home() {
                 >
                   <Image 
                     src="/linkedInIcon.webp" 
-                    alt="LinkedIn" 
+                    alt="Connect with Azul Integrity CPA on LinkedIn" 
                     className={styles.socialIcon} 
                     width={28} 
                     height={28}
@@ -308,6 +322,10 @@ export default function Home() {
           </div>
           <div className={styles.footerCopyright}>
             &copy; {new Date().getFullYear()} Azul Integrity Accounting Services. All rights reserved.
+            <br />
+            <span style={{ fontSize: '0.85rem', opacity: 0.8, marginTop: '0.5rem', display: 'inline-block' }}>
+              Crafted by <a href="https://scarletcodes.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--light-blue)', textDecoration: 'none' }}>Scarlet Codes</a>
+            </span>
           </div>
         </footer>
       </Footer>

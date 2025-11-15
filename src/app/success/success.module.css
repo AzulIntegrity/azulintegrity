@@ -1,0 +1,286 @@
+/* ===== SUCCESS PAGE SPECIFIC STYLES ===== */
+
+/* Logo Styling */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 60px;
+  order: 3;
+  background: var(--white);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.logoImage {
+  height: 50px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.logoImage:hover {
+  transform: scale(1.05);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.companyName {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark-navy);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.companySubtitle {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--dark-navy);
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Page Layout */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--white);
+}
+
+/* Navigation Styles */
+.navigation {
+  display: flex;
+  gap: 2rem;
+  order: 1;
+}
+
+.navigation a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1.25;
+  transition: color 0.3s;
+}
+
+.navigation a:hover {
+  color: var(--light-blue);
+}
+
+/* Contact Section Wrapper */
+.contactSectionWrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1600px;
+}
+
+.contactSection {
+  max-width: 1300px;
+  margin: 0;
+  flex: 1;
+  background: var(--trust-green);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  padding: 2.5rem 3rem;
+  text-align: center;
+}
+
+.contactSection h1 {
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-variant: small-caps;
+  font-size: 3rem;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+/* Success Page Specific Styles */
+.successBox {
+  background: linear-gradient(135deg, var(--white) 0%, #f8fffe 100%);
+  color: var(--foreground);
+  padding: 3rem 2.5rem;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 4rem auto;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid rgba(58, 125, 47, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.successBox::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--trust-green) 0%, var(--primary-blue) 100%);
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem auto;
+  background: linear-gradient(135deg, var(--trust-green) 0%, #4ade80 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  box-shadow: 0 4px 16px rgba(58, 125, 47, 0.3);
+  animation: successPulse 2s ease-in-out infinite;
+}
+
+@keyframes successPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.successTitle {
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  font-family: 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.successText {
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.successActions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.successButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 91, 153, 0.2);
+}
+
+.successButton:hover {
+  background: var(--dark-navy);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 91, 153, 0.3);
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: var(--primary-blue);
+  text-decoration: none;
+  border: 1px solid var(--primary-blue);
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.secondaryButton:hover {
+  background: var(--primary-blue);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Contact Form Mobile Responsive */
+  .contactSection {
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  
+  .contactSection h1 {
+    text-align: center;
+  }
+
+  /* Success Page Mobile */
+  .successBox {
+    margin: 2rem 1rem;
+    padding: 2rem 1.5rem;
+    max-width: none;
+  }
+  
+  .successIcon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.75rem;
+  }
+  
+  .successTitle {
+    font-size: 1.5rem;
+  }
+  
+  .successText {
+    font-size: 1rem;
+  }
+  
+  .successActions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .successButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  /* Header/Navigation Elements */
+  .logoContainer {
+    gap: 0.5rem;
+    height: 50px;
+    order: 2;
+  }
+  
+  .logoImage {
+    height: 40px;
+  }
+  
+  .companyName {
+    font-size: 0.95rem;
+  }
+  
+  .companySubtitle {
+    font-size: 0.8rem;
+  }
+  
+  .navigation {
+    display: none;
+  }
+}

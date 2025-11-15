@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Header, Footer } from "@/components";
-import styles from "../page.module.css";
+import styles from "../shared/legal-pages.module.css";
 
 export default function PrivacyPageClient() {
   return (
@@ -147,8 +147,8 @@ export default function PrivacyPageClient() {
               <div className={styles.contactInfo}>
                 <p><strong>Azul Integrity Accounting Services LLC</strong></p>
                 <p>6999 Merrill Road, STE 2 #313<br />Jacksonville, FL 32277</p>
-                <p><Image src="/emailblue.png" alt="Email" className={styles.contactIcon} width={20} height={20} /> <a href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</a></p>
-                <p><Image src="/phoneblue.png" alt="Phone" className={styles.contactIcon} width={20} height={20} /><a href="tel:+19044764732">(904) 476-4732</a></p>
+                <p><Image src="/emailblue.png" alt="Email Azul Integrity CPA" className={styles.contactIcon} width={20} height={20} /> <a href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</a></p>
+                <p><Image src="/phoneblue.png" alt="Call Azul Integrity CPA" className={styles.contactIcon} width={20} height={20} /><a href="tel:+19044764732">(904) 476-4732</a></p>
               </div>
             </div>
 

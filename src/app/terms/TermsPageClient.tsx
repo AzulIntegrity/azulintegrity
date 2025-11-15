@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Header, Footer } from "@/components";
-import styles from "../page.module.css";
+import styles from "../shared/legal-pages.module.css";
 
 export default function TermsPage() {
   return (
@@ -165,7 +165,7 @@ export default function TermsPage() {
               <div className={styles.contactInfo}>
                 <p><Image 
                   src="/emailblue.png" 
-                  alt="Email" 
+                  alt="Email Azul Integrity CPA" 
                   className={styles.contactIcon} 
                   width={20} 
                   height={20}
@@ -174,7 +174,7 @@ export default function TermsPage() {
                 /> <a href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</a></p>
                 <p><Image 
                   src="/phoneblue.png" 
-                  alt="Phone" 
+                  alt="Call Azul Integrity CPA" 
                   className={styles.contactIcon} 
                   width={20} 
                   height={20}

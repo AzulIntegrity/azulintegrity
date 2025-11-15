@@ -6,11 +6,13 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = generateMetadata({
@@ -54,6 +56,257 @@ export default function RootLayout({
     <meta name="theme-color" content="#005B99" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#003B66" media="(prefers-color-scheme: dark)" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#005B99" />
+        
+       
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://azulintegrity.com/#website",
+              "url": "https://azulintegrity.com",
+              "name": "Azul Integrity Accounting Services",
+              "description": "Professional CPA and accounting services for small businesses. Expert bookkeeping, payroll, tax preparation, and financial consulting by licensed CPA Heather Duran.",
+              "publisher": {
+                "@type": "Organization",
+                "@id": "https://azulintegrity.com/#organization"
+              },
+              "potentialAction": [
+                {
+                  "@type": "SearchAction",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://azulintegrity.com/services?search={search_term_string}"
+                  },
+                  "query-input": "required name=search_term_string"
+                }
+              ],
+              "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": [".aboutHeading", ".aboutSubheading", ".serviceTitle", ".contactSection h1"]
+              }
+            })
+          }}
+        />
+
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "@id": "https://azulintegrity.com/#organization",
+              "name": "Azul Integrity Accounting Services",
+              "alternateName": "Azul Integrity CPA",
+              "url": "https://azulintegrity.com",
+              "logo": "https://azulintegrity.com/tree.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-904-476-4732",
+                "contactType": "customer service",
+                "email": "azulintegritycpa@gmail.com",
+                "availableLanguage": "English"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/azul-integrity-accounting",
+                "https://www.facebook.com/azulintegritycpa"
+              ]
+            })
+          }}
+        />
+
+        {/* LocalBusiness Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": "https://azulintegrity.com",
+              "name": "Azul Integrity Accounting Services",
+              "alternateName": "Azul Integrity CPA",
+              "description": "Professional CPA and accounting services for small businesses. Expert bookkeeping, payroll processing, tax preparation, and financial consulting.",
+              "url": "https://azulintegrity.com",
+              "telephone": "+1-904-476-4732",
+              "email": "azulintegritycpa@gmail.com",
+              "foundingDate": "2023",
+              "founder": {
+                "@type": "Person",
+                "name": "Heather Duran",
+                "jobTitle": "Certified Public Accountant",
+                "alumniOf": "CPA License - Florida & New Mexico"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "FL",
+                "addressCountry": "US",
+                "addressLocality": "Jacksonville"
+              },
+              "areaServed": [
+                {
+                  "@type": "State",
+                  "name": "Florida"
+                },
+                {
+                  "@type": "State",
+                  "name": "New Mexico"
+                }
+              ],
+              "serviceType": "Accounting Services",
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Accounting Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Bookkeeping Services",
+                      "description": "Professional bookkeeping and financial record management"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Tax Preparation",
+                      "description": "Individual and business tax preparation and filing"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Payroll Processing",
+                      "description": "Comprehensive payroll management and processing"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Financial Consulting",
+                      "description": "Strategic financial planning and business consulting"
+                    }
+                  }
+                ]
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/azul-integrity-accounting",
+                "https://www.facebook.com/azulintegritycpa"
+              ],
+              "logo": "https://azulintegrity.com/tree.png",
+              "image": "https://azulintegrity.com/ogCard.png",
+              "priceRange": "$$",
+              "paymentAccepted": ["Credit Card", "Check", "Electronic Transfer"],
+              "currenciesAccepted": "USD",
+              "openingHours": "Mo-Fr 09:00-17:00",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "25",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
+            })
+          }}
+        />
+
+        {/* Professional Service Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "@id": "https://azulintegrity.com/#service",
+              "name": "Azul Integrity CPA Services",
+              "image": "https://azulintegrity.com/servicehero.webp",
+              "description": "Professional CPA services including bookkeeping, tax preparation, payroll processing, and financial consulting for small businesses.",
+              "provider": {
+                "@type": "Organization",
+                "@id": "https://azulintegrity.com/#organization"
+              },
+              "areaServed": ["Florida", "New Mexico"],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "CPA Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Monthly Bookkeeping",
+                      "description": "Comprehensive monthly bookkeeping services to keep your financial records accurate and up-to-date."
+                    }
+                  },
+                  {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Tax Preparation & Filing",
+                      "description": "Professional tax preparation and filing services for individuals and businesses."
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service", 
+                      "name": "Payroll Management",
+                      "description": "Complete payroll processing and management services for small businesses."
+                    }
+                  }
+                ]
+              },
+              "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": [".serviceTitle", ".serviceDescription"]
+              }
+            })
+          }}
+        />
+
+        {/* Person Schema for Heather Duran */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://azulintegrity.com/#founder",
+              "name": "Heather Duran",
+              "jobTitle": "Certified Public Accountant",
+              "description": "Licensed CPA with 25+ years of experience in corporate finance, accounting, and financial systems. Founder of Azul Integrity Accounting Services.",
+              "image": "https://azulintegrity.com/Headshot.webp",
+              "url": "https://azulintegrity.com/contact",
+              "sameAs": [
+                "https://www.linkedin.com/in/heather-duran-cpa"
+              ],
+              "worksFor": {
+                "@type": "Organization",
+                "@id": "https://azulintegrity.com/#organization"
+              },
+              "hasCredential": [
+                "CPA License - Florida",
+                "CPA License - New Mexico"
+              ],
+              "knowsAbout": [
+                "Accounting",
+                "Bookkeeping", 
+                "Tax Preparation",
+                "Financial Planning",
+                "GAAP Compliance",
+                "Payroll Processing"
+              ],
+              "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": [".aboutHeading", ".aboutSubheading", ".credentialsList"]
+              }
+            })
+          }}
+        />
       
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
