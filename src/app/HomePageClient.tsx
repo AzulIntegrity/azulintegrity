@@ -1,40 +1,9 @@
 'use client';
 import Link from "next/link";
 import Image from "next/image";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Header, Footer, headerStyles } from "@/components";
 import styles from "./page.module.css";
-
-// Counter animation component
-const Counter = ({ end, duration = 2000 }: { end: number; duration?: number }) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let startTime: number;
-    let animationFrame: number;
-
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      
-      setCount(Math.floor(progress * end));
-      
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      }
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-    
-    return () => {
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame);
-      }
-    };
-  }, [end, duration]);
-
-  return <span>{count}</span>;
-};
 
 // Service data
 const serviceCategories = [
@@ -155,7 +124,17 @@ export default function HomePageClient() {
 
         {/* Hero Section */}
         <section className={styles.hero}>
-          <div className={styles.heroImageBg}></div>
+          <div className={styles.heroImageBg}>
+            <Image 
+              src="/trusttree.webp" 
+              alt="Azul Integrity Trust Tree - Professional CPA Services" 
+              fill
+              priority
+              quality={85}
+              sizes="(max-width: 768px) 100vw, 60vw"
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
+            />
+          </div>
           <div className={styles.heroContent}>
             <div className={styles.heroText}>
               <h1>You Grow Your Business. <br />I&apos;ll Handle the Numbers</h1>
