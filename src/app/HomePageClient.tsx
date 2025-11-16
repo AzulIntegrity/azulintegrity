@@ -58,6 +58,13 @@ export default function HomePageClient() {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  // Optimize tab switching for mobile
+  const handleTabClick = (key: string) => {
+    if (key !== activeTab) {
+      setActiveTab(key);
+    }
+  };
+
   return (
     <div className={styles.page}>
       <Header>
@@ -130,9 +137,13 @@ export default function HomePageClient() {
               alt="Azul Integrity Trust Tree - Professional CPA Services" 
               fill
               priority
-              quality={85}
+              quality={75}
               sizes="(max-width: 768px) 100vw, 60vw"
-              style={{ objectFit: 'cover', objectPosition: 'center' }}
+              style={{ 
+                objectFit: 'cover', 
+                objectPosition: 'center',
+                transform: 'translateZ(0)'
+              }}
             />
           </div>
           <div className={styles.heroContent}>
@@ -165,7 +176,9 @@ export default function HomePageClient() {
               <button
                 key={category.key}
                 className={`${styles.tabButton} ${activeTab === category.key ? styles.active : ''}`}
-                onClick={() => setActiveTab(category.key)}
+                onClick={() => handleTabClick(category.key)}
+                type="button"
+                aria-pressed={activeTab === category.key}
               >
                 {category.title}
               </button>
@@ -231,6 +244,7 @@ export default function HomePageClient() {
                 width={300} 
                 height={150}
                 loading="lazy"
+                sizes="(max-width: 480px) 280px, (max-width: 768px) 250px, 300px"
               />
             </div>
             <div className={styles.badgeItem}>
@@ -241,6 +255,7 @@ export default function HomePageClient() {
                 width={300} 
                 height={150}
                 loading="lazy"
+                sizes="(max-width: 480px) 280px, (max-width: 768px) 250px, 300px"
               />
             </div>
              <div className={styles.badgeItem}>
@@ -251,6 +266,7 @@ export default function HomePageClient() {
                 width={300} 
                 height={150}
                 loading="lazy"
+                sizes="(max-width: 480px) 280px, (max-width: 768px) 250px, 300px"
               />
             </div>
             <div className={styles.badgeItem}>
@@ -261,6 +277,7 @@ export default function HomePageClient() {
                 width={300} 
                 height={150}
                 loading="lazy"
+                sizes="(max-width: 480px) 280px, (max-width: 768px) 250px, 300px"
               />
            
             </div>
@@ -272,6 +289,7 @@ export default function HomePageClient() {
                 width={300} 
                 height={150}
                 loading="lazy"
+                sizes="(max-width: 480px) 280px, (max-width: 768px) 250px, 300px"
               />
             </div>
           </div>
