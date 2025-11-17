@@ -1122,7 +1122,8 @@
   .hero {
     padding: 3rem 1rem;
     min-height: 400px;
-    contain: layout style;
+    contain: layout style paint;
+    will-change: auto;
   }
   
   .heroImageBg {
@@ -1180,6 +1181,8 @@
   
   .testimonials {
     padding: 3rem 1.5rem;
+    content-visibility: auto;
+    contain-intrinsic-size: 500px;
   }
   
   .testimonialsGrid {
@@ -1407,6 +1410,11 @@
 
 /* Smallest Mobile Devices (480px) */
 @media (max-width: 480px) {
+  .softwareBadges {
+    content-visibility: auto;
+    contain-intrinsic-size: 600px;
+  }
+  
   .badgesGrid {
     grid-template-columns: 1fr;
     gap: 0.8rem;

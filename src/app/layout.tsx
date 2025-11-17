@@ -29,7 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preload" as="image" href="/trusttree.webp" fetchPriority="high" />
+        <link rel="preload" as="image" href="/trusttree.webp" fetchPriority="high" media="(min-width: 769px)" />
+        <link rel="preload" as="image" href="/trusttree.webp" fetchPriority="high" media="(max-width: 768px)" imageSizes="100vw" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" type="image/png" href="/favicon.ico/favicon-96x96.png" sizes="96x96" />
@@ -39,9 +40,6 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="AZUL INTEGRITY ACCOUNTING SERVICES" />
         <link rel="manifest" href="/favicon.ico/site.webmanifest" />
         <meta name="theme-color" content="#005B99" />
-        
-
-   
     <meta name="theme-color" content="#005B99" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#003B66" media="(prefers-color-scheme: dark)" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#005B99" />

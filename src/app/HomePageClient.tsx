@@ -1,7 +1,7 @@
 'use client';
 import Link from "next/link";
 import Image from "next/image";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header, Footer, headerStyles } from "@/components";
 import styles from "./page.module.css";
 
@@ -52,7 +52,16 @@ const serviceCategories = [
 const HomePageClient = React.memo(function HomePageClient() {
   const [activeTab, setActiveTab] = useState(serviceCategories[0].key);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [shouldLoadBadges, setShouldLoadBadges] = useState(false);
   const activeService = serviceCategories.find(s => s.key === activeTab);
+
+  // Defer badge loading for mobile performance
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShouldLoadBadges(true);
+    }, 1000); // Load badges after 1 second
+    return () => clearTimeout(timer);
+  }, []);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -138,15 +147,15 @@ const HomePageClient = React.memo(function HomePageClient() {
               fill
               priority
               quality={75}
-              sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, 60vw"
+              sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, 60vw"
               style={{ 
                 objectFit: 'cover', 
                 objectPosition: 'center',
-                transform: 'translateZ(0)',
-                willChange: 'transform'
+                transform: 'translate3d(0,0,0)',
+                backfaceVisibility: 'hidden'
               }}
               placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyxxkNzxQJVqTX0zUKNRfq/aqWD+FLpVMskPnYfFGKN8iZNEjAe2pHYdJNNfKBEyabH7L2j+zb7KlrBE0gFRFH6nOT5Cr7wgIUGP+vYDbFBAIhGFCgGOASDJEGj+EhUJzHdddUabadCh6e4/GNVGhRt2EfWoNKhUOw8RKGrjrQoUJIrZWgMl6k+1ChFXb0rXrQoGJ4/+R+sKFGgUKFCj/9k="
+              blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx//2wBDAQcHBw0MDRgQEBgaFREVGh8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx//wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRobHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyxxkNzxQJVqTX0zUKNRfq/aqWD+FLpVMskPnYfFGKN8iZNEjAe2pHYdJNNfKBEyabH7L2j+zb7KlrBE0gFRFH6nOT5Cr7wgIUGP+vYDbFBAIhGFCgGOASDJEGj+EhUJzHdddUabadCh6e4/GNVGhRt2EfWoNKhUOw8RKGrjrQoUJIrZWgMl6k+1ChFXb0rXrQoGJ4/+R+sKFGgUKFCj//Z"
             />
           </div>
           <div className={styles.heroContent}>
@@ -234,11 +243,12 @@ const HomePageClient = React.memo(function HomePageClient() {
           </div>
         </section>
 
-        {/* Software Badges Section */}
-        <section className={styles.softwareBadges}>
-          <h2 className={styles.badgesHeading}>Certified in Industry-Leading Software</h2>
-          <p className={styles.badgesSubtext}>Professional certifications and partnerships with the tools you trust</p>
-          <div className={styles.badgesGrid}>
+        {/* Software Badges Section - Deferred for mobile performance */}
+        {shouldLoadBadges && (
+          <section className={styles.softwareBadges} style={{ contentVisibility: 'auto', containIntrinsicSize: '400px' }}>
+            <h2 className={styles.badgesHeading}>Certified in Industry-Leading Software</h2>
+            <p className={styles.badgesSubtext}>Professional certifications and partnerships with the tools you trust</p>
+            <div className={styles.badgesGrid}>
             <div className={styles.badgeItem}>
               <Image 
                 src="/badges/logo_inTuit.webp" 
@@ -297,6 +307,7 @@ const HomePageClient = React.memo(function HomePageClient() {
             </div>
           </div>
         </section>
+        )}
 
         {/* CTA Section */}
         <section className={styles.ctaSection}>
