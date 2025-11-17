@@ -49,7 +49,7 @@ const serviceCategories = [
   },
 ];
 
-export default function HomePageClient() {
+const HomePageClient = React.memo(function HomePageClient() {
   const [activeTab, setActiveTab] = useState(serviceCategories[0].key);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const activeService = serviceCategories.find(s => s.key === activeTab);
@@ -138,12 +138,15 @@ export default function HomePageClient() {
               fill
               priority
               quality={75}
-              sizes="(max-width: 768px) 100vw, 60vw"
+              sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, 60vw"
               style={{ 
                 objectFit: 'cover', 
                 objectPosition: 'center',
-                transform: 'translateZ(0)'
+                transform: 'translateZ(0)',
+                willChange: 'transform'
               }}
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyxxkNzxQJVqTX0zUKNRfq/aqWD+FLpVMskPnYfFGKN8iZNEjAe2pHYdJNNfKBEyabH7L2j+zb7KlrBE0gFRFH6nOT5Cr7wgIUGP+vYDbFBAIhGFCgGOASDJEGj+EhUJzHdddUabadCh6e4/GNVGhRt2EfWoNKhUOw8RKGrjrQoUJIrZWgMl6k+1ChFXb0rXrQoGJ4/+R+sKFGgUKFCj/9k="
             />
           </div>
           <div className={styles.heroContent}>
@@ -361,7 +364,7 @@ export default function HomePageClient() {
             </div>
           </div>
           <div className={styles.footerCopyright}>
-            &copy; {new Date().getFullYear()} Azul Integrity Accounting Services. All rights reserved.
+            &copy; 2024 Azul Integrity Accounting Services. All rights reserved.
             <br />
             <span style={{ fontSize: '0.85rem', opacity: 0.8, marginTop: '0.5rem', display: 'inline-block' }}>
               Crafted by <a href="https://scarletcodes.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--light-blue)', textDecoration: 'none' }}>Scarlet Codes</a>
@@ -371,4 +374,6 @@ export default function HomePageClient() {
       </Footer>
     </div>
   );
-}
+});
+
+export default HomePageClient;

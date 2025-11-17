@@ -245,6 +245,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  contain: layout style;
 }
 
 .heroImageBg {
@@ -1121,6 +1122,7 @@
   .hero {
     padding: 3rem 1rem;
     min-height: 400px;
+    contain: layout style;
   }
   
   .heroImageBg {
@@ -1132,6 +1134,7 @@
     clip-path: none;
     z-index: 1;
     overflow: hidden;
+    contain: layout style paint;
   }
   
   .heroImageBg::after {
@@ -1183,6 +1186,7 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 2rem;
+    contain: layout;
   }
   
   .testimonialCard {

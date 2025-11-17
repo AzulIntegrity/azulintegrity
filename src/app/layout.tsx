@@ -29,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preload" as="image" href="/trusttree.webp" />
+        <link rel="preload" as="image" href="/trusttree.webp" fetchPriority="high" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" type="image/png" href="/favicon.ico/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.ico/favicon.svg" />
         <link rel="shortcut icon" href="/favicon.ico/favicon.ico" />
