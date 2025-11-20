@@ -28,7 +28,7 @@ interface FooterProps {
 }
 
 export function Footer({  className = '' }: FooterProps) {
-  const [year, setYear] = useState("");
+  const [year, setYear] = useState("2024");
   useEffect(() => {
     setYear(new Date().getFullYear().toString());
   }, []);
@@ -96,7 +96,7 @@ export function Footer({  className = '' }: FooterProps) {
           </div>
         </div>
         <div className="footer-copyright">
-          &copy; {year} Azul Integrity Accounting Services. All rights reserved.
+          &copy; <span suppressHydrationWarning>{year}</span> Azul Integrity Accounting Services. All rights reserved.
           <br />
           <span style={{ fontSize: '0.85rem', opacity: 0.8, marginTop: '0.5rem', display: 'inline-block' }}>
             Crafted by <a href="https://scarletcodes.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--light-blue)', textDecoration: 'none' }}>Scarlet Codes</a>

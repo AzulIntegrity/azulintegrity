@@ -1360,20 +1360,21 @@
   }
   
   .heroText {
-    background: rgba(0,34,51,0.45) !important;
+    background: rgba(0,34,51,0.85) !important;
     color: #fff;
     border-radius: 12px;
-    padding: 1.2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
     position: relative;
     z-index: 4;
     will-change: transform;
+    backdrop-filter: blur(4px);
   }
   
   .heroText h1,
   .heroText p {
-    color: #fff;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    color: #fff !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
   }
   
   .testimonialsHeading,

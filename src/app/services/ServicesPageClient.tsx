@@ -175,9 +175,11 @@ export default function ServicesPage() {
 
   // Handle URL hash to set active tab
   useEffect(() => {
-    const hash = window.location.hash.replace('#', '');
-    if (hash && serviceCategories.some(cat => cat.key === hash)) {
-      setActiveTab(hash);
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && serviceCategories.some(cat => cat.key === hash)) {
+        setActiveTab(hash);
+      }
     }
   }, []);
 
