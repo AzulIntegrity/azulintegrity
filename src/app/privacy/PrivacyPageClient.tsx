@@ -143,7 +143,7 @@ export default function PrivacyPageClient() {
               <p><strong>Legal Obligations:</strong> When required by law, regulation, or legal process</p>
               <p><strong>IRS Regulations:</strong> Certain information we collect and retain may be subject to IRS regulations, including IRC §7216, which governs the use and disclosure of tax return information.</p>
               <p><strong>Consent:</strong> With your explicit consent for specific purposes.</p>
-              <p><strong>Cookies and Other Technologies:</strong> We use cookies and similar technologies to enhance your experience on our website. Cookies are small files stored on your device that help us understand how you interact with our site—such as which pages you visit and how long you stay. This may allow us to connect your site usage with other personal information you&rsquo;ve shared. Most browsers let you manage cookie settings, including blocking or deleting them. While disabling cookies typically won&rsquo;t affect your ability to use our site, it may limit certain features or functionality. We may also use web beacons (also known as pixel tags or clear GIFs) to monitor site traffic, personalize content, and confirm receipt of communications. These tools may collect data like your browser type and IP address, and may work with cookies to link usage data to your personal information. We do not use cookies for advertising or tracking across third-party websites.</p>
+              
             </div>
 
             <div className={styles.termsSection}>

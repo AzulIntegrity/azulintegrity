@@ -22,19 +22,19 @@ const serviceCategories = [
       ],
       packages: [
         {
-          name: 'Azul Basic*',
+          name: 'Azul Basic',
           description: 'Monthly bookkeeping for very small operations (under 50 transactions/month); ideal for freelancers and micro-businesses.'
         },
         {
-          name: 'Azul Core*',
+          name: 'Azul Core',
           description: 'Monthly bookkeeping for moderate activity (51–200 transactions/month).'
         },
         {
-          name: 'Azul Growth*',
+          name: 'Azul Growth',
           description: 'Monthly bookkeeping for multi-channel or expanding operations (251–400 transactions/month).'
         },
         {
-          name: 'Azul Scale*',
+          name: 'Azul Scale',
           description: 'High-volume and multi-entity bookkeeping (401+ transactions/month). Additional fee will apply for every 100 transactions above 501.'
         },
         {
@@ -50,7 +50,7 @@ const serviceCategories = [
   },
   {
     key: 'accounting',
-    title: '💰 Accounting / CPA Services',
+    title: '💰 Accounting',
     content: {
       description: 'Professional CPA services to take your financial management to the next level.',
       whatWeDo: [
@@ -58,7 +58,7 @@ const serviceCategories = [
         'Conduct monthly financial statement reviews and analysis.',
         'Provide strategic recommendations through monthly consultations.',
         'Design custom KPI dashboards and forecasting models.',
-        'Perform compilation, review, and attest services for Florida and New Mexico clients only.',
+        'Perform compilation, review, and attest services.',
         'Implement internal controls and compliance monitoring.'
       ],
       packages: [
@@ -76,7 +76,7 @@ const serviceCategories = [
         },
         {
           name: 'Integrity Attest',
-          description: 'Compilation, review, or attest services for Florida and New Mexico clients only.'
+          description: 'Compilation, review, or attest services.'
         },
       ]
     }
@@ -293,11 +293,6 @@ export default function ServicesPage() {
                       </div>
                     ))}
                   </div>
-                   {activeService.key === 'bookkeeping' && (
-    <div className={styles.packageBanner}>
-      **10% Discount for Annual Contracts on Select Packages.
-    </div>
-  )}
                 </div>
               )}
             </div>

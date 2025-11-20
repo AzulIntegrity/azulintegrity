@@ -19,12 +19,13 @@ const serviceCategories = [
   },
   {
     key: 'accounting',
-    title: 'Accounting/CPA Services',
-    valueProp: '<strong>Insight for Growth</strong> <br />Go beyond data entry with high-level financial analysis and strategic reporting. <br /> New Mexico and Florida clients only.',
+    title: 'Accounting',
+    valueProp: '<strong>Insight for Growth</strong> <br />Go beyond data entry with high-level financial analysis and strategic reporting. ',
     bullets: [
       'Annual budget creation and actual-to-budget reporting.',
       'Monthly strategic analysis and statement review.',
       'Custom profitability tracking and forecasting.',
+      `‘Perform compilation, review, and attest services’ can only be done in Florida and New Mexico.`
     ],
   },
   {
@@ -44,7 +45,7 @@ const serviceCategories = [
     bullets: [
       'Full preparation and filing of entity tax returns (1120, 1065, Schedule C).',
       'Specialized preparation for per-state and prior-year filings.',
-      'Receipt organization and documentation services.',
+      `Assistance with IRS notices and audits, explaining next steps, and representing you with tax authorities if needed.`,
     ],
   },
 ];
@@ -218,7 +219,7 @@ const HomePageClient = React.memo(function HomePageClient() {
         <section className={styles.testimonials}>
           <div className={styles.testimonialsContent}>
             <h2 className={styles.testimonialsHeading}>What Our Clients Say</h2>
-            <p className={styles.testimonialsSubtext}>Trusted by small business owners for over 25 years</p>
+            <p className={styles.testimonialsSubtext}>Built on 25 years of corporate accounting and CPA experience—now trusted by small business owners.</p>
             
             <div className={styles.testimonialsGrid}>
               <div className={styles.testimonialCard}>
@@ -226,7 +227,7 @@ const HomePageClient = React.memo(function HomePageClient() {
                   &quot;I wholeheartedly recommend the services of Heather Duran. I have known Heather for the past 25 years and have consistently been impressed by her exceptional skills and professionalism.&quot;
                 </div>
                 <div className={styles.testimonialAuthor}>
-                  <strong>Beth M.</strong>
+                  <strong>Beth Monteith</strong>
                 </div>
               </div>
               
@@ -235,8 +236,28 @@ const HomePageClient = React.memo(function HomePageClient() {
                   &quot;Heather is an extremely competent and reliable accountant. She is very thorough with your tax information. Heather will also look for the greatest number of deductions for filing your taxes and is very easy to work with.&quot;
                 </div>
                 <div className={styles.testimonialAuthor}>
-                  <strong>John P.</strong>
+                  <strong>John Paredes</strong>
                   <span className={styles.testimonialBusiness}>Lawn Service</span>
+                </div>
+              </div>
+
+              <div className={styles.testimonialCard}>
+                <div className={styles.testimonialQuote}>
+                  &quot;Heather has managed our organization&apos;s finances for over two years, delivering audit-ready budgets, clear monthly financials with insightful variance analysis, and timely, accurate 990 filings. Her attention to detail, integrity, and ability to translate complex numbers into plain language gave our board complete confidence — any small business or nonprofit would be fortunate to have her overseeing their finances.&quot;
+                </div>
+                <div className={styles.testimonialAuthor}>
+                  <strong>Carolyn King</strong>
+                  <span className={styles.testimonialBusiness}>Nonprofit Board President</span>
+                </div>
+              </div>
+
+              <div className={styles.testimonialCard}>
+                <div className={styles.testimonialQuote}>
+                  &quot;What makes Heather and Azul Integrity so special is her meticulous attention to detail combined with a proactive approach to financial management. She didn&apos;t just process transactions—she anticipated needs, identified potential issues before they became problems, and ensured our organization maintained impeccable financial records. Her thoroughness gave our entire board complete confidence in our financial standing.&quot;
+                </div>
+                <div className={styles.testimonialAuthor}>
+                  <strong>Kristin Glunt</strong>
+                  <span className={styles.testimonialBusiness}>Non-Profit Board President</span>
                 </div>
               </div>
             </div>
