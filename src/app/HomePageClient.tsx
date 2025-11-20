@@ -157,7 +157,7 @@ const HomePageClient = React.memo(function HomePageClient() {
               sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, 60vw"
               style={{ 
                 objectFit: 'cover', 
-                objectPosition: 'center',
+                objectPosition: 'left center',
                 transform: 'translate3d(0,0,0)',
                 backfaceVisibility: 'hidden'
               }}
