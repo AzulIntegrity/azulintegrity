@@ -157,7 +157,7 @@ const HomePageClient = React.memo(function HomePageClient() {
               sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, 60vw"
               style={{ 
                 objectFit: 'cover', 
-                objectPosition: 'left center',
+                objectPosition: '20% center',
                 transform: 'translate3d(0,0,0)',
                 backfaceVisibility: 'hidden'
               }}
@@ -300,7 +300,7 @@ const HomePageClient = React.memo(function HomePageClient() {
             </div>
              <div className={styles.badgeItem}>
               <Image 
-                src="/badges/intuit-proconnect.jpg" 
+                src="/intuit-proconnect.webp" 
                 alt="Intuit ProConnect" 
                 className={styles.badgeImage} 
                 width={300} 
