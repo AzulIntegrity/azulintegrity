@@ -27,7 +27,6 @@
 }
 
 .headerContent h1 {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-size: 2.8rem;
   margin-bottom: 1rem;
   font-weight: 700;
@@ -72,7 +71,6 @@
 }
 
 .termsSection h2 {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-size: 1.6rem;
   color: var(--dark-navy);
   margin-bottom: 1.5rem;

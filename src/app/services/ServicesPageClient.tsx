@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import React, { useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header, Footer, headerStyles } from "@/components";
 import styles from "./services.module.css";
 
@@ -43,7 +43,7 @@ const serviceCategories = [
         },
         {
           name: 'Integrity Onboarding',
-          description: 'Chart of Accounts, bank and credit card setup, invoice & purchase templates, fixed asset tracking, standard financial close reports, and closing checklist.'
+          description: 'For new business owners, setup chart of accounts, bank and credit card reconciliations, invoicing & purchase templates, fixed asset tracking, standard financial reports, and a standard closing checklist.'
         }
       ]
     }
@@ -58,8 +58,9 @@ const serviceCategories = [
         'Conduct monthly financial statement reviews and analysis.',
         'Provide strategic recommendations through monthly consultations.',
         'Design custom KPI dashboards and forecasting models.',
-        'Perform compilation, review, and attest services.',
-        'Implement internal controls and compliance monitoring.'
+         'Implement internal controls and compliance monitoring.',
+        'Perform compilation, review, and attest services.'
+       
       ],
       packages: [
         {
@@ -172,6 +173,14 @@ export default function ServicesPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const activeService = serviceCategories.find(s => s.key === activeTab);
 
+  // Handle URL hash to set active tab
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && serviceCategories.some(cat => cat.key === hash)) {
+      setActiveTab(hash);
+    }
+  }, []);
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -181,6 +190,7 @@ export default function ServicesPage() {
       <Header>
         <nav className={headerStyles.navigation}>
           <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
           <Link href="/services" className={headerStyles.active}>Services</Link>
           <Link href="/contact">Contact</Link>
         </nav>
@@ -221,6 +231,7 @@ export default function ServicesPage() {
         </div>
         <div className={`${headerStyles.mobileMenu} ${mobileMenuOpen ? headerStyles.active : ''}`}>
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+          <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/services" className={headerStyles.active} onClick={() => setMobileMenuOpen(false)}>Services</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </div>

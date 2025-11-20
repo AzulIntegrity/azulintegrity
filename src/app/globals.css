@@ -1,4 +1,19 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Global Font Styles */
+* {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Trajan Pro', 'Times New Roman', serif !important;
+}
+
+p, li, span, div, input, textarea, button, label, a {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
+}
+
 :root {
   /* Light Mode Colors */
   --background: #ffffff;
@@ -6,7 +21,7 @@
   --primary-blue: #005B99;
   --dark-navy: #003366;
   --trust-green: #3A7D2F;
-  --duskblue: #206178;
+  --duskblue: #1a4f5f;
   --light-blue: #99dbe8;
   --white: #FFFFFF;
   --light-gray: #F4F7F9;
@@ -16,7 +31,7 @@
   /* Text colors */
   --text-primary: #003366;
   --text-secondary: #333333;
-  --text-muted: #718096;
+  --text-muted: #5a6b7d;
   
   /* Background variations */
   --bg-primary: #ffffff;
@@ -41,7 +56,7 @@
     /* Text colors for dark mode */
     --text-primary: #f1f5f9;
     --text-secondary: #cbd5e1;
-    --text-muted: #94a3b8;
+    --text-muted: #9fb0c3;
     
     /* Background variations for dark mode */
     --bg-primary: #0f172a;
@@ -49,6 +64,146 @@
     --bg-elevated: #334155;
   }
 }
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    /* High contrast light mode */
+    --background: #ffffff;
+    --foreground: #000000;
+    --primary-blue: #0000ff;
+    --dark-navy: #000000;
+    --trust-green: #008000;
+    --duskblue: #000080;
+    --light-blue: #87ceeb;
+    --white: #ffffff;
+    --light-gray: #f0f0f0;
+    --border: #000000;
+    --card-bg: #ffffff;
+    
+    /* High contrast text colors */
+    --text-primary: #000000;
+    --text-secondary: #000000;
+    --text-muted: #000000;
+    
+    /* High contrast backgrounds */
+    --bg-primary: #ffffff;
+    --bg-secondary: #ffffff;
+    --bg-elevated: #ffffff;
+  }
+  
+  /* Enhanced focus indicators for high contrast */
+  *:focus-visible {
+    outline: 3px solid #000000 !important;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 1px #ffffff, 0 0 0 4px #000000 !important;
+  }
+  
+  /* High contrast buttons */
+  button, .submitButton, .ctaButton {
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  button:hover, .submitButton:hover, .ctaButton:hover {
+    background: #000000 !important;
+    color: #ffffff !important;
+  }
+  
+  /* High contrast links */
+  a {
+    color: #0000ff !important;
+    text-decoration: underline !important;
+  }
+  
+  a:hover {
+    color: #ffffff !important;
+    background: #0000ff !important;
+  }
+  
+  /* High contrast form elements */
+  input, textarea, select {
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    border-color: #0000ff !important;
+    box-shadow: 0 0 0 2px #0000ff !important;
+  }
+}
+
+/* High contrast dark mode */
+@media (prefers-contrast: high) and (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+    --primary-blue: #87ceeb;
+    --dark-navy: #ffffff;
+    --trust-green: #00ff00;
+    --duskblue: #87ceeb;
+    --light-blue: #add8e6;
+    --white: #ffffff;
+    --light-gray: #333333;
+    --border: #ffffff;
+    --card-bg: #000000;
+    
+    /* High contrast dark text colors */
+    --text-primary: #ffffff;
+    --text-secondary: #ffffff;
+    --text-muted: #ffffff;
+    
+    /* High contrast dark backgrounds */
+    --bg-primary: #000000;
+    --bg-secondary: #000000;
+    --bg-elevated: #000000;
+  }
+  
+  /* High contrast dark mode focus indicators */
+  *:focus-visible {
+    outline: 3px solid #ffffff !important;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 1px #000000, 0 0 0 4px #ffffff !important;
+  }
+  
+  /* High contrast dark buttons */
+  button, .submitButton, .ctaButton {
+    border: 2px solid #ffffff !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+  }
+  
+  button:hover, .submitButton:hover, .ctaButton:hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  /* High contrast dark links */
+  a {
+    color: #87ceeb !important;
+    text-decoration: underline !important;
+  }
+  
+  a:hover {
+    color: #000000 !important;
+    background: #87ceeb !important;
+  }
+  
+  /* High contrast dark form elements */
+  input, textarea, select {
+    border: 2px solid #ffffff !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    border-color: #87ceeb !important;
+    box-shadow: 0 0 0 2px #87ceeb !important;
+  }
+}
+
 .footerCol span {
   justify-content: center;
   width: 100%;
@@ -234,6 +389,13 @@ a:hover {
     align-items: center;
     text-align: center;
   }
+}
+
+/* Enhanced Focus Indicators for Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* Reduce motion for users who prefer reduced motion */

@@ -39,6 +39,7 @@ export function Footer({  className = '' }: FooterProps) {
           <div className="footerCol">
             <h4>Quick Links</h4>
             <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
             <Link href="/services">Services</Link>
             <Link href="/contact">Contact</Link>
           </div>

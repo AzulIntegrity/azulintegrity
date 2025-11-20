@@ -50,13 +50,13 @@
   font-size: 1rem;
 }
 .cardName {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary-blue);
   margin-bottom: 0.25rem;
 }
 .cardTitle {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: var(--duskblue);
   margin-bottom: 0.5rem;
 }
@@ -73,8 +73,8 @@
 .formGroup input::placeholder,
 .formGroup textarea::placeholder {
   font-family: inherit;
-  font-size: 1rem;
-  color: #888;
+  font-size: 1.125rem;
+  color: #5a5a5a;
   opacity: 1;
 }
 /* Contact Form Styles */
@@ -89,9 +89,8 @@
   text-align: center;
 }
 .contactSection h1 {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-variant: small-caps;
-  font-size: 3rem;
+  font-size: 3.3rem;
   color: var(--white);
   margin-bottom: 1.5rem;
   font-weight: 600;
@@ -122,9 +121,10 @@
 }
 
 .formGroup label {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--white);
   margin-bottom: 0.5rem;
+  font-size: 1.125rem;
 }
 .formGroup input,
 .formGroup textarea {
@@ -132,7 +132,7 @@
   padding: 0.75rem 1rem;
   border: 1px solid var(--border);
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: var(--dark-navy);
   /* Removed: margin-bottom: 0.75rem; */ 
 }
@@ -273,11 +273,12 @@
   text-align: center;
   margin-left: auto;
   border-radius: 8px;
-  padding: 1rem;
+  padding: 2rem;
+  background: #f3f7f9;
+ 
 }
 
 .heroText h1 { 
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-variant: small-caps;
   font-size: 3.3rem; 
   margin-bottom: 0.5rem; 
@@ -287,7 +288,6 @@
 }
 
 .heroSubtext { 
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 1.1rem; 
   color: var(--trust-green); 
   font-weight: 600; 
@@ -346,7 +346,6 @@
   border: 1px solid var(--border);
 }
 .sectionSubtext {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 1.15rem;
   color: var(--dark-navy);
   margin-top: 1rem;
@@ -367,7 +366,6 @@
 }
 
 .benefitsList li {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 1.05rem;
   color: var(--duskblue);
   font-weight: 600;
@@ -396,7 +394,6 @@
 }
 
 .sectionHeading {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-variant: small-caps;
   text-align: center;
   font-size: 2rem;
@@ -457,13 +454,22 @@
   text-align: left;
 }
 
-.serviceValueProp {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+.serviceHeading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 0.75rem;
+  text-align: center;
+  font-variant: small-caps;
+}
+
+.serviceDescription {
   font-size: 1.2rem;
   font-weight: 500;
   color: var(--dark-navy);
   margin-bottom: 1.5rem;
   text-align: center;
+  line-height: 1.5;
 }
 
 .serviceList {
@@ -480,6 +486,14 @@
   padding: 0.5rem 0;
   display: flex;
   align-items: center;
+}
+
+.serviceList li:before {
+  content: "✓ ";
+  color: var(--trust-green);
+  font-weight: bold;
+  margin-right: 0.5rem;
+  margin-top: 0.1rem;
 }
 
 .serviceCta {
@@ -518,7 +532,6 @@
 }
 
 .testimonialsHeading {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-size: 2.5rem;
   color: var(--white);
   margin-bottom: 1rem;
@@ -526,7 +539,6 @@
 }
 
 .testimonialsSubtext {
-  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 1.2rem;
   color: var(--white);
   margin-bottom: 3rem;
@@ -561,7 +573,6 @@
 }
 
 .testimonialQuote {
-  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--white);
@@ -570,7 +581,6 @@
 }
 
 .testimonialAuthor {
-  font-family: 'Open Sans', Arial, sans-serif;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -596,7 +606,6 @@
 }
 
 .badgesHeading {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-variant: small-caps;
   font-size: 2rem;
   color: var(--dark-navy);
@@ -605,7 +614,6 @@
 }
 
 .badgesSubtext {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 1.1rem;
   color: var(--duskblue);
   margin-bottom: 3rem;
@@ -653,7 +661,6 @@
 }
 
 .badgeLabel {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--dark-navy);
@@ -668,10 +675,10 @@
 }
 
 .aboutContainer {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 350px 1fr;
   gap: 3rem;
   background: var(--white);
   border-radius: 16px;
@@ -708,25 +715,14 @@
 
 .aboutContactInfo {
   background: linear-gradient(135deg, var(--duskblue) 0%, var(--primary-blue) 100%);
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(32, 97, 120, 0.2);
   width: 100%;
+  min-width: 390px;
 }
 
 .aboutContactInfo h3 {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
-  font-variant: small-caps;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 1rem;
-  text-align: center;
-  letter-spacing: 0.5px;
-}
-
-.aboutContactInfo h4 {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-variant: small-caps;
   font-size: 1.5rem;
   font-weight: 600;
@@ -736,24 +732,36 @@
   letter-spacing: 0.5px;
 }
 
+.aboutContactInfo h4 {
+  font-variant: small-caps;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  text-align: left;
+  letter-spacing: 0.5px;
+
+}
+
 .aboutContactInfo p {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
   margin: 0.3rem 0;
   line-height: 1.4;
   color: var(--white);
+  text-align: left;
 }
 
 .aboutContactInfo p:first-of-type {
   font-weight: 700;
   font-size: 1rem;
   margin-bottom: 0.2rem;
+  text-align: left;
 }
 
 .aboutContactInfo p:nth-of-type(2) {
   font-weight: 500;
   opacity: 0.9;
   margin-bottom: 0.8rem;
+  text-align: left;
 }
 
 .aboutContactInfo a {
@@ -773,22 +781,20 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  justify-content: center;
+  justify-content: left;
 }
 
 .aboutHeading {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-variant: small-caps;
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: var(--dark-navy);
   margin-bottom: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
 }
 
 .aboutSubheading {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--duskblue);
   margin-bottom: 1.5rem;
   font-weight: 700;
@@ -803,8 +809,7 @@
 }
 
 .aboutText p {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   line-height: 1.7;
   color: var(--foreground);
   margin: 0;
@@ -818,8 +823,7 @@
   margin-top: 1rem;
 }
 
-.credentialsList h4 {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+.credentialsList h3 {
   font-size: 1.2rem;
   color: var(--dark-navy);
   margin-bottom: 1rem;
@@ -833,7 +837,6 @@
 }
 
 .credentialsList li {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 1rem;
   color: var(--foreground);
   margin-bottom: 0.8rem;
@@ -1074,36 +1077,59 @@
   }
 }
 
-/* About Section Collapse (968px) */
+/* About Section Tablet Optimization (968px) */
 @media (max-width: 968px) {
+  .aboutSection {
+    padding: 3rem 4%;
+  }
+  
   .aboutContainer {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem;
+    gap: 2.5rem;
+    padding: 2.5rem;
     text-align: center;
+    border-radius: 12px;
   }
   
   .aboutImageSection {
     justify-content: center;
     align-items: center;
+    order: 1;
+  }
+  
+  .aboutContent {
+    order: 2;
   }
   
   .aboutPhoto {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
   }
   
   .aboutContactInfo {
-    max-width: 350px;
+    max-width: 450px;
     margin: 0 auto;
+    min-width: unset;
+    padding: 1.8rem;
   }
   
   .aboutHeading {
     font-size: 1.8rem;
+    text-align: center;
   }
   
   .aboutSubheading {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    text-align: center;
+    border-left: none;
+    border-top: 4px solid var(--duskblue);
+    border-radius: 4px;
+    padding: 1rem;
+    background: var(--light-gray);
+  }
+  
+  .credentialsList {
+    text-align: left;
   }
 }
 
@@ -1160,7 +1186,7 @@
   }
   
   .heroText {
-    background: rgba(0,34,51,0.45);
+    background: rgba(0,34,51,0.45) !important;
     color: #fff;
     border-radius: 12px;
     padding: 1.2rem;
@@ -1275,17 +1301,44 @@
     text-align: left;
   }
 
-  /* About Section Mobile Left-Justified */
+  /* About Section Mobile Optimization */
   .aboutSection {
+    padding: 2rem 3%;
     text-align: left;
+  }
+  
+  .aboutContainer {
+    padding: 2rem;
+    gap: 2rem;
   }
 
   .aboutHeading {
+    font-size: 1.6rem;
     text-align: left;
   }
 
   .aboutSubheading {
+    font-size: 1.2rem;
     text-align: left;
+    padding: 0.8rem;
+  }
+  
+  .aboutPhoto {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .aboutContactInfo {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .aboutContactInfo h3 {
+    font-size: 1.2rem;
+  }
+  
+  .credentialsList {
+    padding: 1.2rem;
   }
 
   .aboutText {
@@ -1388,6 +1441,82 @@
     width: 18px;
     height: 18px;
   }
+}
+
+/* About Section Ultra-Small Mobile (375px and below) */
+@media (max-width: 375px) {
+  .aboutSection {
+    padding: 1rem 1%;
+  }
+  
+  .aboutContainer {
+    padding: 1rem;
+    gap: 1rem;
+    margin: 0 0.5rem;
+  }
+  
+  .aboutHeading {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .aboutSubheading {
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .aboutPhoto {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .aboutContactInfo {
+    padding: 1rem;
+    border-radius: 6px;
+    min-width: unset;
+  }
+  
+  .aboutContactInfo h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .aboutContactInfo h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .aboutContactInfo p {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin: 0.2rem 0;
+  }
+  
+  .aboutText p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  .credentialsList {
+    padding: 0.8rem;
+    margin-top: 0.6rem;
+  }
+  
+  .credentialsList h3 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .credentialsList li {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+  }
+  
+  .credentialsList li:before {
+    font-size: 1rem;
+  }
   
   .footerNav {
     flex-direction: column;
@@ -1447,6 +1576,74 @@
   
   .badgeItem {
     padding: 0.8rem 0.6rem;
+  }
+  
+  /* About Section Small Mobile Optimization */
+  .aboutSection {
+    padding: 1.5rem 2%;
+  }
+  
+  .aboutContainer {
+    padding: 1.5rem;
+    gap: 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .aboutHeading {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .aboutSubheading {
+    font-size: 1.1rem;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .aboutPhoto {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .aboutContactInfo {
+    padding: 1.2rem;
+    border-radius: 8px;
+  }
+  
+  .aboutContactInfo h3 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .aboutContactInfo h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .aboutContactInfo p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+  
+  .aboutText p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .credentialsList {
+    padding: 1rem;
+    margin-top: 0.8rem;
+  }
+  
+  .credentialsList h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .credentialsList li {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+    padding-left: 1.2rem;
   }
   
   .tabButton {
@@ -1773,7 +1970,6 @@
 }
 
 .primaryCta {
-  font-family: 'Open Sans', Arial, sans-serif;
   background: linear-gradient(135deg, var(--trust-green) 0%, #28a745 100%);
   color: white;
   padding: 1.2rem 2.5rem;

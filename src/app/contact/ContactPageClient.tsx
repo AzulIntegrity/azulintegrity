@@ -63,6 +63,7 @@ export default function ContactPageClient() {
       <Header>
         <nav className={headerStyles.navigation}>
           <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
           <Link href="/services">Services</Link>
           <Link href="/contact" className={headerStyles.active}>Contact</Link>
         </nav>
@@ -115,70 +116,12 @@ export default function ContactPageClient() {
           role="navigation"
         >
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+          <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
           <Link href="/contact" className={headerStyles.active} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </nav>
       </Header>
       <main>
-        {/* About Section - Modern Card Layout */}
-        <section className={styles.aboutSection}>
-          <div className={styles.aboutContainer}>
-            <div className={styles.aboutImageSection}>
-              <Image
-                src="/Headshot.webp"
-                alt="Heather Duran - Lead Accountant"
-                className={styles.aboutPhoto}
-                width={300}
-                height={300}
-                priority
-                sizes="(max-width: 768px) 200px, (max-width: 1024px) 250px, 300px"
-              />
-              <div className={styles.aboutContactInfo}>
-                <h4>Contact Information</h4>
-                <p><Link href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</Link></p>
-                <p><Link href="tel:+119044764732">(904) 476-4732</Link></p>
-              </div>
-            </div>
-            <div className={styles.aboutContent}>
-              <h2 className={styles.aboutHeading}>Heather Duran, CPA</h2>
-              <h3 className={styles.aboutSubheading}>Founder of Azul Integrity — Your Virtual CPA — Rooted in Trust, Partner in Growth</h3>
-              <div className={styles.aboutText}>
-                <p>
-                  <strong>If you&apos;re allergic to accounting and taxes, call me — I&apos;ve got the antidote.</strong>
-                </p>
-                <p>
-                  After 25+ years in corporate finance, accounting, insurance, and financial systems, I founded Azul Integrity to bring big-company clarity and efficiency to growing entrepreneurs — without the corporate headaches.
-                </p>
-                <p>
-                  I help business owners turn messy books into meaningful insight. Using GAAP best practices, smart automation, and plain-language explanations, I make your numbers reliable, understandable, and actionable.
-                </p>
-                <p><strong>When we work together, you get:</strong></p>
-                <ul style={{ paddingLeft: '2rem' }}>
-                  <li>Tidy, accurate books that tell your business&apos;s true story</li>
-                  <li>Taxes handled on time — no last-minute chaos</li>
-                  <li>Reports that drive smarter decisions</li>
-                  <li>A partner who cares about your goals, not just your numbers</li>
-                </ul>
-                <div className={styles.credentialsList}>
-                  <h4>Credentials & Experience</h4>
-                  <ul>
-                    <li>Licensed CPA — New Mexico & Florida</li>
-                    <li>25+ years in corporate finance, accounting, insurance, and systems</li>
-                    <li>Expertise in GAAP compliance, automation, and audit readiness</li>
-                    <li>Trusted by small businesses, startups, and local nonprofits</li>
-                  </ul>
-                </div>
-                <p>
-                  At Azul Integrity, I combine technical rigor with genuine care — creating financial systems that reduce stress and build confidence.
-                </p>
-                <p>
-                  <strong>You grow your business. I&apos;ll handle the numbers.</strong>
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section id="contact-form" className={styles.contactSectionWrap}>
           <div className={styles.contactSection}>
             <h1>Get In Touch </h1>

@@ -10,7 +10,8 @@ const serviceCategories = [
   {
     key: 'bookkeeping',
     title: 'Bookkeeping',
-    valueProp: '<strong>Clarity for Decisions</strong> <br />We keep your ledgers accurate, reconciled, and audit-ready every month.',
+    heading: 'Clarity for Decisions',
+    description: 'We keep your ledgers accurate, reconciled, and audit-ready every month.',
     bullets: [
       'Monthly bank and credit card reconciliation.',
       'Management of payables and receivables.',
@@ -20,7 +21,8 @@ const serviceCategories = [
   {
     key: 'accounting',
     title: 'Accounting',
-    valueProp: '<strong>Insight for Growth</strong> <br />Go beyond data entry with high-level financial analysis and strategic reporting. ',
+    heading: 'Insight for Growth',
+    description: 'Go beyond data entry with high-level financial analysis and strategic reporting.',
     bullets: [
       'Annual budget creation and actual-to-budget reporting.',
       'Monthly strategic analysis and statement review.',
@@ -31,7 +33,8 @@ const serviceCategories = [
   {
     key: 'payroll',
     title: 'Payroll',
-    valueProp: '<strong>Seamless & Stress-Free</strong> <br /> We handle the entire payroll lifecycle so you can focus on your team.',
+    heading: 'Seamless & Stress-Free',
+    description: 'We handle the entire payroll lifecycle so you can focus on your team.',
     bullets: [
       'Complete payroll system setup and configuration.',
       'Ongoing payroll processing, direct deposit, and tax filings.',
@@ -41,7 +44,8 @@ const serviceCategories = [
   {
     key: 'taxes',
     title: 'Small Business Taxes',
-    valueProp: '<strong>Compliance with Confidence</strong> <br /> Ensure your entity and state filings are handled accurately and on time.',
+    heading: 'Compliance with Confidence',
+    description: 'Ensure your entity and state filings are handled accurately and on time.',
     bullets: [
       'Full preparation and filing of entity tax returns (1120, 1065, Schedule C).',
       'Specialized preparation for per-state and prior-year filings.',
@@ -80,6 +84,7 @@ const HomePageClient = React.memo(function HomePageClient() {
       <Header>
         <nav className={headerStyles.navigation}>
           <Link href="/" className={headerStyles.active}>Home</Link>
+          <Link href="/about">About</Link>
           <Link href="/services">Services</Link>
           <Link href="/contact">Contact</Link>
         </nav>
@@ -132,6 +137,7 @@ const HomePageClient = React.memo(function HomePageClient() {
           role="navigation"
         >
           <Link href="/" className={headerStyles.active} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+          <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </nav>
@@ -200,15 +206,15 @@ const HomePageClient = React.memo(function HomePageClient() {
           
           {activeService && (
             <div className={styles.serviceDetails}>
-              {/* NOTE: valueProp uses dangerouslySetInnerHTML, ensure content is clean */}
-              <p className={styles.serviceValueProp} dangerouslySetInnerHTML={{ __html: activeService.valueProp }}></p>
+              <h3 className={styles.serviceHeading}>{activeService.heading}</h3>
+              <p className={styles.serviceDescription}>{activeService.description}</p>
               
               <ul className={styles.serviceList}>
                 {activeService.bullets.map((bullet, index) => (
                   <li key={index}>{bullet}</li>
                 ))}
               </ul>
-              <Link href="/services" className={styles.serviceCta}>
+              <Link href={`/services#${activeService.key}`} className={styles.serviceCta}>
                 Learn More
               </Link>
             </div>
@@ -233,6 +239,16 @@ const HomePageClient = React.memo(function HomePageClient() {
               
               <div className={styles.testimonialCard}>
                 <div className={styles.testimonialQuote}>
+                  &quot;What makes Heather and Azul Integrity so special is her meticulous attention to detail combined with a proactive approach to financial management. She didn&apos;t just process transactions—she anticipated needs, identified potential issues before they became problems, and ensured our organization maintained impeccable financial records. Her thoroughness gave our entire board complete confidence in our financial standing.&quot;
+                </div>
+                <div className={styles.testimonialAuthor}>
+                  <strong>Kristin Glunt</strong>
+                  <span className={styles.testimonialBusiness}>Non-Profit Board President</span>
+                </div>
+              </div>
+
+              <div className={styles.testimonialCard}>
+                <div className={styles.testimonialQuote}>
                   &quot;Heather is an extremely competent and reliable accountant. She is very thorough with your tax information. Heather will also look for the greatest number of deductions for filing your taxes and is very easy to work with.&quot;
                 </div>
                 <div className={styles.testimonialAuthor}>
@@ -248,16 +264,6 @@ const HomePageClient = React.memo(function HomePageClient() {
                 <div className={styles.testimonialAuthor}>
                   <strong>Carolyn King</strong>
                   <span className={styles.testimonialBusiness}>Nonprofit Board President</span>
-                </div>
-              </div>
-
-              <div className={styles.testimonialCard}>
-                <div className={styles.testimonialQuote}>
-                  &quot;What makes Heather and Azul Integrity so special is her meticulous attention to detail combined with a proactive approach to financial management. She didn&apos;t just process transactions—she anticipated needs, identified potential issues before they became problems, and ensured our organization maintained impeccable financial records. Her thoroughness gave our entire board complete confidence in our financial standing.&quot;
-                </div>
-                <div className={styles.testimonialAuthor}>
-                  <strong>Kristin Glunt</strong>
-                  <span className={styles.testimonialBusiness}>Non-Profit Board President</span>
                 </div>
               </div>
             </div>
@@ -348,6 +354,7 @@ const HomePageClient = React.memo(function HomePageClient() {
             <div className={styles.footerCol}>
               <h4>Quick Links</h4>
               <Link href="/">Home</Link>
+              <Link href="/about">About</Link>
               <Link href="/services">Services</Link>
               <Link href="/contact">Contact</Link>
             </div>

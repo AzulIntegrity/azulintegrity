@@ -37,7 +37,6 @@
 }
 
 .companyName {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-variant: small-caps;
   font-size: 1.1rem;
   color: white;
@@ -46,7 +45,6 @@
 }
 
 .tagline {
-  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 400;
@@ -75,7 +73,6 @@
 }
 
 .title {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-variant: small-caps;
   font-size: 2.5rem;
   color: #1a365d;
@@ -85,7 +82,6 @@
 }
 
 .description {
-  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 1.2rem;
   color: #4a5568;
   text-align: center;
@@ -108,7 +104,6 @@
 }
 
 .sectionTitle {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-variant: small-caps;
   font-size: 1.4rem;
   color: #1a365d;
@@ -130,7 +125,6 @@
 }
 
 .link {
-  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 1.1rem;
   color: #3182ce;
   text-decoration: none;
@@ -147,7 +141,6 @@
 }
 
 .linkDescription {
-  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 0.9rem;
   color: #718096;
   margin-left: 1.5rem;
@@ -167,7 +160,6 @@
 }
 
 .contactLink {
-  font-family: 'Open Sans', Arial, sans-serif;
   color: #3182ce;
   text-decoration: none;
   font-weight: 500;
@@ -187,7 +179,6 @@
 }
 
 .infoTitle {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-variant: small-caps;
   font-size: 1.3rem;
   color: #1a365d;
@@ -196,7 +187,6 @@
 }
 
 .infoText {
-  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 1rem;
   color: #4a5568;
   line-height: 1.6;

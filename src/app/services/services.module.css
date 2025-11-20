@@ -103,7 +103,6 @@
 }
 
 .headerContent h1 {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
   color: var(--white);
@@ -116,7 +115,6 @@
 }
 
 .headerContent p {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
   color: var(--white);
   font-weight: 400;
@@ -142,11 +140,10 @@
 }
 
 .tabButton {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   background-color: var(--white);
   border: 1px solid var(--border);
-  padding: 0.75rem 1.25rem;
-  font-size: 0.9rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--dark-navy);
   cursor: pointer;
@@ -176,7 +173,6 @@
 }
 
 .serviceDetails h2 {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-size: 2.5rem;
   color: var(--dark-navy);
   margin-bottom: 1.5rem;
@@ -184,7 +180,6 @@
 }
 
 .serviceDescription {
-  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 1.2rem;
   color: var(--foreground);
   margin-bottom: 2rem;
@@ -204,7 +199,6 @@
 }
 
 .whatWeDo h3 {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-size: 1.5rem;
   color: #003366;
   margin-bottom: 1rem;
@@ -219,7 +213,6 @@
 }
 
 .whatWeDo li {
-  font-family: 'Open Sans', Arial, sans-serif;
   padding: 0.5rem 0;
   font-size: 1rem;
   color: #1e293b;
@@ -282,7 +275,6 @@
 }
 
 .packages h3 {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-size: 2rem;
   color: var(--white);
   margin-bottom: 1rem;
@@ -291,7 +283,6 @@
 }
 
 .note {
-  font-family: 'Open Sans', Arial, sans-serif;
   background: var(--duskblue);
   color: var(--dark-navy);
   padding: 1rem;
@@ -322,7 +313,6 @@
 }
 
 .packageCard h4 {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-size: 1.3rem;
   color: var(--primary-blue);
   margin-bottom: 0.75rem;
@@ -330,7 +320,6 @@
 }
 
 .packageCard p {
-  font-family: 'Open Sans', Arial, sans-serif;
   color: var(--foreground);
   line-height: 1.5;
 }
@@ -370,7 +359,6 @@
 }
 
 .ctaContent h2 {
-  font-family: 'Trajan Pro', 'Times New Roman', serif;
   font-size: 2.8rem;
   margin-bottom: 1.5rem;
   color: var(--white);
@@ -379,7 +367,6 @@
 }
 
 .ctaContent p {
-  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 1.3rem;
   line-height: 1.6;
   margin-bottom: 2.5rem;
@@ -393,7 +380,6 @@
 }
 
 .primaryCta {
-  font-family: 'Open Sans', Arial, sans-serif;
   background: linear-gradient(135deg, var(--trust-green) 0%, #28a745 100%);
   color: var(--white);
   padding: 1.2rem 2.5rem;
@@ -436,7 +422,6 @@
 }
 
 .secondaryCta {
-  font-family: 'Open Sans', Arial, sans-serif;
   background-color: transparent;
   color: var(--white);
   border: 2px solid var(--white);
