@@ -17,8 +17,8 @@ const AboutPageClient = React.memo(function AboutPageClient() {
       <Header>
         <nav className={headerStyles.navigation}>
           <Link href="/">Home</Link>
-          <Link href="/about" className={headerStyles.active}>About</Link>
           <Link href="/services">Services</Link>
+          <Link href="/about" className={headerStyles.active}>About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
         <div className={headerStyles.phoneContact}>
@@ -70,8 +70,8 @@ const AboutPageClient = React.memo(function AboutPageClient() {
           role="navigation"
         >
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link href="/about" className={headerStyles.active} onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link href="/about" className={headerStyles.active} onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </nav>
       </Header>
@@ -95,7 +95,6 @@ const AboutPageClient = React.memo(function AboutPageClient() {
                 <h3>Contact Information</h3>
                 <h4>Heather Duran, CPA</h4>
                 <p>Azul Integrity Accounting Services LLC</p>
-                <p>Licensed CPA in Florida & New Mexico</p>
                 <p>Email: <Link href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</Link></p>
                 <p>Phone: <Link href="tel:+19044764732">(904) 476-4732</Link></p>
               </div>
@@ -132,8 +131,7 @@ const AboutPageClient = React.memo(function AboutPageClient() {
                   <li>Specialized in small business accounting, bookkeeping, and tax preparation</li>
                   <li>Extensive experience in payroll processing and compliance</li>
                   <li>Advanced knowledge of GAAP and financial reporting standards</li>
-                  <li>IRS Enrolled Agent authorized for tax representation</li>
-                  <li>Certified in multiple accounting software platforms</li>
+                
                 </ul>
               </div>
             </div>
@@ -158,8 +156,8 @@ const AboutPageClient = React.memo(function AboutPageClient() {
             <div className={styles.footerCol}>
               <h4>Quick Links</h4>
               <Link href="/">Home</Link>
-              <Link href="/about">About</Link>
               <Link href="/services">Services</Link>
+              <Link href="/about">About</Link>
               <Link href="/contact">Contact</Link>
             </div>
             <div className={styles.footerCol}>

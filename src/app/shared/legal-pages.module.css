@@ -187,3 +187,66 @@
     text-align: left;
   }
 }
+
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+  /* Page background */
+  .page {
+    background: var(--bg-primary);
+  }
+  
+  /* Main content background */
+  .termsContent {
+    background: var(--bg-primary);
+  }
+  
+  /* Text colors */
+  .termsSection {
+    color: var(--text-secondary);
+  }
+  
+  .termsSection h2 {
+    color: var(--text-primary);
+    border-bottom-color: var(--primary-blue);
+  }
+  
+  .termsSection h3 {
+    color: var(--text-primary);
+  }
+  
+  .termsSection p {
+    color: var(--text-secondary);
+  }
+  
+  .termsList li {
+    color: var(--text-secondary);
+  }
+  
+  /* Effective date section */
+  .termsEffectiveDate {
+    background: var(--card-bg);
+    border-left-color: var(--primary-blue);
+  }
+  
+  .termsEffectiveDate p {
+    color: var(--text-primary);
+  }
+  
+  /* Contact info section */
+  .contactInfo {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+  }
+  
+  .contactInfo p {
+    color: var(--text-secondary);
+  }
+  
+  .contactInfo a {
+    color: var(--primary-blue);
+  }
+  
+  .contactInfo a:hover {
+    color: var(--trust-green);
+  }
+}

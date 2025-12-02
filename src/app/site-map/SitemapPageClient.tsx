@@ -19,8 +19,8 @@ export default function SitemapPageClient() {
       <Header>
         <nav className={headerStyles.navigation}>
           <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
           <Link href="/services">Services</Link>
+          <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
         <div className={headerStyles.phoneContact}>
@@ -72,8 +72,8 @@ export default function SitemapPageClient() {
           role="navigation"
         >
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </nav>
       </Header>
@@ -91,10 +91,11 @@ export default function SitemapPageClient() {
                 <h2 className={styles.sectionTitle}>Main Pages</h2>
                 <ul className={styles.sitemapList}>
                   <li><Link href="/">Home</Link></li>
-                  <li><Link href="/about">About</Link></li>
-                  <li><Link href="/services">Services</Link>
+                  <li>
+                    <Link href="/services">Services</Link>
                     <span className={styles.linkDescription}>Professional accounting, bookkeeping, payroll, and tax services</span>
                   </li>
+                  <li><Link href="/about">About</Link></li>
                   <li><Link href="/contact">Contact</Link></li>
                 </ul>
               </div>

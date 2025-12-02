@@ -335,6 +335,14 @@ a:hover {
   position: relative;
 }
 
+/* Asus ZenFold Navigation Container Adjustments */
+@media (max-width: 344px) {
+  .nav-container {
+    padding: 0 0.5rem;
+    gap: 0.25rem;
+  }
+}
+
 /* Footer Styles */
 .footer {
   background: var(--dark-navy);

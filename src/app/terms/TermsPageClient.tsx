@@ -18,6 +18,7 @@ export default function TermsPage() {
         <nav className={headerStyles.navigation}>
           <Link href="/">Home</Link>
           <Link href="/services">Services</Link>
+          <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
         <div className={headerStyles.phoneContact}>
@@ -70,6 +71,7 @@ export default function TermsPage() {
         >
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
           <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </nav>
       </Header>

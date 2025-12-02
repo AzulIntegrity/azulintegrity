@@ -50,7 +50,7 @@ const serviceCategories = [
   },
   {
     key: 'accounting',
-    title: '💰 Accounting',
+    title: '💰 Accounting/CPA',
     content: {
       description: 'Professional CPA services to take your financial management to the next level.',
       whatWeDo: [
@@ -59,7 +59,7 @@ const serviceCategories = [
         'Provide strategic recommendations through monthly consultations.',
         'Design custom KPI dashboards and forecasting models.',
          'Implement internal controls and compliance monitoring.',
-        'Perform compilation, review, and attest services.'
+        'Perform compilation, review, and attest services. Available in Florida and New Mexico only.'
        
       ],
       packages: [
@@ -192,8 +192,8 @@ export default function ServicesPage() {
       <Header>
         <nav className={headerStyles.navigation}>
           <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
           <Link href="/services" className={headerStyles.active}>Services</Link>
+          <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
         <div className={headerStyles.phoneContact}>
@@ -233,8 +233,8 @@ export default function ServicesPage() {
         </div>
         <div className={`${headerStyles.mobileMenu} ${mobileMenuOpen ? headerStyles.active : ''}`}>
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/services" className={headerStyles.active} onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </div>
       </Header>

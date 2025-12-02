@@ -20,14 +20,13 @@ const serviceCategories = [
   },
   {
     key: 'accounting',
-    title: 'Accounting',
+    title: 'Accounting/CPA',
     heading: 'Insight for Growth',
     description: 'Go beyond data entry with high-level financial analysis and strategic reporting.',
     bullets: [
       'Annual budget creation and actual-to-budget reporting.',
       'Monthly strategic analysis and statement review.',
       'Custom profitability tracking and forecasting.',
-      `‘Perform compilation, review, and attest services’ can only be done in Florida and New Mexico.`
     ],
   },
   {
@@ -84,8 +83,8 @@ const HomePageClient = React.memo(function HomePageClient() {
       <Header>
         <nav className={headerStyles.navigation}>
           <Link href="/" className={headerStyles.active}>Home</Link>
-          <Link href="/about">About</Link>
           <Link href="/services">Services</Link>
+          <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
         <div className={headerStyles.phoneContact}>
@@ -137,8 +136,8 @@ const HomePageClient = React.memo(function HomePageClient() {
           role="navigation"
         >
           <Link href="/" className={headerStyles.active} onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </nav>
       </Header>
@@ -154,10 +153,10 @@ const HomePageClient = React.memo(function HomePageClient() {
               fill
               priority
               quality={75}
-              sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, 60vw"
+              sizes="(max-width: 480px) 100vw, (max-width: 600px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 80vw, 60vw"
               style={{ 
                 objectFit: 'cover', 
-                objectPosition: '20% center',
+                objectPosition: '25% center',
                 transform: 'translate3d(0,0,0)',
                 backfaceVisibility: 'hidden'
               }}
@@ -263,7 +262,7 @@ const HomePageClient = React.memo(function HomePageClient() {
                 </div>
                 <div className={styles.testimonialAuthor}>
                   <strong>Carolyn King</strong>
-                  <span className={styles.testimonialBusiness}>Nonprofit Board President</span>
+                  <span className={styles.testimonialBusiness}>Non-Profit Board President</span>
                 </div>
               </div>
             </div>
@@ -289,7 +288,7 @@ const HomePageClient = React.memo(function HomePageClient() {
             </div>
             <div className={styles.badgeItem}>
               <Image 
-                src="/badges/logo_quickbooks.webp" 
+                src="/badges/logo_qb.webp" 
                 alt="QuickBooks ProAdvisor" 
                 className={styles.badgeImage} 
                 width={300} 
@@ -300,8 +299,8 @@ const HomePageClient = React.memo(function HomePageClient() {
             </div>
              <div className={styles.badgeItem}>
               <Image 
-                src="/intuit-proconnect.webp" 
-                alt="Intuit ProConnect" 
+                src="/badges/logo_gusto.webp" 
+                alt="Gusto Certified" 
                 className={styles.badgeImage} 
                 width={300} 
                 height={150}
@@ -354,8 +353,8 @@ const HomePageClient = React.memo(function HomePageClient() {
             <div className={styles.footerCol}>
               <h4>Quick Links</h4>
               <Link href="/">Home</Link>
-              <Link href="/about">About</Link>
               <Link href="/services">Services</Link>
+              <Link href="/about">About</Link>
               <Link href="/contact">Contact</Link>
             </div>
             <div className={styles.footerCol}>

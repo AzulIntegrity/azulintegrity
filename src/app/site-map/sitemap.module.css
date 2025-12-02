@@ -255,3 +255,74 @@
     padding: 1rem;
   }
 }
+
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+  /* Main background */
+  .main {
+    background: var(--bg-primary);
+  }
+  
+  /* Content container */
+  .content {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Title and description */
+  .title {
+    color: var(--text-primary);
+  }
+  
+  .description {
+    color: var(--text-secondary);
+  }
+  
+  /* Section backgrounds and titles */
+  .sitemapSection {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary-blue);
+  }
+  
+  .sectionTitle {
+    color: var(--text-primary);
+  }
+  
+  /* Links and descriptions */
+  .link {
+    color: var(--primary-blue);
+  }
+  
+  .link:hover {
+    color: var(--trust-green);
+  }
+  
+  .linkDescription {
+    color: var(--text-secondary);
+  }
+  
+  /* Contact links */
+  .contactLink {
+    color: var(--primary-blue);
+  }
+  
+  .contactLink:hover {
+    color: var(--trust-green);
+  }
+  
+  /* Additional info section */
+  .additionalInfo {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+  }
+  
+  .infoTitle {
+    color: var(--text-primary);
+  }
+  
+  .infoText {
+    color: var(--text-secondary);
+  }
+}

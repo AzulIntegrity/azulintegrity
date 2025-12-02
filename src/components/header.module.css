@@ -224,6 +224,79 @@
 
 /* ===== RESPONSIVE STYLES ===== */
 
+/* Tablet Devices (iPad Pro, Surface Pro, Nest Hub - larger tablets) */
+@media (max-width: 1024px) and (min-width: 855px) {
+  .phoneLink {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+  }
+  
+  .phoneIcon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .callNow {
+    font-size: 0.95rem;
+  }
+  
+  .phoneNumber {
+    font-size: 0.85rem;
+  }
+}
+
+/* Asus ZenFold and iPad Air - Hamburger Menu */
+@media (max-width: 854px) and (min-width: 769px) {
+  .logoContainer {
+    gap: 0.5rem;
+    height: 50px;
+    order: 3;
+  }
+  
+  .logoImage {
+    height: 40px;
+  }
+  
+  .companyName {
+    font-size: 1rem;
+  }
+  
+  .companySubtitle {
+    font-size: 0.85rem;
+  }
+  
+  .navigation {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+    order: 1;
+  }
+  
+  .phoneContact {
+    order: 2;
+  }
+  
+  .phoneLink {
+    padding: 0.4rem 0.7rem;
+    border-radius: 20px;
+  }
+  
+  .phoneIcon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .callNow {
+    font-size: 0.85rem;
+  }
+  
+  .phoneNumber {
+    font-size: 0.8rem;
+  }
+}
+
 /* Mobile (768px and below) */
 @media (max-width: 768px) {
   /* Header/Navigation Elements */
@@ -330,5 +403,65 @@
   .phoneIcon {
     width: 16px;
     height: 16px;
+  }
+}
+
+/* Asus ZenFold and Ultra-Narrow Devices (344px and below) */
+@media (max-width: 344px) {
+  .logoContainer {
+    gap: 0.2rem;
+    height: 42px;
+    padding: 0.2rem 0.4rem;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+  
+  .logoImage {
+    height: 28px;
+    flex-shrink: 0;
+  }
+  
+  .logoText {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+  
+  .companyName {
+    font-size: 0.75rem;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .companySubtitle {
+    font-size: 0.65rem;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .phoneLink {
+    padding: 0.25rem 0.4rem;
+    gap: 0.15rem;
+    min-width: 36px;
+    min-height: 36px;
+    flex-shrink: 0;
+  }
+  
+  .callNow {
+    font-size: 0.6rem;
+    line-height: 1.1;
+  }
+  
+  .phoneIcon {
+    width: 14px;
+    height: 14px;
+  }
+  
+  /* Hide phone number completely on ultra-narrow screens */
+  .phoneNumber {
+    display: none !important;
   }
 }

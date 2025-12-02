@@ -252,7 +252,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 60%; 
+  width: 50%; 
   height: 100%;
   clip-path: circle(50% at 50% 50%); 
   z-index: 1;
@@ -269,13 +269,12 @@
 }
 
 .heroText {
-  max-width: 800px;
-  text-align: center;
-  margin-left: auto;
+  width: 50%;
+  text-align: left;
+  max-width: none;
   border-radius: 8px;
   padding: 2rem;
   background: #f3f7f9;
- 
 }
 
 .heroText h1 { 
@@ -818,6 +817,8 @@
   max-height: 80px;
   width: auto;
   height: auto;
+  display: block;
+  margin: auto;
 }
 
 .badgeItem:hover .badgeImage {
@@ -1167,27 +1168,28 @@
     width: 60%;
     background-position: center center;
     clip-path: circle(50% at 50% 50%);
+    
   }
   
   .heroContent {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     padding: 3rem 2vw;
     width: 100%;
   }
   .heroText {
+    width: 80%;
     max-width: 420px;
-    margin-left: auto;
-    padding-right: 3vw;
+    margin: 0 auto;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 8px;
     padding: 2rem;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     position: relative;
     z-index: 3;
-    text-align: left;
+    text-align: center;
   }
   .heroText h1,
   .heroText p {
@@ -1208,8 +1210,32 @@
   }
 }
 
-/* Mid-Range Tablet Adjustments (1024px) - Consolidated */
+
+
+/* ===== CONSOLIDATED TABLET BREAKPOINT (1024px and below) ===== */
 @media (max-width: 1024px) {
+  /* Hero Image Responsive */
+  .heroImageBg {
+    width: 80%; /* Transition from 60% to 80% */
+    clip-path: circle(55% at 45% 50%); /* Slightly larger circle */
+  }
+  
+  .heroContent {
+    justify-content: center;
+  }
+  
+  .heroText {
+    width: 70%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .heroImageBg img {
+    object-position: 25% center; /* Adjust tree position for tablets */
+  }
+  
+  /* Service Details */
   .serviceDetails .serviceList {
     align-self: flex-start;
     text-align: left;
@@ -1219,7 +1245,7 @@
     justify-content: flex-start;
   }
   
-  /* Contact Form Tablet Responsive: 3-column row becomes 2-column */
+  /* Contact Form: 3-column row becomes 2-column */
   .formRowThree {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -1229,7 +1255,7 @@
     grid-column: 1 / -1; /* Forces the third item to full width */
   }
   
-  /* Tablet Tab Layout */
+  /* Tab Layout */
   .tabsHeader {
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -1242,6 +1268,16 @@
     flex: 1;
     min-width: 140px;
     max-width: 200px;
+  }
+  
+  /* Testimonials Grid */
+  .testimonialsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .testimonialCard {
+    padding: 2rem 1.5rem;
   }
 }
 
@@ -1314,7 +1350,9 @@
   }
 }
 
-/* Mobile Collapse (768px) - Consolidated Global and Terms Styles */
+
+
+/* Tablet Portrait (768px and below) */
 @media (max-width: 768px) {
   .hero {
     padding: 3rem 1rem;
@@ -1327,12 +1365,16 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 95%; /* Slight margin instead of full width */
     height: 100%;
-    clip-path: none;
+    clip-path: circle(60% at 40% 50%); /* Keep some circular clipping */
     z-index: 1;
     overflow: hidden;
     contain: layout style paint;
+  }
+  
+  .heroImageBg img {
+    object-position: 30% center; /* Better tree visibility on smaller tablets */
   }
   
   .heroImageBg::after {
@@ -1357,9 +1399,14 @@
     position: relative;
     z-index: 3;
     background: none;
+    justify-content: center;
+    padding: 3rem 1rem;
   }
   
   .heroText {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
     background: rgba(1, 51, 76, 0.85) !important;
     color: #fff;
     border-radius: 12px;
@@ -1369,6 +1416,7 @@
     z-index: 4;
     will-change: transform;
     backdrop-filter: blur(4px);
+    text-align: center;
   }
   
   .heroText h1,
@@ -1616,6 +1664,50 @@
     width: 18px;
     height: 18px;
   }
+  
+  /* CTA Section Mobile */
+  .ctaSection {
+    padding: 3rem 1.5rem;
+  }
+  
+  .ctaContent h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .ctaContent p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .primaryCta,
+  .phoneCta {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    /* Optimize for mobile performance */
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+}
+
+/* Medium Mobile (600px and below) */
+@media (max-width: 600px) {
+  .heroImageBg {
+    width: 100%;
+    clip-path: none; /* Remove clipping on smaller screens */
+  }
+  
+  .heroImageBg img {
+    object-position: center center !important; /* Center image on small screens */
+  }
 }
 
 /* About Section Ultra-Small Mobile (375px and below) */
@@ -1715,17 +1807,7 @@
   }
 }
 
-/* Tablet/Medium Screens */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .testimonialsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  
-  .testimonialCard {
-    padding: 2rem 1.5rem;
-  }
-}
+
 
 /* Smallest Mobile Devices (480px) */
 @media (max-width: 480px) {
@@ -2108,49 +2190,5 @@
 }
 
 
-/* Mobile responsive for CTA section */
-@media (max-width: 768px) {
-  .ctaSection {
-    padding: 3rem 1.5rem;
-  }
-  
-  .ctaContent h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .ctaContent p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .ctaButtons {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .primaryCta,
-  .phoneCta {
-    width: 100%;
-    max-width: 300px;
-    justify-content: center;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    /* Optimize for mobile performance */
-    will-change: transform;
-    backface-visibility: hidden;
-  }
-}
 
-/* ===== DARK MODE STYLES ===== */
-@media (prefers-color-scheme: dark) {
-  /* CTA Section */
-  .ctaSection {
-    background: #1e40af;
-  }
-  
-  .ctaContent h2,
-  .ctaContent p {
-    color: var(--white);
-  }
-}
+

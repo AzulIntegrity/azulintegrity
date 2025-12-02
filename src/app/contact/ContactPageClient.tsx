@@ -63,8 +63,8 @@ export default function ContactPageClient() {
       <Header>
         <nav className={headerStyles.navigation}>
           <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
           <Link href="/services">Services</Link>
+          <Link href="/about">About</Link>
           <Link href="/contact" className={headerStyles.active}>Contact</Link>
         </nav>
         <div className={headerStyles.phoneContact}>
@@ -116,8 +116,8 @@ export default function ContactPageClient() {
           role="navigation"
         >
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/contact" className={headerStyles.active} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </nav>
       </Header>
