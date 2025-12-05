@@ -5,8 +5,7 @@ backend:
 # Local development backend (automatically enabled for localhost)
 local_backend: true
 
-# Use Netlify Identity for authentication
-# This will be set up in Netlify dashboard
+# Will use GitHub OAuth once transferred to client's GitHub
 publish_mode: editorial_workflow
 media_folder: "public/images"
 public_folder: "/images"
