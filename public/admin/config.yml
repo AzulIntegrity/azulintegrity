@@ -650,8 +650,30 @@ collections:
         label: "General Settings"
         file: "content/settings/general.md"
         fields:
-          - { label: "Site Title", name: "site_title", widget: "string", default: "Azul Integrity Accounting Services" }
-          - { label: "Phone Number", name: "phone", widget: "string", default: "(904) 476-4732" }
-          - { label: "Email Address", name: "email", widget: "string", default: "azulintegritycpa@gmail.com" }
-          - { label: "Facebook URL", name: "facebook_url", widget: "string", required: false }
-          - { label: "LinkedIn URL", name: "linkedin_url", widget: "string", required: false }
+          - label: "Site Title"
+            name: "site_title"
+            widget: "string"
+            default: "Azul Integrity Accounting Services"
+            hint: "Current: Azul Integrity Accounting Services"
+          - label: "Phone Number"
+            name: "phone"
+            widget: "string"
+            default: "(904) 476-4732"
+            hint: "Current: (904) 476-4732"
+          - label: "Email Address"
+            name: "email"
+            widget: "string"
+            default: "azulintegritycpa@gmail.com"
+            hint: "Current: azulintegritycpa@gmail.com"
+          - label: "Facebook URL"
+            name: "facebook_url"
+            widget: "string"
+            required: false
+            default: "https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#"
+            hint: "Current: https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#"
+          - label: "LinkedIn URL"
+            name: "linkedin_url"
+            widget: "string"
+            required: false
+            default: "https://www.linkedin.com/in/heather-duran-2ba29045"
+            hint: "Current: https://www.linkedin.com/in/heather-duran-2ba29045"
