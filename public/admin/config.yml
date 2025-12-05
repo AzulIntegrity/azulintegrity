@@ -6,8 +6,8 @@ backend:
 # Local development backend (automatically enabled for localhost)
 local_backend: true
 
-# Will use GitHub OAuth once transferred to client's GitHub
-publish_mode: editorial_workflow
+# Simple workflow: Save changes go live immediately
+# publish_mode: editorial_workflow
 media_folder: "public/images"
 public_folder: "/images"
 
