@@ -8,12 +8,21 @@
 </head>
 <body>
   <!-- Include the script that builds the page and powers Decap CMS -->
-  <script src="https://unpkg.com/decap-cms-app@3.9.0/dist/decap-cms-app.js"></script>
+  <script src="https://unpkg.com/decap-cms-app@3.8.0/dist/decap-cms-app.js"></script>
   
   <!-- Initialize CMS -->
   <script>
-    // CMS will automatically initialize and use GitHub OAuth as configured in config.yml
-    console.log('Decap CMS loading with GitHub OAuth authentication');
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add a small delay to ensure the CMS script is fully loaded
+      setTimeout(function() {
+        if (window.CMS) {
+          console.log('Decap CMS initialized with GitHub OAuth authentication');
+          // CMS will automatically read config.yml and initialize
+        } else {
+          console.error('Decap CMS failed to load');
+        }
+      }, 100);
+    });
   </script>
 </body>
 </html>
