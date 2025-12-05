@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = generateMetadata({
   title: "Azul Integrity CPA | Professional Accounting & Bookkeeping Services",
   description: "Professional CPA and accounting services for small businesses. Expert bookkeeping, payroll processing, tax preparation, and financial consulting. Licensed CPA in Florida and New Mexico.",
-  keywords: ["CPA services", "accounting services", "bookkeeping", "virtual bookkeeping", "Xero bookkeeper", "QuickBooks bookkeeping expert", "payroll processing", "tax preparation", "small business accounting", "financial consulting", "Florida CPA", "New Mexico CPA", "QuickBooks", "GAAP compliance"],
+  keywords: ["CPA services", "accounting services", "bookkeeping", "virtual bookkeeping", "Xero bookkeeper", "QuickBooks bookkeeping expert", "payroll processing", "tax preparation", "small business accounting", "financial consulting", "virtual CPA", "remote CPA services", "QuickBooks", "GAAP compliance"],
 });
 
 export default function RootLayout({

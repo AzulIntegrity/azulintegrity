@@ -1,11 +1,42 @@
 import { generateMetadata } from "@/components";
 import ServicesPageClient from './ServicesPageClient';
+import { getServicesPageContent, getFooterContent, loadServicesPageSeo } from "@/lib/content";
 
-export const metadata = generateMetadata({
-  title: "Professional Accounting Services | Bookkeeping, Payroll & Tax | Azul Integrity CPA",
-  description: "Comprehensive accounting services for small businesses. Expert bookkeeping, payroll processing, tax preparation, and CPA consulting. Licensed in Florida and New Mexico. Get professional financial solutions.",
-  keywords: ["accounting services", "bookkeeping services", "payroll processing", "tax preparation", "CPA services", "small business accounting", "QuickBooks", "financial consulting", "GAAP compliance", "Florida CPA", "New Mexico CPA"],
-});
+// Core SEO keywords for services (protected)
+const coreServicesKeywords = [
+  "CPA services",
+  "accounting services",
+  "bookkeeping services", 
+  "virtual CPA",
+  "remote CPA services"
+];
+
+// Load services SEO data and generate metadata
+async function getServicesPageMetadata() {
+  try {
+    const seoData = await loadServicesPageSeo();
+    
+    // Combine core keywords with CMS flexible keywords
+    const allKeywords = [...coreServicesKeywords, ...(seoData.flexible_keywords || [])];
+    
+    return generateMetadata({
+      title: seoData.title,
+      description: seoData.description,
+      keywords: allKeywords,
+    });
+  } catch (error) {
+    console.error('Failed to load services SEO data, using fallback:', error);
+    
+    // Fallback metadata if CMS fails
+    return generateMetadata({
+      title: "Professional Accounting Services | Bookkeeping, Payroll & Tax | Azul Integrity CPA",
+      description: "Comprehensive accounting services for small businesses. Expert bookkeeping, payroll processing, tax preparation, and CPA consulting. Licensed in Florida and New Mexico. Get professional financial solutions.",
+      keywords: [...coreServicesKeywords, "payroll processing", "tax preparation", "small business accounting", "QuickBooks", "financial consulting"],
+    });
+  }
+}
+
+export const metadata = await getServicesPageMetadata();
 
 // Structured data schemas
 const breadcrumbSchema = {
@@ -40,7 +71,10 @@ const serviceSchema = {
   "serviceType": ["Bookkeeping", "Accounting", "Payroll", "Tax Preparation"]
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const servicesData = getServicesPageContent();
+  const footerData = getFooterContent();
+
   return (
     <>
       <script
@@ -55,7 +89,7 @@ export default function ServicesPage() {
           __html: JSON.stringify(serviceSchema),
         }}
       />
-      <ServicesPageClient />
+      <ServicesPageClient servicesData={servicesData} footerData={footerData} />
     </>
   );
 }

@@ -1,11 +1,42 @@
 import { generateMetadata } from "@/components";
+import { getAboutPageContent, getFooterContent, loadAboutPageSeo } from "@/lib/content";
 import AboutPageClient from "./AboutPageClient";
 
-export const metadata = generateMetadata({
-  title: "About Heather Duran CPA | 25+ Years Experience | Azul Integrity Accounting",
-  description: "Meet Heather Duran, CPA with 25+ years of corporate accounting experience. Licensed in Florida and New Mexico. Professional credentials include CPA certification and extensive financial management expertise.",
-  keywords: ["Heather Duran CPA", "about CPA", "Florida CPA", "New Mexico CPA", "corporate accounting experience", "CPA credentials", "accounting professional", "financial management", "small business accounting expert"],
-});
+// Core SEO keywords for About page (protected)
+const coreAboutKeywords = [
+  "CPA services",
+  "accounting services",
+  "virtual CPA",
+  "remote CPA services",
+  "about CPA"
+];
+
+// Load About SEO data and generate metadata
+async function getAboutPageMetadata() {
+  try {
+    const seoData = await loadAboutPageSeo();
+    
+    // Combine core keywords with CMS flexible keywords
+    const allKeywords = [...coreAboutKeywords, ...(seoData.flexible_keywords || [])];
+    
+    return generateMetadata({
+      title: seoData.title,
+      description: seoData.description,
+      keywords: allKeywords,
+    });
+  } catch (error) {
+    console.error('Failed to load About SEO data, using fallback:', error);
+    
+    // Fallback metadata if CMS fails
+    return generateMetadata({
+      title: "About Heather Duran CPA | Virtual CPA | Azul Integrity Accounting",
+      description: "Meet Heather Duran, CPA with 25+ years of corporate accounting experience. Licensed in Florida and New Mexico. Professional credentials include CPA certification and extensive financial management expertise.",
+      keywords: [...coreAboutKeywords, "licensed CPA", "corporate accounting experience", "CPA credentials", "accounting professional", "financial management"],
+    });
+  }
+}
+
+export const metadata = await getAboutPageMetadata();
 
 // Structured data schemas
 const breadcrumbSchema = {
@@ -42,6 +73,9 @@ const personSchema = {
 };
 
 export default function AboutPage() {
+  const aboutData = getAboutPageContent();
+  const footerData = getFooterContent();
+  
   return (
     <>
       <script
@@ -56,7 +90,7 @@ export default function AboutPage() {
           __html: JSON.stringify(personSchema),
         }}
       />
-      <AboutPageClient />
+      <AboutPageClient aboutData={aboutData} footerData={footerData} />
     </>
   );
 }

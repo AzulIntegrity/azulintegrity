@@ -1,4 +1,5 @@
 import { generateMetadata } from "@/components";
+import { getPrivacyPageContent, getFooterContent } from "@/lib/content";
 import PrivacyPageClient from './PrivacyPageClient';
 
 export const metadata = generateMetadata({
@@ -7,6 +8,11 @@ export const metadata = generateMetadata({
   keywords: ["privacy policy", "data protection", "client confidentiality", "CPA privacy", "financial data security", "accounting privacy", "GDPR compliance"],
 });
 
-export default function PrivacyPage() {
-  return <PrivacyPageClient />;
+export default async function PrivacyPage() {
+  const [privacyData, footerData] = await Promise.all([
+    getPrivacyPageContent(),
+    getFooterContent()
+  ]);
+
+  return <PrivacyPageClient privacyData={privacyData} footerData={footerData} />;
 }

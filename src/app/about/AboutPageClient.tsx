@@ -3,9 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useState } from 'react';
 import { Header, Footer, headerStyles } from "@/components";
+import { AboutPageData, FooterData } from "@/lib/content";
 import styles from "../page.module.css";
 
-const AboutPageClient = React.memo(function AboutPageClient() {
+interface AboutPageClientProps {
+  aboutData: AboutPageData;
+  footerData: FooterData;
+}
+
+const AboutPageClient = React.memo(function AboutPageClient({ aboutData, footerData }: AboutPageClientProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -93,45 +99,29 @@ const AboutPageClient = React.memo(function AboutPageClient() {
               
               <div className={styles.aboutContactInfo}>
                 <h3>Contact Information</h3>
-                <h4>Heather Duran, CPA</h4>
-                <p>Azul Integrity Accounting Services LLC</p>
-                <p>Email: <Link href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</Link></p>
-                <p>Phone: <Link href="tel:+19044764732">(904) 476-4732</Link></p>
+                <h4>{aboutData.profile.contact.name}</h4>
+                <p>{aboutData.profile.contact.company}</p>
+                <p>Email: <Link href={`mailto:${aboutData.profile.contact.email}`}>{aboutData.profile.contact.email}</Link></p>
+                <p>Phone: <Link href={`tel:+1${aboutData.profile.contact.phone.replace(/[^\d]/g, '')}`}>{aboutData.profile.contact.phone}</Link></p>
               </div>
             </div>
             
             <div className={styles.aboutContent}>
-              <h1 className={styles.aboutHeading}>Professional Background</h1>
-              <h2 className={styles.aboutSubheading}>Your Virtual CPA Partner</h2>
+              <h1 className={styles.aboutHeading}>{aboutData.pageHeader.title}</h1>
+              <h2 className={styles.aboutSubheading}>{aboutData.pageHeader.subtitle}</h2>
               
               <div className={styles.aboutText}>
-                <p>
-                  With over 25 years of corporate accounting experience, I bring deep expertise in financial management, 
-                  compliance, and strategic business guidance to small business owners who need reliable, professional support.
-                </p>
-                
-                <p>
-                  My background spans across multiple industries, giving me the versatility to understand your unique 
-                  business challenges and provide tailored solutions that drive growth and ensure compliance.
-                </p>
-                
-                <p>
-                  As a licensed CPA in both Florida and New Mexico, I combine technical expertise with a personal 
-                  approach, ensuring you receive the individual attention your business deserves while maintaining 
-                  the highest professional standards.
-                </p>
+                {aboutData.profile.biography.map((paragraph: string, index: number) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
               </div>
               
               <div className={styles.credentialsList}>
-                <h3>Professional Credentials & Expertise</h3>
+                <h3>{aboutData.credentials.title}</h3>
                 <ul>
-                  <li>Certified Public Accountant (CPA) - Licensed in Florida and New Mexico</li>
-                  <li>25+ years of corporate accounting and financial management experience</li>
-                  <li>Expert in QuickBooks, Xero, and professional accounting software</li>
-                  <li>Specialized in small business accounting, bookkeeping, and tax preparation</li>
-                  <li>Extensive experience in payroll processing and compliance</li>
-                  <li>Advanced knowledge of GAAP and financial reporting standards</li>
-                
+                  {aboutData.credentials.credentials.map((credential: any, index: number) => (
+                    <li key={index}>{credential.summary}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -141,10 +131,10 @@ const AboutPageClient = React.memo(function AboutPageClient() {
         {/* CTA Section */}
         <section className={styles.ctaSection}>
           <div className={styles.ctaContent}>
-            <h2>Ready to Work Together?</h2>
-            <p>Experience the difference that personalized, professional accounting services can make for your business. Let&apos;s discuss how I can help you achieve your financial goals.</p>
+            <h2>{aboutData.cta.heading}</h2>
+            <p>{aboutData.cta.description}</p>
             <div className={styles.ctaButtons}>
-              <Link href="/contact#contact-form" className={styles.primaryCta}>Get Your Free Consultation</Link>
+              <Link href={aboutData.cta.button_link} className={styles.primaryCta}>{aboutData.cta.button_text}</Link>
             </div>
           </div>
         </section>
@@ -162,8 +152,8 @@ const AboutPageClient = React.memo(function AboutPageClient() {
             </div>
             <div className={styles.footerCol}>
               <h4>Contact</h4>
-              <span>Email: <Link href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</Link></span>
-              <span>Phone: <Link href="tel:+19044764732">(904) 476-4732</Link></span>
+              <span>Email: <Link href={`mailto:${footerData.contact.email}`}>{footerData.contact.email}</Link></span>
+              <span>Phone: <Link href={`tel:+1${footerData.contact.phone.replace(/[^\d]/g, '')}`}>{footerData.contact.phone}</Link></span>
               <div className={styles.footerSocial}>
                 <Link
                   href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#"

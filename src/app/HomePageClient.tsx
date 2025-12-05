@@ -3,61 +3,19 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useState, useEffect } from 'react';
 import { Header, Footer, headerStyles } from "@/components";
+import { HomepageContent, FooterData } from '@/lib/content';
 import styles from "./page.module.css";
 
-// Service data
-const serviceCategories = [
-  {
-    key: 'bookkeeping',
-    title: 'Bookkeeping',
-    heading: 'Clarity for Decisions',
-    description: 'We keep your ledgers accurate, reconciled, and audit-ready every month.',
-    bullets: [
-      'Monthly bank and credit card reconciliation.',
-      'Management of payables and receivables.',
-      'Delivery of all core reports (P&L, Balance Sheet, etc.).',
-    ],
-  },
-  {
-    key: 'accounting',
-    title: 'Accounting/CPA',
-    heading: 'Insight for Growth',
-    description: 'Go beyond data entry with high-level financial analysis and strategic reporting.',
-    bullets: [
-      'Annual budget creation and actual-to-budget reporting.',
-      'Monthly strategic analysis and statement review.',
-      'Custom profitability tracking and forecasting.',
-    ],
-  },
-  {
-    key: 'payroll',
-    title: 'Payroll',
-    heading: 'Seamless & Stress-Free',
-    description: 'We handle the entire payroll lifecycle so you can focus on your team.',
-    bullets: [
-      'Complete payroll system setup and configuration.',
-      'Ongoing payroll processing, direct deposit, and tax filings.',
-      'Full-service annual 1099 preparation.',
-    ],
-  },
-  {
-    key: 'taxes',
-    title: 'Small Business Taxes',
-    heading: 'Compliance with Confidence',
-    description: 'Ensure your entity and state filings are handled accurately and on time.',
-    bullets: [
-      'Full preparation and filing of entity tax returns (1120, 1065, Schedule C).',
-      'Specialized preparation for per-state and prior-year filings.',
-      `Assistance with IRS notices and audits, explaining next steps, and representing you with tax authorities if needed.`,
-    ],
-  },
-];
+interface HomePageClientProps {
+  homepageContent: HomepageContent;
+  footerData: FooterData;
+}
 
-const HomePageClient = React.memo(function HomePageClient() {
-  const [activeTab, setActiveTab] = useState(serviceCategories[0].key);
+const HomePageClient = React.memo(function HomePageClient({ homepageContent, footerData }: HomePageClientProps) {
+  const [activeTab, setActiveTab] = useState(homepageContent.services.services[0].key);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [shouldLoadBadges, setShouldLoadBadges] = useState(false);
-  const activeService = serviceCategories.find(s => s.key === activeTab);
+  const activeService = homepageContent.services.services.find(s => s.key === activeTab);
 
   // Defer badge loading for mobile performance
   useEffect(() => {
@@ -148,8 +106,8 @@ const HomePageClient = React.memo(function HomePageClient() {
         <section className={styles.hero}>
           <div className={styles.heroImageBg}>
             <Image 
-              src="/trusttree.webp" 
-              alt="Azul Integrity Trust Tree - Professional CPA Services" 
+              src={homepageContent.hero.background_image} 
+              alt={homepageContent.hero.background_alt} 
               fill
               priority
               quality={75}
@@ -166,31 +124,30 @@ const HomePageClient = React.memo(function HomePageClient() {
           </div>
           <div className={styles.heroContent}>
             <div className={styles.heroText}>
-              <h1>You Grow Your Business. <br />I&apos;ll Handle the Numbers</h1>
+              <h1 dangerouslySetInnerHTML={{ __html: homepageContent.hero.title.replace(/\n/g, '<br />') }} />
               <p className={styles.heroSubtext}>
-                Your Virtual CPA - Rooted in Trust, Partner in Growth.
+                {homepageContent.hero.subtitle}
               </p>
-              <Link href="/contact#contact-form" className={styles.ctaButton}>
-                Get Your Free Consultation
+              <Link href={homepageContent.hero.cta_link} className={styles.ctaButton}>
+                {homepageContent.hero.cta_text}
               </Link>
             </div>
           </div>
         </section>
 
-        {/* --- UPDATED SEO BLOCK --- */}
         <section className={styles.seoBlock}>
           <h2 className={styles.sectionHeading}>
-            Why Choose Azul Integrity as Your Virtual CPA? <br />
-            Expert Bookkeeping, Tax, Payroll & Accounting Services for Small Businesses
+            {homepageContent.seoSection.heading} <br />
+            {homepageContent.seoSection.subheading}
           </h2>
           <p className={styles.sectionSubtext}>
-            Get trusted financial guidance, accurate records, and stress-free compliance from a licensed CPA with 25+ years of experience. We help small businesses grow with clarity, confidence, and personalized support. Experience peace of mind knowing your books are done right, make better business decisions with clear, accurate financials, and enjoy less stress around tax time with experience you can trust and support you&apos;ll actually enjoy.
+            {homepageContent.seoSection.description}
           </p>
         </section>
         <section className={styles.services} suppressHydrationWarning>
-          <h2 className={styles.sectionHeading}>Our Four Pillars of Service</h2>
+          <h2 className={styles.sectionHeading}>{homepageContent.services.section_title}</h2>
           <div className={styles.tabsHeader}>
-            {serviceCategories.map((category) => (
+            {homepageContent.services.services.map((category) => (
               <button
                 key={category.key}
                 className={`${styles.tabButton} ${activeTab === category.key ? styles.active : ''}`}
@@ -223,48 +180,23 @@ const HomePageClient = React.memo(function HomePageClient() {
         {/* Testimonials Section */}
         <section className={styles.testimonials}>
           <div className={styles.testimonialsContent}>
-            <h2 className={styles.testimonialsHeading}>What Our Clients Say</h2>
-            <p className={styles.testimonialsSubtext}>Built on 25 years of corporate accounting and CPA experience—now trusted by small business owners.</p>
+            <h2 className={styles.testimonialsHeading}>{homepageContent.testimonials.section_title}</h2>
+            <p className={styles.testimonialsSubtext}>{homepageContent.testimonials.section_subtitle}</p>
             
             <div className={styles.testimonialsGrid}>
-              <div className={styles.testimonialCard}>
-                <div className={styles.testimonialQuote}>
-                  &quot;I wholeheartedly recommend the services of Heather Duran. I have known Heather for the past 25 years and have consistently been impressed by her exceptional skills and professionalism.&quot;
+              {homepageContent.testimonials.testimonials.map((testimonial, index) => (
+                <div key={index} className={styles.testimonialCard}>
+                  <div className={styles.testimonialQuote}>
+                    &quot;{testimonial.quote}&quot;
+                  </div>
+                  <div className={styles.testimonialAuthor}>
+                    <strong>{testimonial.author}</strong>
+                    {testimonial.business && (
+                      <span className={styles.testimonialBusiness}>{testimonial.business}</span>
+                    )}
+                  </div>
                 </div>
-                <div className={styles.testimonialAuthor}>
-                  <strong>Beth Monteith</strong>
-                </div>
-              </div>
-              
-              <div className={styles.testimonialCard}>
-                <div className={styles.testimonialQuote}>
-                  &quot;What makes Heather and Azul Integrity so special is her meticulous attention to detail combined with a proactive approach to financial management. She didn&apos;t just process transactions—she anticipated needs, identified potential issues before they became problems, and ensured our organization maintained impeccable financial records. Her thoroughness gave our entire board complete confidence in our financial standing.&quot;
-                </div>
-                <div className={styles.testimonialAuthor}>
-                  <strong>Kristin Glunt</strong>
-                  <span className={styles.testimonialBusiness}>Non-Profit Board President</span>
-                </div>
-              </div>
-
-              <div className={styles.testimonialCard}>
-                <div className={styles.testimonialQuote}>
-                  &quot;Heather is an extremely competent and reliable accountant. She is very thorough with your tax information. Heather will also look for the greatest number of deductions for filing your taxes and is very easy to work with.&quot;
-                </div>
-                <div className={styles.testimonialAuthor}>
-                  <strong>John Paredes</strong>
-                  <span className={styles.testimonialBusiness}>Lawn Service</span>
-                </div>
-              </div>
-
-              <div className={styles.testimonialCard}>
-                <div className={styles.testimonialQuote}>
-                  &quot;Heather has managed our organization&apos;s finances for over two years, delivering audit-ready budgets, clear monthly financials with insightful variance analysis, and timely, accurate 990 filings. Her attention to detail, integrity, and ability to translate complex numbers into plain language gave our board complete confidence — any small business or nonprofit would be fortunate to have her overseeing their finances.&quot;
-                </div>
-                <div className={styles.testimonialAuthor}>
-                  <strong>Carolyn King</strong>
-                  <span className={styles.testimonialBusiness}>Non-Profit Board President</span>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -272,65 +204,22 @@ const HomePageClient = React.memo(function HomePageClient() {
         {/* Software Badges Section - Deferred for mobile performance */}
         {shouldLoadBadges && (
           <section className={styles.softwareBadges} style={{ contentVisibility: 'auto', containIntrinsicSize: '400px' }}>
-            <h2 className={styles.badgesHeading}>Certified in Industry-Leading Software</h2>
-            <p className={styles.badgesSubtext}>Professional certifications and partnerships with the tools you trust</p>
+            <h2 className={styles.badgesHeading}>{homepageContent.certifications.section_title}</h2>
+            <p className={styles.badgesSubtext}>{homepageContent.certifications.section_subtitle}</p>
             <div className={styles.badgesGrid}>
-            <div className={styles.badgeItem}>
-              <Image 
-                src="/badges/logo_inTuit.webp" 
-                alt="Intuit Certified" 
-                className={styles.badgeImage} 
-                width={300} 
-                height={150}
-                loading="lazy"
-                sizes="(max-width: 480px) 280px, (max-width: 768px) 250px, 300px"
-              />
-            </div>
-            <div className={styles.badgeItem}>
-              <Image 
-                src="/badges/logo_qb.webp" 
-                alt="QuickBooks ProAdvisor" 
-                className={styles.badgeImage} 
-                width={300} 
-                height={150}
-                loading="lazy"
-                sizes="(max-width: 480px) 280px, (max-width: 768px) 250px, 300px"
-              />
-            </div>
-             <div className={styles.badgeItem}>
-              <Image 
-                src="/badges/logo_gusto.webp" 
-                alt="Gusto Certified" 
-                className={styles.badgeImage} 
-                width={300} 
-                height={150}
-                loading="lazy"
-                sizes="(max-width: 480px) 280px, (max-width: 768px) 250px, 300px"
-              />
-            </div>
-            <div className={styles.badgeItem}>
-              <Image 
-                src="/badges/logo_efile.webp" 
-                alt="E-File Authorized" 
-                className={styles.badgeImage} 
-                width={300} 
-                height={150}
-                loading="lazy"
-                sizes="(max-width: 480px) 280px, (max-width: 768px) 250px, 300px"
-              />
-           
-            </div>
-            <div className={styles.badgeItem}>
-             <Image 
-                src="/badges/xero-badge.webp" 
-                alt="Xero Certified" 
-                className={styles.badgeImage} 
-                width={300} 
-                height={150}
-                loading="lazy"
-                sizes="(max-width: 480px) 280px, (max-width: 768px) 250px, 300px"
-              />
-            </div>
+              {homepageContent.certifications.badges.map((badge, index) => (
+                <div key={index} className={styles.badgeItem}>
+                  <Image 
+                    src={badge.image} 
+                    alt={badge.alt} 
+                    className={styles.badgeImage} 
+                    width={300} 
+                    height={150}
+                    loading="lazy"
+                    sizes="(max-width: 480px) 280px, (max-width: 768px) 250px, 300px"
+                  />
+                </div>
+              ))}
           </div>
         </section>
         )}
@@ -338,10 +227,10 @@ const HomePageClient = React.memo(function HomePageClient() {
         {/* CTA Section */}
         <section className={styles.ctaSection}>
           <div className={styles.ctaContent}>
-            <h2>Ready to Get Started?</h2>
-            <p>Join the small business owners who trust Azul Integrity for their accounting needs. Get your free consultation today and discover how we can transform your workload.</p>
+            <h2>{homepageContent.cta.heading}</h2>
+            <p>{homepageContent.cta.description}</p>
             <div className={styles.ctaButtons}>
-              <Link href="/contact#contact-form" className={styles.primaryCta}>Get Your Free Consultation</Link>
+              <Link href={homepageContent.cta.button_link} className={styles.primaryCta}>{homepageContent.cta.button_text}</Link>
             </div>
           </div>
         </section>
@@ -359,8 +248,8 @@ const HomePageClient = React.memo(function HomePageClient() {
             </div>
             <div className={styles.footerCol}>
               <h4>Contact</h4>
-              <span>Email: <Link href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</Link></span>
-              <span>Phone: <Link href="tel:+19044764732">(904) 476-4732</Link></span>
+              <span>Email: <Link href={`mailto:${footerData.contact.email}`}>{footerData.contact.email}</Link></span>
+              <span>Phone: <Link href={`tel:+1${footerData.contact.phone.replace(/[^\d]/g, '')}`}>{footerData.contact.phone}</Link></span>
               <div className={styles.footerSocial}>
                 <Link
                   href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#"
@@ -398,7 +287,7 @@ const HomePageClient = React.memo(function HomePageClient() {
               <h4>Legal Pages</h4>
               <Link href="/terms">Terms of Service</Link>
               <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/site-map">Site Map</Link>
+              <Link href="/site-map">Site Map</Link>
             </div>
           </div>
           <div className={styles.footerCopyright}>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Azul Integrity - Content Management</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <!-- Include the script that builds the page and powers Decap CMS -->
+  <script src="https://unpkg.com/decap-cms-app@3.9.0/dist/decap-cms-app.js"></script>
+  
+  <!-- Local development mode for CMS -->
+  <script>
+    // Check if running locally
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      // For local development, initialize CMS in local mode
+      window.CMS_MANUAL_INIT = true;
+      
+      // Wait for CMS to load then configure
+      document.addEventListener('DOMContentLoaded', function() {
+        // Small delay to ensure CMS script is fully loaded
+        setTimeout(function() {
+          if (window.CMS) {
+            window.CMS.init();
+            console.log('Decap CMS initialized in local development mode');
+          }
+        }, 100);
+      });
+    }
+  </script>
+  
+  <!-- Initialize Netlify Identity (for production) -->
+  <script>
+    if (window.netlifyIdentity && !window.location.hostname.includes('localhost')) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -4,10 +4,16 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Header, Footer, headerStyles } from "@/components";
+import { SitemapPageData, FooterData } from "@/lib/content";
 import pageStyles from "../shared/legal-pages.module.css";
 import styles from "./sitemap.module.css";
 
-export default function SitemapPageClient() {
+interface SitemapPageClientProps {
+  sitemapData: SitemapPageData;
+  footerData: FooterData;
+}
+
+export default function SitemapPageClient({ sitemapData, footerData }: SitemapPageClientProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -81,59 +87,37 @@ export default function SitemapPageClient() {
       <main className={styles.main} id="main-content">
         <div className={styles.container}>
           <div className={styles.content}>
-            <h1 className={styles.title}>Site Map</h1>
+            <h1 className={styles.title}>{sitemapData.header.title}</h1>
             <p className={styles.description}>
-              Navigate through all pages and resources on the Azul Integrity Accounting Services website.
+              {sitemapData.header.description}
             </p>
 
             <div className={styles.sitemap}>
-              <div className={styles.sitemapSection}>
-                <h2 className={styles.sectionTitle}>Main Pages</h2>
-                <ul className={styles.sitemapList}>
-                  <li><Link href="/">Home</Link></li>
-                  <li>
-                    <Link href="/services">Services</Link>
-                    <span className={styles.linkDescription}>Professional accounting, bookkeeping, payroll, and tax services</span>
-                  </li>
-                  <li><Link href="/about">About</Link></li>
-                  <li><Link href="/contact">Contact</Link></li>
-                </ul>
-              </div>
-
-              <div className={styles.sitemapSection}>
-                <h2 className={styles.sectionTitle}>Service Categories</h2>
-                <ul className={styles.sitemapList}>
-                  <li>Tax Preparation Services</li>
-                  <li>Bookkeeping Services</li>
-                  <li>Business Consulting</li>
-                  <li>Payroll Services</li>
-                  <li>QuickBooks Setup & Training</li>
-                </ul>
-              </div>
-
-              <div className={styles.sitemapSection}>
-                <h2 className={styles.sectionTitle}>Legal & Information</h2>
-                <ul className={styles.sitemapList}>
-                  <li><Link href="/terms">Terms and Conditions</Link></li>
-                  <li><Link href="/privacy">Privacy Policy</Link></li>
-                  <li><Link href="/site-map">Site Map</Link></li>
-                </ul>
-              </div>
-
-              <div className={styles.sitemapSection}>
-                <h2 className={styles.sectionTitle}>Contact Information</h2>
-                <ul className={styles.sitemapList}>
-                  <li>Phone: <a href="tel:+19044764732">(904) 476-4732</a></li>
-                  <li>Email: <a href="mailto:azulintegritycpa@gmail.com">azulintegritycpa@gmail.com</a></li>
-                  <li>Location: Jacksonville, FL</li>
-                </ul>
-              </div>
+              {sitemapData.sections.map((section, sectionIndex) => (
+                <div key={sectionIndex} className={styles.sitemapSection}>
+                  <h2 className={styles.sectionTitle}>{section.section_title}</h2>
+                  <ul className={styles.sitemapList}>
+                    {section.items.map((item, itemIndex) => (
+                      <li key={itemIndex}>
+                        {item.url ? (
+                          <Link href={item.url}>{item.title}</Link>
+                        ) : (
+                          <span>{item.title}</span>
+                        )}
+                        {item.description && (
+                          <span className={styles.linkDescription}>{item.description}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </main>
 
-      <Footer />
+      <Footer footerData={footerData} />
     </div>
   );
 }

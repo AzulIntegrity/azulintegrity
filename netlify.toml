@@ -1,0 +1,18 @@
+[build]
+  publish = ".next"
+  command = "npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# CMS Admin redirects
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Environment variables for build
+[build.environment]
+  NODE_VERSION = "18"

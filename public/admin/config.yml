@@ -1,0 +1,657 @@
+backend:
+  name: git-gateway
+  branch: master
+
+# Local development backend (automatically enabled for localhost)
+local_backend: true
+
+# Use Netlify Identity for authentication
+# This will be set up in Netlify dashboard
+publish_mode: editorial_workflow
+media_folder: "public/images"
+public_folder: "/images"
+
+# Configure the CMS interface
+display_url: https://azulintegrityaccounting.netlify.app
+logo_url: https://azulintegrityaccounting.netlify.app/tree.png
+
+collections:
+  - name: "homepage"
+    label: "Homepage Content"
+    description: "Manage content for the main homepage"
+    files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "content/homepage/hero.md"
+        fields:
+          - { label: "Main Headline", name: "title", widget: "string", default: "You Grow Your Business. I'll Handle the Numbers" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", default: "Your Virtual CPA - Rooted in Trust, Partner in Growth." }
+          - { label: "Call-to-Action Button Text", name: "cta_text", widget: "string", default: "Get Your Free Consultation" }
+          - { label: "Call-to-Action Link", name: "cta_link", widget: "string", default: "/contact#contact-form" }
+          - { label: "Background Image", name: "background_image", widget: "image", default: "/trusttree.webp" }
+          - { label: "Background Image Alt Text", name: "background_alt", widget: "string", default: "Azul Integrity Trust Tree - Professional CPA Services" }
+
+      - name: "seo_section"
+        label: "SEO Introduction"
+        file: "content/homepage/seo-section.md"
+        fields:
+          - { label: "Main Heading", name: "heading", widget: "string", default: "Why Choose Azul Integrity as Your Virtual CPA?" }
+          - { label: "Subheading", name: "subheading", widget: "string", default: "Expert Bookkeeping, Tax, Payroll & Accounting Services for Small Businesses" }
+          - { label: "Description", name: "description", widget: "text", default: "Get trusted financial guidance, accurate records, and stress-free compliance from a licensed CPA with 25+ years of experience." }
+
+      - name: "services"
+        label: "Service Categories"
+        file: "content/homepage/services.md"
+        fields:
+          - { label: "Section Title", name: "section_title", widget: "string", default: "Our Four Pillars of Service" }
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Service Name", name: "title", widget: "string" }
+              - { label: "Tab Key (lowercase, no spaces)", name: "key", widget: "string" }
+              - { label: "Service Headline", name: "heading", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Key Features"
+                name: "bullets"
+                widget: "list"
+                field: { label: "Feature", name: "feature", widget: "string" }
+
+      - name: "testimonials"
+        label: "Client Testimonials"
+        file: "content/homepage/testimonials.md"
+        fields:
+          - { label: "Section Title", name: "section_title", widget: "string", default: "What Our Clients Say" }
+          - { label: "Section Subtitle", name: "section_subtitle", widget: "string", default: "Built on 25 years of corporate accounting and CPA experience—now trusted by small business owners." }
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Client Quote", name: "quote", widget: "text" }
+              - { label: "Client Name", name: "author", widget: "string" }
+              - { label: "Business/Title", name: "business", widget: "string", required: false }
+
+      - name: "certifications"
+        label: "Software Certifications"
+        file: "content/homepage/certifications.md"
+        fields:
+          - { label: "Section Title", name: "section_title", widget: "string", default: "Certified in Industry-Leading Software" }
+          - { label: "Section Subtitle", name: "section_subtitle", widget: "string", default: "Professional certifications and partnerships with the tools you trust" }
+          - label: "Certification Badges"
+            name: "badges"
+            widget: "list"
+            summary: "{{fields.name}} - {{fields.alt}}"
+            fields:
+              - { label: "Company Name", name: "name", widget: "string", hint: "e.g., QuickBooks, Xero, Intuit" }
+              - { label: "Badge Image", name: "image", widget: "image", hint: "Upload a new badge image or select from existing badges. Recommended size: 300x150px" }
+              - { label: "Alt Text", name: "alt", widget: "string", hint: "Describe the badge for screen readers, e.g., 'QuickBooks ProAdvisor Certified'" }
+
+      - name: "cta_section"
+        label: "Call-to-Action Section"
+        file: "content/homepage/cta.md"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string", default: "Ready to Get Started?" }
+          - { label: "Description", name: "description", widget: "text", default: "Join the small business owners who trust Azul Integrity for their accounting needs." }
+          - { label: "Button Text", name: "button_text", widget: "string", default: "Get Your Free Consultation" }
+          - { label: "Button Link", name: "button_link", widget: "string", default: "/contact#contact-form" }
+
+  - name: "services_page"
+    label: "Services Page Content"
+    description: "Manage all content for the detailed services page"
+    files:
+      - name: "page_header"
+        label: "Services Page Header"
+        file: "content/services/service_page_header.md"
+        fields:
+          - { label: "SEO Title (for search engines)", name: "title", widget: "string", default: "Professional Accounting & Bookkeeping Services", hint: "Optimized for search engines" }
+          - { label: "Display Title (visible to users)", name: "displayTitle", widget: "string", default: "Find Your Financial Solution", hint: "What users see on the page" }
+          - { label: "Description", name: "description", widget: "text", default: "All services include a one-time 15‑minute consultation to find the package that fits your business and get a fast high-level estimate. For custom needs not listed, call Azul Integrity Accounting Services for a tailored quote." }
+
+      - name: "service_01_bookkeeping"
+        label: "Service #1: Bookkeeping"
+        file: "content/services/service_01_bookkeeping.md"
+        fields:
+          - { label: "Service Key", name: "key", widget: "string", default: "bookkeeping", hint: "Internal identifier - do not change" }
+          - { label: "SEO Title (for search engines)", name: "title", widget: "string", default: "Bookkeeping Services for Small Business" }
+          - { label: "Display Title (with emoji)", name: "displayTitle", widget: "string", default: "🧾 Bookkeeping" }
+          - label: "Service Content"
+            name: "content"
+            widget: "object"
+            fields:
+              - { label: "Service Description", name: "description", widget: "text", default: "We keep your books accurate and audit-ready so you can make faster, smarter decisions." }
+              - label: "What We Do For You"
+                name: "whatWeDo"
+                widget: "list"
+                hint: "List the key services provided for bookkeeping"
+                field: { label: "Service Item", name: "item", widget: "string" }
+              - label: "Bookkeeping Service Packages"
+                name: "packages"
+                widget: "list"
+                summary: "{{fields.name}} - {{fields.description | truncate(50)}}"
+                hint: "All available bookkeeping service packages"
+                fields:
+                  - { label: "Package Name", name: "name", widget: "string", hint: "e.g., Azul Basic, Azul Core" }
+                  - { label: "Package Description", name: "description", widget: "text", hint: "Detailed description of what's included in this bookkeeping package" }
+
+      - name: "service_02_accounting"
+        label: "Service #2: CPA & Accounting"
+        file: "content/services/service_02_accounting.md"
+        fields:
+          - { label: "Service Key", name: "key", widget: "string", default: "accounting", hint: "Internal identifier - do not change" }
+          - { label: "SEO Title (for search engines)", name: "title", widget: "string", default: "CPA & Accounting Services" }
+          - { label: "Display Title (with emoji)", name: "displayTitle", widget: "string", default: "💰 Accounting/CPA" }
+          - label: "Service Content"
+            name: "content"
+            widget: "object"
+            fields:
+              - { label: "Service Description", name: "description", widget: "text", default: "Professional CPA services to take your financial management to the next level." }
+              - label: "What We Do For You"
+                name: "whatWeDo"
+                widget: "list"
+                hint: "List the key CPA and accounting services provided"
+                field: { label: "Service Item", name: "item", widget: "string" }
+              - label: "CPA & Accounting Service Packages"
+                name: "packages"
+                widget: "list"
+                summary: "{{fields.name}} - {{fields.description | truncate(50)}}"
+                hint: "All available CPA and accounting service packages"
+                fields:
+                  - { label: "Package Name", name: "name", widget: "string", hint: "e.g., Integrity Blueprint, Azul Insight" }
+                  - { label: "Package Description", name: "description", widget: "text", hint: "Detailed description of what's included in this CPA package" }
+
+      - name: "service_03_payroll"
+        label: "Service #3: Payroll Processing"
+        file: "content/services/service_03_payroll.md"
+        fields:
+          - { label: "Service Key", name: "key", widget: "string", default: "payroll", hint: "Internal identifier - do not change" }
+          - { label: "SEO Title (for search engines)", name: "title", widget: "string", default: "Payroll Processing Services" }
+          - { label: "Display Title (with emoji)", name: "displayTitle", widget: "string", default: "💸 Payroll" }
+          - label: "Service Content"
+            name: "content"
+            widget: "object"
+            fields:
+              - { label: "Service Description", name: "description", widget: "text", default: "Complete payroll solutions from setup to ongoing processing." }
+              - label: "What We Do For You"
+                name: "whatWeDo"
+                widget: "list"
+                hint: "List the key payroll services provided"
+                field: { label: "Service Item", name: "item", widget: "string" }
+              - label: "Payroll Service Packages"
+                name: "packages"
+                widget: "list"
+                summary: "{{fields.name}} - {{fields.description | truncate(50)}}"
+                hint: "All available payroll service packages"
+                fields:
+                  - { label: "Package Name", name: "name", widget: "string", hint: "e.g., Pay Roots Setup, Clarity Pay Runs" }
+                  - { label: "Package Description", name: "description", widget: "text", hint: "Detailed description of what's included in this payroll package" }
+
+      - name: "service_04_taxes"
+        label: "Service #4: Small Business Taxes"
+        file: "content/services/service_04_taxes.md"
+        fields:
+          - { label: "Service Key", name: "key", widget: "string", default: "taxes", hint: "Internal identifier - do not change" }
+          - { label: "SEO Title (for search engines)", name: "title", widget: "string", default: "Small Business Tax Preparation" }
+          - { label: "Display Title (with emoji)", name: "displayTitle", widget: "string", default: "🪙 Small Business Taxes" }
+          - label: "Service Content"
+            name: "content"
+            widget: "object"
+            fields:
+              - { label: "Service Description", name: "description", widget: "text", default: "Comprehensive tax preparation and filing services for small businesses." }
+              - label: "What We Do For You"
+                name: "whatWeDo"
+                widget: "list"
+                hint: "List the key tax services provided"
+                field: { label: "Service Item", name: "item", widget: "string" }
+              - label: "Tax Service Packages"
+                name: "packages"
+                widget: "list"
+                summary: "{{fields.name}} - {{fields.description | truncate(50)}}"
+                hint: "All available tax service packages"
+                fields:
+                  - { label: "Package Name", name: "name", widget: "string", hint: "e.g., Azul Tax Prep, Prior Year Rescue" }
+                  - { label: "Package Description", name: "description", widget: "text", hint: "Detailed description of what's included in this tax package" }
+
+      - name: "service_05_additional"
+        label: "Service #5: Additional Business Support"
+        file: "content/services/service_05_additional.md"
+        fields:
+          - { label: "Service Key", name: "key", widget: "string", default: "additional", hint: "Internal identifier - do not change" }
+          - { label: "SEO Title (for search engines)", name: "title", widget: "string", default: "Additional Business Support Services" }
+          - { label: "Display Title (with emoji)", name: "displayTitle", widget: "string", default: "💬 Additional Support" }
+          - label: "Service Content"
+            name: "content"
+            widget: "object"
+            fields:
+              - { label: "Service Description", name: "description", widget: "text", default: "Specialized services to enhance your financial operations." }
+              - label: "What We Do For You"
+                name: "whatWeDo"
+                widget: "list"
+                hint: "List the key additional support services provided"
+                field: { label: "Service Item", name: "item", widget: "string" }
+              - label: "Additional Support Packages"
+                name: "packages"
+                widget: "list"
+                summary: "{{fields.name}} - {{fields.description | truncate(50)}}"
+                hint: "All available additional support packages"
+                fields:
+                  - { label: "Package Name", name: "name", widget: "string", hint: "e.g., Bookkeeper Training Lab, Azul Automate" }
+                  - { label: "Package Description", name: "description", widget: "text", hint: "Detailed description of what's included in this support package" }
+
+      - name: "page_cta"
+        label: "Services Page Call-to-Action"
+        file: "content/services/service_page_cta.md"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string", default: "Ready to Get Started?" }
+          - { label: "Description", name: "description", widget: "text", default: "Call Azul Integrity Accounting Services for a personalized quote or submit your details for a high‑level estimate by clicking the button below." }
+          - { label: "Button Text", name: "button_text", widget: "string", default: "Get Your Free Consultation" }
+          - { label: "Button Link", name: "button_link", widget: "string", default: "/contact#contact-form" }
+
+  - name: "about_page"
+    label: "About Page Content"
+    description: "Manage all content for the About page"
+    files:
+      - name: "page_header"
+        label: "About Page Header"
+        file: "content/about/about_page_header.md"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", default: "Professional Background", hint: "Main heading for the About page" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", default: "Your Virtual CPA Partner", hint: "Supporting subtitle text" }
+
+      - name: "profile"
+        label: "Profile Section"
+        file: "content/about/about_profile.md"
+        fields:
+          - { label: "Professional Photo", name: "photo", widget: "image", default: "/Headshot.webp", hint: "Professional headshot photo" }
+          - { label: "Photo Alt Text", name: "photo_alt", widget: "string", default: "Heather Duran, CPA - Azul Integrity Accounting Services", hint: "Describe the photo for screen readers" }
+          - label: "Contact Information"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Full Name", name: "name", widget: "string", default: "Heather Duran, CPA" }
+              - { label: "Professional Title", name: "title", widget: "string", default: "Heather Duran, CPA" }
+              - { label: "Company Name", name: "company", widget: "string", default: "Azul Integrity Accounting Services LLC" }
+              - { label: "Email Address", name: "email", widget: "string", default: "azulintegritycpa@gmail.com" }
+              - { label: "Phone Number", name: "phone", widget: "string", default: "(904) 476-4732" }
+          - label: "Biography Paragraphs"
+            name: "bio_paragraphs"
+            widget: "list"
+            hint: "Professional background and experience paragraphs"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+
+      - name: "credentials"
+        label: "Professional Credentials"
+        file: "content/about/about_credentials.md"
+        fields:
+          - { label: "Section Heading", name: "heading", widget: "string", default: "Professional Credentials & Expertise" }
+          - label: "Credentials List"
+            name: "credentials"
+            widget: "list"
+            summary: "{{fields.item | truncate(60)}}"
+            hint: "List of professional qualifications and expertise areas"
+            fields:
+              - { label: "Credential/Expertise", name: "item", widget: "text", hint: "e.g., 'Certified Public Accountant (CPA) - Licensed in Florida and New Mexico'" }
+
+      - name: "page_cta"
+        label: "About Page Call-to-Action"
+        file: "content/about/about_page_cta.md"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string", default: "Ready to Work Together?" }
+          - { label: "Description", name: "description", widget: "text", default: "Experience the difference that personalized, professional accounting services can make for your business. Let's discuss how I can help you achieve your financial goals." }
+          - { label: "Button Text", name: "button_text", widget: "string", default: "Get Your Free Consultation" }
+          - { label: "Button Link", name: "button_link", widget: "string", default: "/contact#contact-form" }
+
+  - name: "footer"
+    label: "Footer"
+    description: "Footer contact information and settings"
+    files:
+      - name: "footer_contact"
+        label: "Footer Contact"
+        file: "content/footer.md"
+        fields:
+          - label: "Contact Information"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Email Address", name: "email", widget: "string", default: "azulintegritycpa@gmail.com", hint: "Footer email address" }
+              - { label: "Phone Number", name: "phone", widget: "string", default: "(904) 476-4732", hint: "Footer phone number with formatting" }
+
+  - name: "terms_page"
+    label: "Terms & Conditions"
+    description: "Terms and Conditions page content management"
+    files:
+      - name: "terms_page_header"
+        label: "Page Header"
+        file: "content/terms_page_header.md"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", default: "Terms and Conditions", hint: "Main page heading" }
+          - { label: "Company Subtitle", name: "subtitle", widget: "string", default: "Azul Integrity Accounting Services LLC", hint: "Company name displayed under title" }
+
+      - name: "terms_page_meta"
+        label: "Document Information"
+        file: "content/terms_page_meta.md"
+        fields:
+          - { label: "Effective Date", name: "effective_date", widget: "string", default: "November 1, 2025", hint: "Date these terms became effective" }
+          - { label: "Last Modified Date", name: "last_modified", widget: "string", required: false, hint: "Optional: Date of last modification" }
+
+      - name: "terms_page_content"
+        label: "Terms Sections"
+        file: "content/terms_page_content.md"
+        fields:
+          - label: "Terms Sections"
+            name: "sections"
+            widget: "list"
+            summary: "{{fields.heading}}"
+            hint: "Manage all 21 sections of the Terms and Conditions. Each section covers different legal aspects of using the website and services."
+            fields:
+              - label: "Section Heading"
+                name: "heading"
+                widget: "string"
+                hint: "The numbered section title (e.g., '1. Introduction and Acceptance of Terms', '13. Limitation of Liability')"
+              - label: "Section Content"
+                name: "content"
+                widget: "list"
+                hint: "The main text content for this section. Add separate paragraphs for better readability. Most sections have 1-3 paragraphs."
+                field: 
+                  label: "Paragraph"
+                  name: "paragraph"
+                  widget: "text"
+                  hint: "A single paragraph of content. Use separate entries for each paragraph to improve formatting."
+              - label: "Lists (Optional)"
+                name: "lists"
+                widget: "list"
+                required: false
+                hint: "Only needed for sections with bullet points (like Section 4: Eligibility). Leave empty for most sections."
+                field:
+                  label: "List Items"
+                  name: "list_items"
+                  widget: "list"
+                  hint: "Individual bullet points or numbered items"
+                  field: 
+                    label: "List Item"
+                    name: "item"
+                    widget: "string"
+                    hint: "Single bullet point (e.g., '(a) use the Site for unlawful purposes;')"
+
+  - name: "privacy_policy"
+    label: "Privacy Policy"
+    description: "Privacy Policy page content management - control all text while preserving legal document structure"
+    files:
+      - name: "privacy_page_header"
+        label: "Page Header"
+        file: "content/privacy_page_header.md"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", default: "Privacy Policy", hint: "Main page heading" }
+          - { label: "Company Subtitle", name: "subtitle", widget: "string", default: "Azul Integrity Accounting Services LLC", hint: "Company name displayed under title" }
+
+      - name: "privacy_page_meta"
+        label: "Document Information"
+        file: "content/privacy_page_meta.md"
+        fields:
+          - { label: "Effective Date", name: "effective_date", widget: "string", default: "November 1, 2025", hint: "Date this privacy policy became effective" }
+          - { label: "Last Modified Date", name: "last_modified", widget: "string", required: false, hint: "Optional: Date of last modification" }
+
+      - name: "privacy_page_content"
+        label: "Privacy Policy Content"
+        file: "content/privacy_page_content.md"
+        fields:
+          - label: "Introduction Paragraph"
+            name: "introduction"
+            widget: "list"
+            hint: "Opening paragraph(s) that appear before the numbered sections. Usually 1-2 paragraphs explaining the privacy policy overview."
+            field: 
+              label: "Paragraph"
+              name: "paragraph"
+              widget: "text"
+              hint: "A single paragraph of the introduction. Use separate entries for each paragraph."
+          
+          - label: "Privacy Policy Sections"
+            name: "sections"
+            widget: "list"
+            summary: "{{fields.heading}}"
+            hint: "Manage all 11 numbered sections of the Privacy Policy. Each section covers different aspects of data protection and privacy practices."
+            fields:
+              - label: "Section Heading"
+                name: "heading"
+                widget: "string"
+                hint: "The numbered section title (e.g., '1. Scope and Controlling Documents', '7. Your Rights')"
+              
+              - label: "Section Content"
+                name: "content"
+                widget: "list"
+                hint: "The main text content for this section. Add separate paragraphs for better readability. Most sections have 1-2 paragraphs."
+                field: 
+                  label: "Paragraph"
+                  name: "paragraph"
+                  widget: "text"
+                  hint: "A single paragraph of content. Use separate entries for each paragraph to improve formatting."
+              
+              - label: "Lists (Optional)"
+                name: "lists"
+                widget: "list"
+                required: false
+                hint: "Only needed for sections with bullet points: Section 2 (Information We Collect), Section 3 (How We Use Your Information), and Section 7 (Your Rights). Leave empty for other sections."
+                field:
+                  label: "List Items"
+                  name: "list_items"
+                  widget: "list"
+                  hint: "Individual bullet points for this section"
+                  field: 
+                    label: "List Item"
+                    name: "item"
+                    widget: "string"
+                    hint: "Single bullet point (e.g., 'Access, correct, or update your personal information')"
+
+  - name: "sitemap_page"
+    label: "Site Map Page"
+    description: "Manage the site map page content and SEO"
+    files:
+      - name: "sitemap_page_header"
+        label: "Page Header"
+        file: "content/sitemap_page_header.md"
+        fields:
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+            default: "Site Map"
+            hint: "The main heading displayed on the site map page"
+          
+          - label: "Page Description"
+            name: "description"
+            widget: "text"
+            default: "Navigate through all pages and resources on the Azul Integrity Accounting Services website."
+            hint: "Brief description explaining the purpose of the site map (appears below the title)"
+
+      - name: "sitemap_page_meta"
+        label: "SEO Settings"
+        file: "content/sitemap_page_meta.md"
+        fields:
+          - label: "SEO Page Title"
+            name: "title"
+            widget: "string"
+            default: "Site Map | Azul Integrity Accounting Services Navigation"
+            hint: "This appears in search results and browser tabs. Keep under 60 characters for best results."
+          
+          - label: "SEO Description"
+            name: "description"
+            widget: "text"
+            default: "Complete sitemap for Azul Integrity Accounting Services. Navigate through all our services, pages, and resources for professional accounting help."
+            hint: "This appears in search results. Keep between 150-160 characters to avoid truncation. This is what potential clients see in Google."
+          
+          - label: "SEO Keywords"
+            name: "keywords"
+            widget: "list"
+            default: ["sitemap", "navigation", "accounting services map", "site structure"]
+            hint: "Keywords that help search engines understand your page. Add terms your clients might search for."
+            field: 
+              label: "Keyword"
+              name: "keyword"
+              widget: "string"
+              hint: "Single keyword or short phrase (e.g., 'accounting services', 'business navigation')"
+
+      - name: "sitemap_page_content"
+        label: "Site Map Sections"
+        file: "content/sitemap_page_content.md"
+        fields:
+          - label: "Site Map Sections"
+            name: "sections"
+            widget: "list"
+            summary: "{{fields.section_title}}"
+            hint: "Organize your site map into logical sections. Each section groups related pages or information together."
+            fields:
+              - label: "Section Title"
+                name: "section_title"
+                widget: "string"
+                hint: "The heading for this section (e.g., 'Main Pages', 'Service Categories', 'Contact Information')"
+              
+              - label: "Section Items"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.title}}"
+                hint: "Add pages, links, or information items for this section"
+                fields:
+                  - label: "Item Title"
+                    name: "title"
+                    widget: "string"
+                    hint: "The name/title of the page or item"
+                  
+                  - label: "URL (Optional)"
+                    name: "url"
+                    widget: "string"
+                    required: false
+                    hint: "Leave empty for non-clickable items (like service categories). For pages, use relative URLs like '/services' or '/contact'"
+                  
+                  - label: "Description (Optional)"
+                    name: "description"
+                    widget: "string"
+                    required: false
+                    hint: "Brief description of what this page/item offers (helps visitors understand the content)"
+
+  - name: "seo_settings"
+    label: "SEO Settings"
+    description: "Manage search engine optimization for each page"
+    files:
+      - name: "home_page_seo"
+        label: "Home Page SEO"
+        file: "content/seo/home_page_seo.md"
+        fields:
+          - label: "SEO Page Title"
+            name: "title"
+            widget: "string"
+            default: "Azul Integrity CPA | Professional Accounting & Bookkeeping Services"
+            hint: "This appears in browser tabs and search results. Keep under 60 characters for best results."
+          
+          - label: "SEO Description"
+            name: "description"
+            widget: "text"
+            default: "Professional CPA and accounting services for small businesses. Expert bookkeeping, payroll processing, tax preparation, and financial consulting. Licensed CPA in Florida and New Mexico."
+            hint: "This appears in Google search results. Keep between 150-160 characters. This is what potential clients see when searching."
+          
+          - label: "Additional Keywords (5 max)"
+            name: "flexible_keywords"
+            widget: "list"
+            max: 5
+            default: ["tax preparation", "financial consulting", "GAAP compliance"]
+            hint: "Add up to 5 keywords to emphasize your current business focus. Core keywords (CPA services, accounting services, virtual CPA, remote CPA services) are automatically included."
+            field:
+              label: "Keyword"
+              name: "keyword"
+              widget: "string"
+              hint: "Single keyword or short phrase (e.g., 'small business', 'tax planning', 'QuickBooks expert')"
+
+      - name: "services_page_seo"
+        label: "Services Page SEO"
+        file: "content/seo/services_page_seo.md"
+        fields:
+          - label: "SEO Page Title"
+            name: "title"
+            widget: "string"
+            default: "Professional Accounting Services | Bookkeeping, Payroll & Tax | Azul Integrity CPA"
+            hint: "This appears in browser tabs and search results. Keep under 60 characters for best results."
+          
+          - label: "SEO Description"
+            name: "description"
+            widget: "text"
+            default: "Comprehensive accounting services for small businesses. Expert bookkeeping, payroll processing, tax preparation, and CPA consulting. Licensed in Florida and New Mexico. Get professional financial solutions."
+            hint: "This appears in Google search results. Keep between 150-160 characters. This is what potential clients see when searching."
+          
+          - label: "Additional Keywords (5 max)"
+            name: "flexible_keywords"
+            widget: "list"
+            max: 5
+            default: ["QuickBooks", "financial consulting", "GAAP compliance"]
+            hint: "Add up to 5 keywords to emphasize your current service focus. Core keywords (accounting services, bookkeeping services, CPA services, virtual CPA) are automatically included."
+            field:
+              label: "Keyword"
+              name: "keyword"
+              widget: "string"
+              hint: "Single keyword or short phrase (e.g., 'payroll processing', 'tax preparation', 'small business')"
+
+      - name: "about_page_seo"
+        label: "About Page SEO"
+        file: "content/seo/about_page_seo.md"
+        fields:
+          - label: "SEO Page Title"
+            name: "title"
+            widget: "string"
+            default: "Virtual CPA | Azul Integrity CPA | Professional Accounting Services"
+            hint: "This appears in browser tabs and search results. Keep under 60 characters for best results."
+          
+          - label: "SEO Description"
+            name: "description"
+            widget: "text"
+            default: "Meet your virtual CPA! Professional accounting services with personalized attention. Expert bookkeeping, tax preparation, and financial consulting for small businesses nationwide."
+            hint: "This appears in Google search results. Keep between 150-160 characters. This is what potential clients see when searching."
+          
+          - label: "Additional Keywords (5 max)"
+            name: "flexible_keywords"
+            widget: "list"
+            max: 5
+            default: ["professional CPA", "financial expertise", "small business advisor"]
+            hint: "Add up to 5 keywords to emphasize your professional background. Core keywords (CPA services, accounting services, virtual CPA) are automatically included."
+            field:
+              label: "Keyword"
+              name: "keyword"
+              widget: "string"
+              hint: "Single keyword or short phrase (e.g., 'certified accountant', 'business advisor', 'financial expert')"
+
+      - name: "contact_page_seo"
+        label: "Contact Page SEO"
+        file: "content/seo/contact_page_seo.md"
+        fields:
+          - label: "SEO Page Title"
+            name: "title"
+            widget: "string"
+            default: "Contact Virtual CPA | Get Professional Accounting Services | Azul Integrity"
+            hint: "This appears in browser tabs and search results. Keep under 60 characters for best results."
+          
+          - label: "SEO Description"
+            name: "description"
+            widget: "text"
+            default: "Contact our virtual CPA for professional accounting services. Get expert bookkeeping, tax preparation, and financial consulting. Serving small businesses nationwide with personalized attention."
+            hint: "This appears in Google search results. Keep between 150-160 characters. This is what potential clients see when searching."
+          
+          - label: "Additional Keywords (5 max)"
+            name: "flexible_keywords"
+            widget: "list"
+            max: 5
+            default: ["CPA consultation", "accounting help", "business support"]
+            hint: "Add up to 5 keywords to emphasize how clients can reach you. Core keywords (CPA services, accounting services, virtual CPA) are automatically included."
+            field:
+              label: "Keyword"
+              name: "keyword"
+              widget: "string"
+              hint: "Single keyword or short phrase (e.g., 'free consultation', 'accounting inquiry', 'business questions')"
+
+  - name: "site_settings"
+    label: "Site Settings"
+    description: "Global website settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "content/settings/general.md"
+        fields:
+          - { label: "Site Title", name: "site_title", widget: "string", default: "Azul Integrity Accounting Services" }
+          - { label: "Phone Number", name: "phone", widget: "string", default: "(904) 476-4732" }
+          - { label: "Email Address", name: "email", widget: "string", default: "azulintegritycpa@gmail.com" }
+          - { label: "Facebook URL", name: "facebook_url", widget: "string", required: false }
+          - { label: "LinkedIn URL", name: "linkedin_url", widget: "string", required: false }

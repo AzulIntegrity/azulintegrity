@@ -1,15 +1,25 @@
-import { generateMetadata } from "@/components";
+import { generateMetadata as createMetadata } from "@/components";
+import { getSitemapPageContent, getFooterContent } from "@/lib/content";
 import SitemapPageClient from './SitemapPageClient';
 import type { Metadata } from "next";
 
-export const metadata: Metadata = generateMetadata({
-  title: "Site Map | Azul Integrity Accounting Services Navigation",
-  description: "Complete sitemap for Azul Integrity Accounting Services. Navigate through all our services, pages, and resources for professional accounting help.",
-  keywords: ["sitemap", "navigation", "accounting services map", "site structure"],
-  canonicalUrl: "/site-map",
-  noIndex: true,
-});
+export async function generateMetadata(): Promise<Metadata> {
+  const sitemapData = getSitemapPageContent();
+  
+  return createMetadata({
+    title: sitemapData.meta.title,
+    description: sitemapData.meta.description,
+    keywords: sitemapData.meta.keywords,
+    canonicalUrl: "/site-map",
+    noIndex: true, // Keep technical SEO under developer control
+  });
+}
 
-export default function SitemapPage() {
-  return <SitemapPageClient />;
+export default async function SitemapPage() {
+  const [sitemapData, footerData] = await Promise.all([
+    getSitemapPageContent(),
+    getFooterContent()
+  ]);
+
+  return <SitemapPageClient sitemapData={sitemapData} footerData={footerData} />;
 }

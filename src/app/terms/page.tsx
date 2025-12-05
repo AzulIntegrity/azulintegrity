@@ -1,4 +1,5 @@
 import { generateMetadata } from "@/components";
+import { getTermsPageContent, getFooterContent } from "@/lib/content";
 import TermsPageClient from './TermsPageClient';
 
 export const metadata = generateMetadata({
@@ -7,6 +8,11 @@ export const metadata = generateMetadata({
   keywords: ["terms of service", "accounting agreement", "CPA terms", "service conditions", "professional accounting", "client agreement", "business policies"],
 });
 
-export default function TermsPage() {
-  return <TermsPageClient />;
+export default async function TermsPage() {
+  const [termsData, footerData] = await Promise.all([
+    getTermsPageContent(),
+    getFooterContent()
+  ]);
+
+  return <TermsPageClient termsData={termsData} footerData={footerData} />;
 }
