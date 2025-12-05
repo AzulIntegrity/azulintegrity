@@ -4,7 +4,7 @@
 
 This documentation covers the hybrid SEO management system implemented for Azul Integrity CPA, providing client control over flexible keywords while protecting core SEO terms.
 
-## Architecture
+
 
 ### Hybrid Keyword System
 - **Core Keywords**: Hardcoded, protected keywords that cannot be modified by clients
