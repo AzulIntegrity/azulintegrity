@@ -129,7 +129,7 @@ const HomePageClient = React.memo(function HomePageClient({ homepageContent, foo
               <p className={styles.heroSubtext}>
                 {homepageContent.hero.subtitle}
               </p>
-              <Link href={homepageContent.hero.cta_link} className={styles.ctaButton}>
+              <Link href="/contact#contact-form" className={styles.ctaButton}>
                 {homepageContent.hero.cta_text}
               </Link>
             </div>
@@ -231,7 +231,7 @@ const HomePageClient = React.memo(function HomePageClient({ homepageContent, foo
             <h2>{homepageContent.cta.heading}</h2>
             <p>{homepageContent.cta.description}</p>
             <div className={styles.ctaButtons}>
-              <Link href={homepageContent.cta.button_link} className={styles.primaryCta}>{homepageContent.cta.button_text}</Link>
+              <Link href="/contact#contact-form" className={styles.primaryCta}>{homepageContent.cta.button_text}</Link>
             </div>
           </div>
         </section>

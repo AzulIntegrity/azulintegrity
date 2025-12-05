@@ -135,7 +135,7 @@ const AboutPageClient = React.memo(function AboutPageClient({ aboutData, footerD
             <h2>{aboutData.cta.heading}</h2>
             <p>{aboutData.cta.description}</p>
             <div className={styles.ctaButtons}>
-              <Link href={aboutData.cta.button_link} className={styles.primaryCta}>{aboutData.cta.button_text}</Link>
+              <Link href="/contact#contact-form" className={styles.primaryCta}>{aboutData.cta.button_text}</Link>
             </div>
           </div>
         </section>

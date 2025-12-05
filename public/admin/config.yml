@@ -26,8 +26,11 @@ collections:
         fields:
           - { label: "Main Headline", name: "title", widget: "string", default: "You Grow Your Business. I'll Handle the Numbers" }
           - { label: "Subtitle", name: "subtitle", widget: "string", default: "Your Virtual CPA - Rooted in Trust, Partner in Growth." }
-          - { label: "Call-to-Action Button Text", name: "cta_text", widget: "string", default: "Get Your Free Consultation" }
-          - { label: "Call-to-Action Link", name: "cta_link", widget: "string", default: "/contact#contact-form" }
+          - label: "Call-to-Action Button Text"
+            name: "cta_text"
+            widget: "string"
+            default: "Get Your Free Consultation"
+            hint: "Change the button text - the link will always go to the contact form"
           - { label: "Background Image", name: "background_image", widget: "image", default: "/trusttree.webp" }
           - { label: "Background Image Alt Text", name: "background_alt", widget: "string", default: "Azul Integrity Trust Tree - Professional CPA Services" }
 
@@ -92,8 +95,11 @@ collections:
         fields:
           - { label: "Heading", name: "heading", widget: "string", default: "Ready to Get Started?" }
           - { label: "Description", name: "description", widget: "text", default: "Join the small business owners who trust Azul Integrity for their accounting needs." }
-          - { label: "Button Text", name: "button_text", widget: "string", default: "Get Your Free Consultation" }
-          - { label: "Button Link", name: "button_link", widget: "string", default: "/contact#contact-form" }
+          - label: "Button Text"
+            name: "button_text"
+            widget: "string"
+            default: "Get Your Free Consultation"
+            hint: "Change the button text - the button will always link to the contact form"
 
   - name: "services_page"
     label: "Services Page Content"
@@ -243,8 +249,11 @@ collections:
         fields:
           - { label: "Heading", name: "heading", widget: "string", default: "Ready to Get Started?" }
           - { label: "Description", name: "description", widget: "text", default: "Call Azul Integrity Accounting Services for a personalized quote or submit your details for a high‑level estimate by clicking the button below." }
-          - { label: "Button Text", name: "button_text", widget: "string", default: "Get Your Free Consultation" }
-          - { label: "Button Link", name: "button_link", widget: "string", default: "/contact#contact-form" }
+          - label: "Button Text"
+            name: "button_text"
+            widget: "string"
+            default: "Get Your Free Consultation"
+            hint: "Change the button text - the button will always link to the contact form"
 
   - name: "about_page"
     label: "About Page Content"
@@ -297,8 +306,11 @@ collections:
         fields:
           - { label: "Heading", name: "heading", widget: "string", default: "Ready to Work Together?" }
           - { label: "Description", name: "description", widget: "text", default: "Experience the difference that personalized, professional accounting services can make for your business. Let's discuss how I can help you achieve your financial goals." }
-          - { label: "Button Text", name: "button_text", widget: "string", default: "Get Your Free Consultation" }
-          - { label: "Button Link", name: "button_link", widget: "string", default: "/contact#contact-form" }
+          - label: "Button Text"
+            name: "button_text"
+            widget: "string"
+            default: "Get Your Free Consultation"
+            hint: "Change the button text - the button will always link to the contact form"
 
   - name: "footer"
     label: "Footer"

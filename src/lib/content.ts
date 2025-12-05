@@ -37,7 +37,6 @@ export interface HeroContent {
   title: string;
   subtitle: string;
   cta_text: string;
-  cta_link: string;
   background_image: string;
   background_alt: string;
 }
@@ -89,7 +88,6 @@ export interface CtaContent {
   heading: string;
   description: string;
   button_text: string;
-  button_link: string;
 }
 
 export interface HomepageContent {
@@ -130,7 +128,6 @@ export interface ServicesPageCta {
   heading: string;
   description: string;
   button_text: string;
-  button_link: string;
 }
 
 export interface ServicesPageData {
