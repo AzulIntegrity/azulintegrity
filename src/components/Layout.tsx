@@ -75,7 +75,12 @@ export function Footer({ className = '', footerData }: FooterProps) {
               sizes="20px"
             /> <Link href={`tel:+1${phone.replace(/[^\d]/g, '')}`}>{phone}</Link></span>
             <div className="footerSocial">
-              <Link href="https://www.linkedin.com/company/azul-integrity-accounting-services/" target="_blank" rel="noopener noreferrer">
+              <Link 
+                href="https://www.linkedin.com/company/azul-integrity-accounting-services/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Follow Azul Integrity CPA on LinkedIn"
+              >
                 <Image 
                   src="/linkedInIcon.png" 
                   alt="Follow Azul Integrity CPA on LinkedIn" 
@@ -86,7 +91,12 @@ export function Footer({ className = '', footerData }: FooterProps) {
                   sizes="20px"
                 />
               </Link>
-              <Link href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#" target="_blank" rel="noopener noreferrer">
+              <Link 
+                href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Like Azul Integrity CPA on Facebook"
+              >
                 <Image 
                   src="/facebookIcon.png" 
                   alt="Like Azul Integrity CPA on Facebook" 
@@ -110,7 +120,7 @@ export function Footer({ className = '', footerData }: FooterProps) {
           &copy; <span suppressHydrationWarning>{year}</span> Azul Integrity Accounting Services. All rights reserved.
           <br />
           <span style={{ fontSize: '0.85rem', opacity: 0.8, marginTop: '0.5rem', display: 'inline-block' }}>
-            Crafted by <a href="https://scarletcodes.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--light-blue)', textDecoration: 'none' }}>Scarlet Codes</a>
+            Crafted by <a href="https://scarletcodes.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Scarlet Codes website - Web development services" style={{ color: 'var(--light-blue)', textDecoration: 'none' }}>Scarlet Codes</a>
           </span>
         </div>
       </div>

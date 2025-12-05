@@ -20,6 +20,7 @@ const AboutPageClient = React.memo(function AboutPageClient({ aboutData, footerD
 
   return (
     <div className={styles.page}>
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Header>
         <nav className={headerStyles.navigation}>
           <Link href="/">Home</Link>
@@ -82,7 +83,7 @@ const AboutPageClient = React.memo(function AboutPageClient({ aboutData, footerD
         </nav>
       </Header>
       
-      <main className={styles.main}>
+      <main className={styles.main} id="main-content">
         {/* About Section */}
         <section className={styles.aboutSection}>
           <div className={styles.aboutContainer}>
@@ -119,7 +120,7 @@ const AboutPageClient = React.memo(function AboutPageClient({ aboutData, footerD
               <div className={styles.credentialsList}>
                 <h3>{aboutData.credentials.title}</h3>
                 <ul>
-                  {aboutData.credentials.credentials.map((credential: any, index: number) => (
+                  {aboutData.credentials.credentials.map((credential: { summary: string }, index: number) => (
                     <li key={index}>{credential.summary}</li>
                   ))}
                 </ul>
@@ -159,6 +160,7 @@ const AboutPageClient = React.memo(function AboutPageClient({ aboutData, footerD
                   href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Follow Azul Integrity CPA on Facebook"
                 >
                   <Image 
                     src="/facebookIcon.webp" 
@@ -174,6 +176,7 @@ const AboutPageClient = React.memo(function AboutPageClient({ aboutData, footerD
                   href="https://www.linkedin.com/in/heather-duran-2ba29045"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Connect with Azul Integrity CPA on LinkedIn"
                 >
                   <Image 
                     src="/linkedInIcon.webp" 
@@ -198,7 +201,7 @@ const AboutPageClient = React.memo(function AboutPageClient({ aboutData, footerD
             &copy; 2024 Azul Integrity Accounting Services. All rights reserved.
             <br />
             <span style={{ fontSize: '0.85rem', opacity: 0.8, marginTop: '0.5rem', display: 'inline-block' }}>
-              Crafted by <a href="https://scarletcodes.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--light-blue)', textDecoration: 'none' }}>Scarlet Codes</a>
+              Crafted by <a href="https://scarletcodes.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Scarlet Codes website - Web development services" style={{ color: 'var(--light-blue)', textDecoration: 'none' }}>Scarlet Codes</a>
             </span>
           </div>
         </footer>

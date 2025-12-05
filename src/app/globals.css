@@ -133,6 +133,24 @@ p, li, span, div, input, textarea, button, label, a {
     border-color: #0000ff !important;
     box-shadow: 0 0 0 2px #0000ff !important;
   }
+  
+  /* High contrast skip links */
+  .skip-link {
+    background: #0000ff !important;
+    color: #ffffff !important;
+    border: 3px solid #ffffff !important;
+    font-weight: bold !important;
+  }
+  
+  .skip-link:focus {
+    outline: 3px solid #ffffff !important;
+    box-shadow: 0 0 0 1px #0000ff, 0 0 0 6px #ffffff !important;
+  }
+  
+  .skip-link:hover {
+    background: #ffffff !important;
+    color: #0000ff !important;
+  }
 }
 
 /* High contrast dark mode */
@@ -203,6 +221,36 @@ p, li, span, div, input, textarea, button, label, a {
     box-shadow: 0 0 0 2px #87ceeb !important;
   }
 }
+
+/* Skip Link Styles for Accessibility */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 6px;
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 9999;
+  transition: top 0.3s ease;
+  border: 2px solid var(--white);
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+.skip-link:hover {
+  background: var(--dark-navy);
+  text-decoration: underline;
+}
+
+
 
 .footerCol span {
   justify-content: center;

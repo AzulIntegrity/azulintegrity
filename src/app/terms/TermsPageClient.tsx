@@ -20,6 +20,7 @@ export default function TermsPageClient({ termsData, footerData }: TermsPageClie
   };
   return (
     <div className={styles.page}>
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Header>
         <nav className={headerStyles.navigation}>
           <Link href="/">Home</Link>
@@ -82,7 +83,7 @@ export default function TermsPageClient({ termsData, footerData }: TermsPageClie
         </nav>
       </Header>
 
-      <main className={styles.main}>
+      <main className={styles.main} id="main-content">
         {/* Terms Page Header */}
         <section className={styles.pageHeader}>
           <div className={styles.headerContent}>

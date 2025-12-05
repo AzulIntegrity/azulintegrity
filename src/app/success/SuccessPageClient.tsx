@@ -9,6 +9,7 @@ export default function SuccessPageClient() {
 
   return (
     <div className={styles.page}>
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Header>
         <nav className={headerStyles.navigation}>
           <Link href="/">Home</Link>
@@ -23,7 +24,7 @@ export default function SuccessPageClient() {
           </div>
         </div>
       </Header>
-      <main>
+      <main id="main-content">
         <section className={styles.contactSectionWrap}>
           <div className={styles.successBox}>
             <div className={styles.successIcon}>✓</div>

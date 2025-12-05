@@ -737,11 +737,12 @@
 }
 
 .testimonialQuote {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.7;
   color: var(--white);
   margin-bottom: 1.5rem;
   font-style: italic;
+  font-weight: 500;
 }
 
 .testimonialAuthor {
@@ -753,13 +754,14 @@
 .testimonialAuthor strong {
   color: var(--white);
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .testimonialBusiness {
   color: rgba(255, 255, 255, 0.95);
   font-size: 0.95rem;
   font-style: italic;
+  font-weight: 500;
 }
 
 /* Software Badges Section */
@@ -1450,9 +1452,10 @@
   }
   
   .testimonialQuote {
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.6;
     text-align: left;
+    font-weight: 500;
   }
   
   .tabsHeader {

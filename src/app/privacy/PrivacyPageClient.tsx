@@ -19,6 +19,7 @@ export default function PrivacyPageClient({ privacyData, footerData }: PrivacyPa
   };
   return (
     <div className={styles.page}>
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Header>
         <nav className={headerStyles.navigation}>
           <Link href="/">Home</Link>
@@ -81,7 +82,7 @@ export default function PrivacyPageClient({ privacyData, footerData }: PrivacyPa
         </nav>
       </Header>
 
-      <main className={styles.main}>
+      <main className={styles.main} id="main-content">
         {/* Privacy Page Header */}
         <section className={styles.pageHeader}>
           <div className={styles.headerContent}>

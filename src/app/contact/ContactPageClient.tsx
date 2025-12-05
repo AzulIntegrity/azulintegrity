@@ -60,6 +60,7 @@ export default function ContactPageClient() {
   }, [showModal]);
   return (
     <div className={styles.page}>
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Header>
         <nav className={headerStyles.navigation}>
           <Link href="/">Home</Link>
@@ -121,7 +122,7 @@ export default function ContactPageClient() {
           <Link href="/contact" className={headerStyles.active} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
         </nav>
       </Header>
-      <main>
+      <main id="main-content">
         <section id="contact-form" className={styles.contactSectionWrap}>
           <div className={styles.contactSection}>
             <h1>Get In Touch </h1>

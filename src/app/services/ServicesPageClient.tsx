@@ -26,7 +26,7 @@ export default function ServicesPageClient({ servicesData, footerData }: Service
         setActiveTab(hash);
       }
     }
-  }, []);
+  }, [serviceCategories]);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
