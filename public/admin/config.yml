@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: AzulIntegrity/azulintegrity
   branch: master
 
 # Local development backend (automatically enabled for localhost)
