@@ -30,7 +30,7 @@ export default function TermsPageClient({ termsData, footerData }: TermsPageClie
         <div className={headerStyles.phoneContact}>
           <Link href="tel:+19044764732" className={headerStyles.phoneLink}>
             <Image 
-              src="/phoneicon.webp" 
+              src="/phoneIcon.webp" 
               alt="Phone icon - Call Azul Integrity Accounting at (904) 476-4732" 
               className={headerStyles.phoneIcon}
               width={20} 

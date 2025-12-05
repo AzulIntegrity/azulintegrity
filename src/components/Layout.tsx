@@ -62,7 +62,7 @@ export function Footer({ className = '', footerData }: FooterProps) {
               className="contactIcon" 
               width={20} 
               height={20}
-              loading="lazy"
+              priority
               sizes="20px"
             /> <Link href={`mailto:${email}`}>{email}</Link></span>
             <span> <Image 
@@ -71,7 +71,7 @@ export function Footer({ className = '', footerData }: FooterProps) {
               className="contactIcon" 
               width={20} 
               height={20}
-              loading="lazy"
+              priority
               sizes="20px"
             /> <Link href={`tel:+1${phone.replace(/[^\d]/g, '')}`}>{phone}</Link></span>
             <div className="footerSocial">
