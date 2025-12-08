@@ -65,20 +65,20 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "@id": "https://azulintegrity.com/#website",
-              "url": "https://azulintegrity.com",
+              "@id": "https://azulcpa.com/#website",
+              "url": "https://azulcpa.com",
               "name": "Azul Integrity Accounting Services",
               "description": "Professional CPA and accounting services for small businesses. Expert bookkeeping, payroll, tax preparation, and financial consulting by licensed CPA Heather Duran.",
               "publisher": {
                 "@type": "Organization",
-                "@id": "https://azulintegrity.com/#organization"
+                "@id": "https://azulcpa.com/#organization"
               },
               "potentialAction": [
                 {
                   "@type": "SearchAction",
                   "target": {
                     "@type": "EntryPoint",
-                    "urlTemplate": "https://azulintegrity.com/services?search={search_term_string}"
+                    "urlTemplate": "https://azulcpa.com/services?search={search_term_string}"
                   },
                   "query-input": "required name=search_term_string"
                 }
@@ -98,11 +98,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "@id": "https://azulintegrity.com/#organization",
+              "@id": "https://azulcpa.com/#organization",
               "name": "Azul Integrity Accounting Services",
               "alternateName": "Azul Integrity CPA",
-              "url": "https://azulintegrity.com",
-              "logo": "https://azulintegrity.com/tree.png",
+              "url": "https://azulcpa.com",
+              "logo": "https://azulcpa.com/tree.webp",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+1-904-476-4732",
@@ -125,11 +125,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "@id": "https://azulintegrity.com",
+              "@id": "https://azulcpa.com",
               "name": "Azul Integrity Accounting Services",
               "alternateName": "Azul Integrity CPA",
               "description": "Professional CPA and accounting services for small businesses. Expert bookkeeping, payroll processing, tax preparation, and financial consulting.",
-              "url": "https://azulintegrity.com",
+              "url": "https://azulcpa.com",
               "telephone": "+1-904-476-4732",
               "email": "azulintegritycpa@gmail.com",
               "foundingDate": "2023",
@@ -198,8 +198,8 @@ export default function RootLayout({
                 "https://www.linkedin.com/company/azul-integrity-accounting",
                 "https://www.facebook.com/azulintegritycpa"
               ],
-              "logo": "https://azulintegrity.com/tree.png",
-              "image": "https://azulintegrity.com/ogCard.png",
+              "logo": "https://azulcpa.com/tree.webp",
+              "image": "https://azulcpa.com/ogCard.png",
               "priceRange": "$$",
               "paymentAccepted": ["Credit Card", "Check", "Electronic Transfer"],
               "currenciesAccepted": "USD",
@@ -222,13 +222,13 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
-              "@id": "https://azulintegrity.com/#service",
+              "@id": "https://azulcpa.com/#service",
               "name": "Azul Integrity CPA Services",
-              "image": "https://azulintegrity.com/servicehero.webp",
+              "image": "https://azulcpa.com/servicehero.webp",
               "description": "Professional CPA services including bookkeeping, tax preparation, payroll processing, and financial consulting for small businesses.",
               "provider": {
                 "@type": "Organization",
-                "@id": "https://azulintegrity.com/#organization"
+                "@id": "https://azulcpa.com/#organization"
               },
               "areaServed": ["Florida", "New Mexico"],
               "hasOfferCatalog": {
@@ -276,18 +276,18 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "@id": "https://azulintegrity.com/#founder",
+              "@id": "https://azulcpa.com/#founder",
               "name": "Heather Duran",
               "jobTitle": "Certified Public Accountant",
               "description": "Licensed CPA with 25+ years of experience in corporate finance, accounting, and financial systems. Founder of Azul Integrity Accounting Services.",
-              "image": "https://azulintegrity.com/Headshot.webp",
-              "url": "https://azulintegrity.com/contact",
+              "image": "https://azulcpa.com/Headshot.webp",
+              "url": "https://azulcpa.com/contact",
               "sameAs": [
                 "https://www.linkedin.com/in/heather-duran-cpa"
               ],
               "worksFor": {
                 "@type": "Organization",
-                "@id": "https://azulintegrity.com/#organization"
+                "@id": "https://azulcpa.com/#organization"
               },
               "hasCredential": [
                 "CPA License - Florida",

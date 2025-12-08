@@ -3,7 +3,7 @@
 ## 🚪 Getting Started
 
 ### How to Access Your CMS
-1. **Go to:** https://azulintegrity.netlify.app/admin/
+1. **Go to:** https://azulcpa.com/admin/
 2. **Click "Login with GitHub"**
 3. **Use your AzulIntegrity GitHub account** to sign in
 4. **You're now in your content management system!**

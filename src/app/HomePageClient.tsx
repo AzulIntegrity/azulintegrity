@@ -63,7 +63,7 @@ const HomePageClient = React.memo(function HomePageClient({ homepageContent, foo
         </div>
         <div className={headerStyles.logoContainer}>
           <Image 
-            src="/tree.png" 
+            src="/tree.webp" 
             alt="Azul Integrity Tree Logo" 
             className={headerStyles.logoImage} 
             width={50} 
@@ -111,6 +111,7 @@ const HomePageClient = React.memo(function HomePageClient({ homepageContent, foo
               alt={homepageContent.hero.background_alt} 
               fill
               priority
+              fetchPriority="high"
               quality={75}
               sizes="(max-width: 480px) 100vw, (max-width: 600px) 100vw, (max-width: 768px) 95vw, (max-width: 1024px) 80vw, 60vw"
               style={{ 
@@ -178,7 +179,7 @@ const HomePageClient = React.memo(function HomePageClient({ homepageContent, foo
               <Link 
                 href={`/services#${activeService.key}`} 
                 className={styles.serviceCta}
-                aria-label={`Learn more about ${activeService.title} - detailed service information`}
+                aria-label={`Learn more about ${activeService.title} services - view detailed information, pricing, and how we can help your business`}
               >
                 Learn More
               </Link>

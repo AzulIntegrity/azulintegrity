@@ -46,7 +46,7 @@ export default function SitemapPageClient({ sitemapData, footerData }: SitemapPa
         </div>
         <div className={headerStyles.logoContainer}>
           <Image 
-            src="/tree.png" 
+            src="/tree.webp" 
             alt="Azul Integrity Tree Logo" 
             className={headerStyles.logoImage} 
             width={50} 

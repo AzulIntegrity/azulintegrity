@@ -12,8 +12,8 @@ media_folder: "public/images"
 public_folder: "/images"
 
 # Configure the CMS interface
-display_url: https://azulintegrity.netlify.app
-logo_url: https://azulintegrity.netlify.app/tree.png
+display_url: https://azulcpa.com
+logo_url: https://azulcpa.com/tree.webp
 
 # 💡 HOW TO SAVE NETLIFY CREDITS:
 # 1. Make changes and click "Save Draft" (FREE - no credits used)
@@ -324,17 +324,19 @@ collections:
                 default: "(904) 476-4732"
                 hint: "Current: (904) 476-4732"
           - label: "Biography Paragraphs"
-            name: "bio_paragraphs"
+            name: "biography"
             widget: "list"
+            summary: "{{item | truncate(80)}}"
+            hint: "CURRENT BIO: 1) 'With over 25 years of corporate accounting experience...', 2) 'My background spans across multiple industries...', 3) 'As a licensed CPA in both Florida and New Mexico...'"
             default:
               - "With over 25 years of corporate accounting experience, I bring deep expertise in financial management, compliance, and strategic business guidance to small business owners who need reliable, professional support."
               - "My background spans across multiple industries, giving me the versatility to understand your unique business challenges and provide tailored solutions that drive growth and ensure compliance."
               - "As a licensed CPA in both Florida and New Mexico, I combine technical expertise with a personal approach, ensuring you receive the individual attention your business deserves while maintaining the highest professional standards."
-            hint: "Current biography paragraphs - edit or add new ones as needed"
             field:
-              label: "Paragraph"
-              name: "paragraph"
+              label: "Biography Paragraph"
+              name: "item"
               widget: "text"
+              hint: "Each paragraph should be 2-3 sentences focusing on experience, expertise, or client value"
 
       - name: "credentials"
         label: "Professional Credentials"
@@ -344,10 +346,17 @@ collections:
           - label: "Credentials List"
             name: "credentials"
             widget: "list"
-            summary: "{{fields.item | truncate(60)}}"
-            hint: "List of professional qualifications and expertise areas"
+            summary: "{{fields.summary | truncate(60)}}"
+            hint: "CURRENT CREDENTIALS: 1) CPA Licensed FL & NM, 2) 25+ years experience, 3) QuickBooks/Xero expert, 4) Small business specialist, 5) Payroll compliance, 6) GAAP knowledge"
+            default:
+              - summary: "Certified Public Accountant (CPA) - Licensed in Florida and New Mexico"
+              - summary: "25+ years of corporate accounting and financial management experience"
+              - summary: "Expert in QuickBooks, Xero, and professional accounting software"
+              - summary: "Specialized in small business accounting, bookkeeping, and tax preparation"
+              - summary: "Extensive experience in payroll processing and compliance"
+              - summary: "Advanced knowledge of GAAP and financial reporting standards"
             fields:
-              - { label: "Credential/Expertise", name: "item", widget: "text", hint: "e.g., 'Certified Public Accountant (CPA) - Licensed in Florida and New Mexico'" }
+              - { label: "Credential/Expertise", name: "summary", widget: "text", hint: "Edit existing credentials or add new ones. Be specific and professional." }
 
       - name: "page_cta"
         label: "About Page Call-to-Action"

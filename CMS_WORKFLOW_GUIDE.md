@@ -8,7 +8,7 @@
 ## 📝 Smart Workflow (Save Credits!)
 
 ### Step 1: Make Draft Changes (FREE!)
-1. **Login to your CMS** at: https://azulintegrity.netlify.app/admin/
+1. **Login to your CMS** at: https://azulcpa.com/admin/
 2. **Edit any page** (Homepage, About, Services, etc.)
 3. **Click "Save Draft"** - This is FREE and uses no credits
 4. **Repeat** for as many pages as you want to change

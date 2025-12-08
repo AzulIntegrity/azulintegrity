@@ -17,7 +17,7 @@ export default function SuccessPageClient() {
           <Link href="/contact">Contact</Link>
         </nav>
         <div className={headerStyles.logoContainer}>
-          <Image src="/tree.png" alt="Azul Integrity Tree Logo" className={headerStyles.logoImage} width={50} height={50} />
+          <Image src="/tree.webp" alt="Azul Integrity Tree Logo" className={headerStyles.logoImage} width={50} height={50} />
           <div className={headerStyles.logoText}>
             <div className={headerStyles.companyName}>Azul Integrity</div>
             <div className={headerStyles.companySubtitle}>Accounting Services</div>
