@@ -164,7 +164,13 @@ export default function ServicesPageClient({ servicesData, footerData }: Service
             <h2>{cta.heading}</h2>
             <p>{cta.description}</p>
             <div className={styles.ctaButtons}>
-              <Link href="/contact#contact-form" className={styles.primaryCta}>{cta.button_text}</Link>
+              <Link 
+                href="/contact#contact-form" 
+                className={styles.primaryCta}
+                aria-label={`${cta.button_text} - Get started with professional CPA services from Azul Integrity`}
+              >
+                {cta.button_text}
+              </Link>
             </div>
           </div>
         </section>

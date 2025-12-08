@@ -129,7 +129,11 @@ const HomePageClient = React.memo(function HomePageClient({ homepageContent, foo
               <p className={styles.heroSubtext}>
                 {homepageContent.hero.subtitle}
               </p>
-              <Link href="/contact#contact-form" className={styles.ctaButton}>
+              <Link 
+                href="/contact#contact-form" 
+                className={styles.ctaButton}
+                aria-label={`${homepageContent.hero.cta_text} - Schedule your free CPA consultation with Azul Integrity Accounting`}
+              >
                 {homepageContent.hero.cta_text}
               </Link>
             </div>
@@ -171,7 +175,11 @@ const HomePageClient = React.memo(function HomePageClient({ homepageContent, foo
                   <li key={index}>{bullet}</li>
                 ))}
               </ul>
-              <Link href={`/services#${activeService.key}`} className={styles.serviceCta}>
+              <Link 
+                href={`/services#${activeService.key}`} 
+                className={styles.serviceCta}
+                aria-label={`Learn more about ${activeService.title} - detailed service information`}
+              >
                 Learn More
               </Link>
             </div>
@@ -231,7 +239,13 @@ const HomePageClient = React.memo(function HomePageClient({ homepageContent, foo
             <h2>{homepageContent.cta.heading}</h2>
             <p>{homepageContent.cta.description}</p>
             <div className={styles.ctaButtons}>
-              <Link href="/contact#contact-form" className={styles.primaryCta}>{homepageContent.cta.button_text}</Link>
+              <Link 
+                href="/contact#contact-form" 
+                className={styles.primaryCta}
+                aria-label={`${homepageContent.cta.button_text} - Contact Heather Duran CPA for professional accounting services`}
+              >
+                {homepageContent.cta.button_text}
+              </Link>
             </div>
           </div>
         </section>
@@ -241,16 +255,26 @@ const HomePageClient = React.memo(function HomePageClient({ homepageContent, foo
         <footer className={styles.footerColumns}>
           <div className={styles.footerGrid}>
             <div className={styles.footerCol}>
-              <h4>Quick Links</h4>
+              <h3>Quick Links</h3>
               <Link href="/">Home</Link>
               <Link href="/services">Services</Link>
               <Link href="/about">About</Link>
               <Link href="/contact">Contact</Link>
             </div>
             <div className={styles.footerCol}>
-              <h4>Contact</h4>
-              <span>Email: <Link href={`mailto:${footerData.contact.email}`}>{footerData.contact.email}</Link></span>
-              <span>Phone: <Link href={`tel:+1${footerData.contact.phone.replace(/[^\d]/g, '')}`}>{footerData.contact.phone}</Link></span>
+              <h3>Contact</h3>
+              <span>Email: <Link 
+                href={`mailto:${footerData.contact.email}`}
+                aria-label={`Send email to Azul Integrity CPA at ${footerData.contact.email}`}
+              >
+                {footerData.contact.email}
+              </Link></span>
+              <span>Phone: <Link 
+                href={`tel:+1${footerData.contact.phone.replace(/[^\d]/g, '')}`}
+                aria-label={`Call Azul Integrity CPA at ${footerData.contact.phone}`}
+              >
+                {footerData.contact.phone}
+              </Link></span>
               <div className={styles.footerSocial}>
                 <Link
                   href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#"
@@ -287,10 +311,10 @@ const HomePageClient = React.memo(function HomePageClient({ homepageContent, foo
               </div>
             </div>
             <div className={styles.footerCol}>
-              <h4>Legal Pages</h4>
-              <Link href="/terms">Terms of Service</Link>
-              <Link href="/privacy">Privacy Policy</Link>
-              <Link href="/site-map">Site Map</Link>
+              <h3>Legal Pages</h3>
+              <Link href="/terms" aria-label="View Terms of Service and legal policies">Terms of Service</Link>
+              <Link href="/privacy" aria-label="Read Privacy Policy and data protection information">Privacy Policy</Link>
+              <Link href="/site-map" aria-label="View complete site map and page directory">Site Map</Link>
             </div>
           </div>
           <div className={styles.footerCopyright}>

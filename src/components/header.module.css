@@ -32,7 +32,7 @@
 }
 
 .companyName {
-  font-family: 'Trajan Pro', 'Times New Roman', serif !important;
+  font-family: var(--font-serif) !important;
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--dark-navy);

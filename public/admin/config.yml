@@ -6,14 +6,20 @@ backend:
 # Local development backend (automatically enabled for localhost)
 local_backend: true
 
-# Simple workflow: Save changes go live immediately
-# publish_mode: editorial_workflow
+# Credit-saving workflow: Make multiple changes, then publish all at once
+publish_mode: editorial_workflow
 media_folder: "public/images"
 public_folder: "/images"
 
 # Configure the CMS interface
-display_url: https://azulintegrityaccounting.netlify.app
-logo_url: https://azulintegrityaccounting.netlify.app/tree.png
+display_url: https://azulintegrity.netlify.app
+logo_url: https://azulintegrity.netlify.app/tree.png
+
+# 💡 HOW TO SAVE NETLIFY CREDITS:
+# 1. Make changes and click "Save Draft" (FREE - no credits used)
+# 2. Edit multiple pages as drafts 
+# 3. When ready, go to "Workflow" tab and "Publish All" changes at once
+# 4. This uses only 1 credit instead of 1 credit per save!
 
 collections:
   - name: "homepage"
@@ -261,35 +267,78 @@ collections:
     files:
       - name: "page_header"
         label: "About Page Header"
-        file: "content/about/about_page_header.md"
+        file: "content/about_page_header.md"
         fields:
-          - { label: "Page Title", name: "title", widget: "string", default: "Professional Background", hint: "Main heading for the About page" }
-          - { label: "Subtitle", name: "subtitle", widget: "string", default: "Your Virtual CPA Partner", hint: "Supporting subtitle text" }
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+            default: "Professional Background"
+            hint: "Current: Professional Background - Main heading for the About page"
+          - label: "Subtitle"
+            name: "subtitle"
+            widget: "string"
+            default: "Your Virtual CPA Partner"
+            hint: "Current: Your Virtual CPA Partner - Supporting subtitle text"
 
       - name: "profile"
         label: "Profile Section"
-        file: "content/about/about_profile.md"
+        file: "content/about_profile.md"
         fields:
-          - { label: "Professional Photo", name: "photo", widget: "image", default: "/Headshot.webp", hint: "Professional headshot photo" }
-          - { label: "Photo Alt Text", name: "photo_alt", widget: "string", default: "Heather Duran, CPA - Azul Integrity Accounting Services", hint: "Describe the photo for screen readers" }
+          - label: "Professional Photo"
+            name: "photo"
+            widget: "image"
+            default: "/Headshot.webp"
+            hint: "Current: /Headshot.webp - Professional headshot photo"
+          - label: "Photo Alt Text"
+            name: "photo_alt"
+            widget: "string"
+            default: "Heather Duran, CPA - Azul Integrity Accounting Services"
+            hint: "Current: Heather Duran, CPA - Azul Integrity Accounting Services"
           - label: "Contact Information"
             name: "contact"
             widget: "object"
             fields:
-              - { label: "Full Name", name: "name", widget: "string", default: "Heather Duran, CPA" }
-              - { label: "Professional Title", name: "title", widget: "string", default: "Heather Duran, CPA" }
-              - { label: "Company Name", name: "company", widget: "string", default: "Azul Integrity Accounting Services LLC" }
-              - { label: "Email Address", name: "email", widget: "string", default: "azulintegritycpa@gmail.com" }
-              - { label: "Phone Number", name: "phone", widget: "string", default: "(904) 476-4732" }
+              - label: "Full Name"
+                name: "name"
+                widget: "string"
+                default: "Heather Duran, CPA"
+                hint: "Current: Heather Duran, CPA"
+              - label: "Professional Title"
+                name: "title"
+                widget: "string"
+                default: "Heather Duran, CPA"
+                hint: "Current: Heather Duran, CPA"
+              - label: "Company Name"
+                name: "company"
+                widget: "string"
+                default: "Azul Integrity Accounting Services LLC"
+                hint: "Current: Azul Integrity Accounting Services LLC"
+              - label: "Email Address"
+                name: "email"
+                widget: "string"
+                default: "azulintegritycpa@gmail.com"
+                hint: "Current: azulintegritycpa@gmail.com"
+              - label: "Phone Number"
+                name: "phone"
+                widget: "string"
+                default: "(904) 476-4732"
+                hint: "Current: (904) 476-4732"
           - label: "Biography Paragraphs"
             name: "bio_paragraphs"
             widget: "list"
-            hint: "Professional background and experience paragraphs"
-            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+            default:
+              - "With over 25 years of corporate accounting experience, I bring deep expertise in financial management, compliance, and strategic business guidance to small business owners who need reliable, professional support."
+              - "My background spans across multiple industries, giving me the versatility to understand your unique business challenges and provide tailored solutions that drive growth and ensure compliance."
+              - "As a licensed CPA in both Florida and New Mexico, I combine technical expertise with a personal approach, ensuring you receive the individual attention your business deserves while maintaining the highest professional standards."
+            hint: "Current biography paragraphs - edit or add new ones as needed"
+            field:
+              label: "Paragraph"
+              name: "paragraph"
+              widget: "text"
 
       - name: "credentials"
         label: "Professional Credentials"
-        file: "content/about/about_credentials.md"
+        file: "content/about_credentials.md"
         fields:
           - { label: "Section Heading", name: "heading", widget: "string", default: "Professional Credentials & Expertise" }
           - label: "Credentials List"
@@ -302,15 +351,23 @@ collections:
 
       - name: "page_cta"
         label: "About Page Call-to-Action"
-        file: "content/about/about_page_cta.md"
+        file: "content/about_page_cta.md"
         fields:
-          - { label: "Heading", name: "heading", widget: "string", default: "Ready to Work Together?" }
-          - { label: "Description", name: "description", widget: "text", default: "Experience the difference that personalized, professional accounting services can make for your business. Let's discuss how I can help you achieve your financial goals." }
+          - label: "Heading"
+            name: "heading"
+            widget: "string"
+            default: "Ready to Work Together?"
+            hint: "Current: Ready to Work Together?"
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            default: "Experience the difference that personalized, professional accounting services can make for your business. Let's discuss how I can help you achieve your financial goals."
+            hint: "Current description - explains the value proposition for potential clients"
           - label: "Button Text"
             name: "button_text"
             widget: "string"
             default: "Get Your Free Consultation"
-            hint: "Change the button text - the button will always link to the contact form"
+            hint: "Current: Get Your Free Consultation - Change the button text, it will always link to the contact form"
 
   - name: "footer"
     label: "Footer"

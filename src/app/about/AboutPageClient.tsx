@@ -102,8 +102,18 @@ const AboutPageClient = React.memo(function AboutPageClient({ aboutData, footerD
                 <h3>Contact Information</h3>
                 <h4>{aboutData.profile.contact.name}</h4>
                 <p>{aboutData.profile.contact.company}</p>
-                <p>Email: <Link href={`mailto:${aboutData.profile.contact.email}`}>{aboutData.profile.contact.email}</Link></p>
-                <p>Phone: <Link href={`tel:+1${aboutData.profile.contact.phone.replace(/[^\d]/g, '')}`}>{aboutData.profile.contact.phone}</Link></p>
+                <p>Email: <Link 
+                  href={`mailto:${aboutData.profile.contact.email}`}
+                  aria-label={`Send email to ${aboutData.profile.contact.name} at ${aboutData.profile.contact.email}`}
+                >
+                  {aboutData.profile.contact.email}
+                </Link></p>
+                <p>Phone: <Link 
+                  href={`tel:+1${aboutData.profile.contact.phone.replace(/[^\d]/g, '')}`}
+                  aria-label={`Call ${aboutData.profile.contact.name} at ${aboutData.profile.contact.phone}`}
+                >
+                  {aboutData.profile.contact.phone}
+                </Link></p>
               </div>
             </div>
             
@@ -135,7 +145,13 @@ const AboutPageClient = React.memo(function AboutPageClient({ aboutData, footerD
             <h2>{aboutData.cta.heading}</h2>
             <p>{aboutData.cta.description}</p>
             <div className={styles.ctaButtons}>
-              <Link href="/contact#contact-form" className={styles.primaryCta}>{aboutData.cta.button_text}</Link>
+              <Link 
+                href="/contact#contact-form" 
+                className={styles.primaryCta}
+                aria-label={`${aboutData.cta.button_text} - Contact Heather Duran CPA to discuss your business needs`}
+              >
+                {aboutData.cta.button_text}
+              </Link>
             </div>
           </div>
         </section>
@@ -145,16 +161,26 @@ const AboutPageClient = React.memo(function AboutPageClient({ aboutData, footerD
         <footer className={styles.footerColumns}>
           <div className={styles.footerGrid}>
             <div className={styles.footerCol}>
-              <h4>Quick Links</h4>
+              <h3>Quick Links</h3>
               <Link href="/">Home</Link>
               <Link href="/services">Services</Link>
               <Link href="/about">About</Link>
               <Link href="/contact">Contact</Link>
             </div>
             <div className={styles.footerCol}>
-              <h4>Contact</h4>
-              <span>Email: <Link href={`mailto:${footerData.contact.email}`}>{footerData.contact.email}</Link></span>
-              <span>Phone: <Link href={`tel:+1${footerData.contact.phone.replace(/[^\d]/g, '')}`}>{footerData.contact.phone}</Link></span>
+              <h3>Contact</h3>
+              <span>Email: <Link 
+                href={`mailto:${footerData.contact.email}`}
+                aria-label={`Send email to Azul Integrity CPA at ${footerData.contact.email}`}
+              >
+                {footerData.contact.email}
+              </Link></span>
+              <span>Phone: <Link 
+                href={`tel:+1${footerData.contact.phone.replace(/[^\d]/g, '')}`}
+                aria-label={`Call Azul Integrity CPA at ${footerData.contact.phone}`}
+              >
+                {footerData.contact.phone}
+              </Link></span>
               <div className={styles.footerSocial}>
                 <Link
                   href="https://www.facebook.com/people/Azul-Integrity-Accounting-Services-LLC/61581436237919/#"
@@ -191,10 +217,10 @@ const AboutPageClient = React.memo(function AboutPageClient({ aboutData, footerD
               </div>
             </div>
             <div className={styles.footerCol}>
-              <h4>Legal Pages</h4>
-              <Link href="/terms">Terms of Service</Link>
-              <Link href="/privacy">Privacy Policy</Link>
-              <Link href="/site-map">Site Map</Link>
+              <h3>Legal Pages</h3>
+              <Link href="/terms" aria-label="View Terms of Service and legal policies">Terms of Service</Link>
+              <Link href="/privacy" aria-label="Read Privacy Policy and data protection information">Privacy Policy</Link>
+              <Link href="/site-map" aria-label="View complete site map and page directory">Site Map</Link>
             </div>
           </div>
           <div className={styles.footerCopyright}>

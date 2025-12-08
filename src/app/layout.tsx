@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import { generateMetadata } from "@/components";
+import { Open_Sans } from 'next/font/google';
 import "./globals.css";
+
+// Optimize Google Fonts loading with Next.js
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-open-sans',
+  preload: true,
+});
 
 export const metadata: Metadata = generateMetadata({
   title: "Azul Integrity CPA | Professional Accounting & Bookkeeping Services",
@@ -14,8 +24,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={openSans.variable}>
       <head>
+        {/* Preload critical fonts for better performance */}
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+          as="style"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" type="image/png" href="/favicon.ico/favicon-96x96.png" sizes="96x96" />

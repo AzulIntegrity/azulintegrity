@@ -21,7 +21,7 @@ Allow: /privacy
 Allow: /terms
 
 # Specify sitemap location for search engines
-Sitemap: https://azulintegritycpa.com/sitemap.xml
+Sitemap: https://azulcpa.com/sitemap.xml
 
 # Crawl delay to be respectful to server resources
 Crawl-delay: 1

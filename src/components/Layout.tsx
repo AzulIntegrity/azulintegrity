@@ -48,14 +48,14 @@ export function Footer({ className = '', footerData }: FooterProps) {
       <div className="footer-container">
         <div className="footerGrid">
           <div className="footerCol">
-            <h4>Quick Links</h4>
+            <h3>Quick Links</h3>
             <Link href="/">Home</Link>
             <Link href="/services">Services</Link>
             <Link href="/about">About</Link>
             <Link href="/contact">Contact</Link>
           </div>
           <div className="footerCol">
-            <h4>Contact</h4>
+            <h3>Contact</h3>
             <span> <Image 
               src="/emailIcon.webp" 
               alt={`Email Azul Integrity CPA - ${email}`}
@@ -110,7 +110,7 @@ export function Footer({ className = '', footerData }: FooterProps) {
             </div>
           </div>
           <div className="footerCol">
-            <h4>Legal Pages</h4>
+            <h3>Legal Pages</h3>
             <Link href="/terms">Terms and Conditions</Link>
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/site-map">Site Map</Link>
