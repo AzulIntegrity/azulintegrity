@@ -44,15 +44,21 @@ const AboutPageClient = React.memo(function AboutPageClient({ aboutData, footerD
           </Link>
         </div>
         <div className={headerStyles.logoContainer}>
-          <Image 
-            src="/tree.webp" 
-            alt="Azul Integrity Tree Logo" 
-            className={headerStyles.logoImage} 
-            width={50} 
-            height={50}
-            priority
-            sizes="(max-width: 768px) 40px, 50px"
-          />
+          <picture>
+            <source 
+              media="(max-width: 768px)" 
+              srcSet="/tree-mobile.webp"
+            />
+            <Image 
+              src="/tree.webp" 
+              alt="Azul Integrity Tree Logo" 
+              className={headerStyles.logoImage} 
+              width={50} 
+              height={50}
+              priority
+              sizes="(max-width: 768px) 40px, 50px"
+            />
+          </picture>
           <div className={headerStyles.logoText}>
             <div className={headerStyles.companyName}>Azul Integrity</div>
             <div className={headerStyles.companySubtitle}>Accounting Services</div>
