@@ -112,30 +112,23 @@ const HomePageClient = React.memo(function HomePageClient({ homepageContent, foo
         {/* Hero Section */}
         <section className={styles.hero}>
           <div className={styles.heroImageBg}>
-            {/* Mobile-optimized hero image */}
-            <picture>
-              <source 
-                media="(max-width: 768px)" 
-                srcSet="/trusttree-mobile.webp"
-              />
-              <Image 
-                src={homepageContent.hero.background_image} 
-                alt={homepageContent.hero.background_alt} 
-                fill
-                priority
-                fetchPriority="high"
-                quality={75}
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw"
-                style={{ 
-                  objectFit: 'cover', 
-                  objectPosition: '25% center',
-                  transform: 'translate3d(0,0,0)',
-                  backfaceVisibility: 'hidden'
-                }}
-                placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx//2wBDAQcHBw0MDRgQEBgaFREVGh8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx//wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRobHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyxxkNzxQJVqTX0zUKNRfq/aqWD+FLpVMskPnYfFGKN8iZNEjAe2pHYdJNNfKBEyabH7L2j+zb7KlrBE0gFRFH6nOT5Cr7wgIUGP+vYDbFBAIhGFCgGOASDJEGj+EhUJzHdddUabadCh6e4/GNVGhRt2EfWoNKhUOw8RKGrjrQoUJIrZWgMl6k+1ChFXb0rXrQoGJ4/+R+sKFGgUKFCj//Z"
-              />
-            </picture>
+            <Image 
+              src="/trusttree-mobile.webp"
+              alt={homepageContent.hero.background_alt} 
+              fill
+              priority
+              fetchPriority="high"
+              quality={85}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw"
+              style={{ 
+                objectFit: 'cover', 
+                objectPosition: '25% center',
+                transform: 'translate3d(0,0,0)',
+                backfaceVisibility: 'hidden'
+              }}
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwMDAwMEAwODxAPDgwTExQUExMcGxsbHB8fHx8fHx8fHx//2wBDAQcHBw0MDRgQEBgaFREVGh8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx//wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRobHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyxxkNzxQJVqTX0zUKNRfq/aqWD+FLpVMskPnYfFGKN8iZNEjAe2pHYdJNNfKBEyabH7L2j+zb7KlrBE0gFRFH6nOT5Cr7wgIUGP+vYDbFBAIhGFCgGOASDJEGj+EhUJzHdddUabadCh6e4/GNVGhRt2EfWoNKhUOw8RKGrjrQoUJIrZWgMl6k+1ChFXb0rXrQoGJ4/+R+sKFGgUKFCj//Z"
+            />
           </div>
           <div className={styles.heroContent}>
             <div className={styles.heroText}>

@@ -26,27 +26,30 @@ export default function RootLayout({
   return (
     <html lang="en" className={openSans.variable}>
       <head>
-        {/* Preload critical fonts for better performance */}
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
-          as="style"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
+        {/* Optimized non-blocking font loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+          as="style"
+        />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            (function(){
+              var link = document.querySelector('link[as="style"]');
+              if(link) {
+                link.onload = function() {
+                  this.onload = null;
+                  this.rel = 'stylesheet';
+                };
+              }
+            })();
+          `
+        }} />
+        <noscript>
+          <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        </noscript>
         <link rel="icon" type="image/png" href="/favicon.ico/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.ico/favicon.svg" />
         <link rel="shortcut icon" href="/favicon.ico/favicon.ico" />
